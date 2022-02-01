@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create(first_name: 'Maria', last_name: 'Henriquez', role: 'teacher', email: 'maria@email.com', password: '1234567');
+
+Line.create(name: 'Estación principal');
+Line.create(name: 'Idea de la investigación');
+Line.create(name: 'Marco teoríco');
