@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get '/resources', to: "pages#resources", as: 'resources'
+  get '/recursos', to: "pages#recursos", as: 'recursos'
   resources :lines, only: [:index]
   resources :interviews, only: [ :new, :create]
 

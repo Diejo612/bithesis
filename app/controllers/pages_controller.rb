@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def resources
+  def recursos
 
   end
 end
