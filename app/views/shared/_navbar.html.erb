@@ -1,24 +1,31 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-   <h1>Bi thesis</h1>
+   <h1>Bi.Thesis</h1>
     <a class="navbar-brand" href="#">
     </a>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Mi perfil", "#", class: "dropdown-item" %>
+              <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
           <li class="nav-item">
             <a class="nav-link text-white" href="#">Conócenos</a>
           </li>
+          <span style='font-size:23px; color:white'>|</span>
           <li class="nav-item">
-            <% if user_signed_in? %>
-              <%= link_to 'Cerrar sesión', destroy_user_session_path, class: 'nav-link text-white', method: :delete %>
-            <% else %>
-              <%= link_to 'Iniciar sesión', new_user_session_path, class: 'nav-link text-white' %>
-            <% end %>
+            <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link text-white" %>
           </li>
+          <%= link_to 'Solicita una entrevista', new_user_registration_path, class: 'btn-yours' %>
+        <% end %>
       </ul>
-      <% unless user_signed_in? %>
-        <%= link_to 'Solicita una entrevista', new_user_registration_path, class: 'btn-yours' %>
-      <% end %>
     </div>
+
   </div>
 </div>
