@@ -4,17 +4,21 @@
   background: #957fef;
 }
 
+.navbar-brand {
+  width: 63px;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-
 .container-fluid h1 {
   color: white;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 24px;
 
+  font-family: 'Poppins', sans-serif;
+   font-weight: bold;
+  font-size: 26px;
+  text-decoration: none !important;
 }
 
 .text-white{
