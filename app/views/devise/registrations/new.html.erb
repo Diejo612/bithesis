@@ -1,46 +1,70 @@
-<h2>Sign up</h2>
+<div class="background-register">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+</div>
 
-  <div class="form-inputs">
-    <%= f.input :first_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "first_name" }%>
-    <%= f.input :last_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "last_name" }%>
-    <%= f.input :university,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "university" }%>
-    <%= f.input :level_instruction,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "level_instruction" }%>
-    <%= f.input :phone,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "phone" }%>
-    <%= f.input :photo, as: :file %>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+<div class='container-register'>
+  <h1>Primero completa el siguiente formulario</h1>
+  <div class="form-register">
+    <h2>Datos personales</h2>
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs grid-form">
+          <%= f.input :first_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "first_name" },
+                      label: false,
+                      placeholder: 'Nombre' %>
+          <%= f.input :last_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "last_name" },
+                      label: false,
+                      placeholder: 'Apellido' %>
+          <%= f.input :university,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "university" },
+                      label: false,
+                      placeholder: 'University' %>
+          <%= f.input :level_instruction,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "level_instruction" },
+                      label: false,
+                      placeholder: 'Nivel de instrucción' %>
+          <%= f.input :phone,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "phone" },
+                      label: false,
+                      placeholder: 'Phone' %>
+          <%= f.input :photo, as: :file, label: false %>
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" },
+                        label: false,
+                        placeholder: 'Email' %>
+          <%= f.input :password,
+                      required: true,
+                      input_html: { autocomplete: "new-password" },
+                        label: false,
+                       placeholder: 'Contraseña' %>
+
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" },
+                      label: false,
+                      placeholder: 'Confirmar contraseña'  %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up", class: 'btn-registro' %>
+      </div>
+    <% end %>
+
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
