@@ -9,10 +9,16 @@
             <a class="nav-link text-white" href="#">Conócenos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Iniciar sesión</a>
+            <% if user_signed_in? %>
+              <%= link_to 'Cerrar sesión', destroy_user_session_path, class: 'nav-link text-white', method: :delete %>
+            <% else %>
+              <%= link_to 'Iniciar sesión', new_user_session_path, class: 'nav-link text-white' %>
+            <% end %>
           </li>
       </ul>
-      <a href="#" class="btn-yours">Solicita una entrevista</a>
+      <% unless user_signed_in? %>
+        <%= link_to 'Solicita una entrevista', new_user_registration_path, class: 'btn-yours' %>
+      <% end %>
     </div>
   </div>
 </div>
