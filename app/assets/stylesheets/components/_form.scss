@@ -1,0 +1,46 @@
+.background-login {
+  background-image: url(https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  background-size: cover;
+  background-position: 30%;
+}
+.login {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 92vh;
+}
+.container-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+
+.form-login {
+  width: 55%;
+}
+
+input {
+  border-radius: 15px !important;
+  border: 1px solid #C4A5FF !important;
+}
+
+.form-check {
+  color: #8240FF;
+  #user_remember_me {
+    border: 1px solid #8240FF !important;
+  }
+}
+
+.btn-yellow {
+  display: block;
+  width: 150px;
+  height: 40px;
+  background-color: #F9FD32;
+  border: none !important;
+  margin: 0 auto;
+}
+
+.form-login a {
+  color: black !important;
+  font-weight: lighter !important;
+}
