@@ -1,0 +1,14 @@
+<div class="background-register">
+
+</div>
+
+<div class='container-register'>
+  <h1>Elige la fecha y hora para tu reunión</h1>
+  <div class="form-register">
+    <h2>Datos personales</h2>
+      <%= simple_form_for @interview do |f| %>
+        <%= f.input :date %>
+        <%= f.button :submit, class: 'btn-yellow' %>
+      <% end %>
+  </div>
+</div>
