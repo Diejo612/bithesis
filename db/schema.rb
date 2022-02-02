@@ -115,6 +115,8 @@ ActiveRecord::Schema.define(version: 2022_02_01_223822) do
     t.string "university"
     t.string "level_instruction"
     t.string "phone"
+    t.boolean "admited", default: false
+    t.boolean "set_interview", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

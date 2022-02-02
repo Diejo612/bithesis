@@ -1,3 +1,16 @@
-<% @lines.each do |line| %>
-  <%= line.name %>
+<% if current_user.role == 'teacher' %>
+  <%= render 'dashboard_teacher' %>
+<% else %>
+  <% if current_user.admited %>
+    <%= render 'dashboard' %>
+  <% else %>
+    <% if current_user.set_interview %>
+      <div class='interview-info'>
+       <h1>Reunión confirmada</h1>
+        Tu cita ha sido programada para el <%= @date %>
+      </div>
+    <% else %>
+      <%= render 'no_interview' %>
+    <% end %>
+  <% end %>
 <% end %>
