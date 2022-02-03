@@ -6,4 +6,7 @@ class PagesController < ApplicationController
 
   def recursos
   end
+
+  def cursos
+  end
 end

@@ -22,6 +22,11 @@ Line.create(name: 'Finales', icon_tag: 'far fa-lightbulb', abrv: 'linea8')
 Line.create(name: 'Defensa de tesis', icon_tag: 'far fa-lightbulb', abrv: 'linea9')
 Line.create(name: 'Estación servicios adicionales', icon_tag: 'far fa-lightbulb', abrv: 'linea10')
 
+puts 'Asignando cursos a usuario prueba'
+
+Assignation.create(user_id: 5, line_id: 2, completed: false)
+Assignation.create(user_id: 5, line_id: 9, completed: false)
+
 puts 'Creando station'
 station1 = Station.new(name: 'Bienvenida', line_id: 1, abrv: 'st1')
 station1.save
