@@ -7,7 +7,7 @@ puts 'Creando Usuarios'
 User.create(first_name: 'Maria', last_name: 'Henriquez', role: 'teacher', email: 'maria@email.com', password: '1234567').photo.attach(io: avatar, filename: 'avatar.png', content_type: 'image/png');
 User.create(first_name: 'Mel', last_name: 'Valle', role: 'student', email: 'mel@email.com', password: '1234567')
 User.create(first_name: 'Jhon', last_name: 'Figueroa', role: 'student', email: 'jh@email.com', password: '1234567')
-User.create(first_name: 'Jean', last_name: 'Pier', role: 'student', email: 'jean_piere@email.com', password: '1234567')
+User.create(first_name: 'Jean', last_name: 'Pier', role: 'student', email: 'jean_pier@email.com', password: '1234567')
 
 puts 'Creando Lines'
 Line.create(name: 'Linea principal')
