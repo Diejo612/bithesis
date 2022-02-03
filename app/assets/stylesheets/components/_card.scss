@@ -80,8 +80,8 @@
   grid-gap: 50px;
 }
 .img-recurso {
-  width: 292px;
-  height: 180px;
+  width: 472px;
+  height: 292px;
 }
 .container-dashboard {
   height: 100vh;
@@ -130,4 +130,17 @@
     border-bottom: 1px solid #D7C3FF;
     margin-bottom: 20px;
   }
+}
+
+.card-text-recurso h5 {
+  color: #8240FF;
+}
+
+.container-recurso h1 {
+  color: #8240FF;
+  font-weight: bold;
+}
+.container-recurso-2 h1 {
+  color: #8240FF;
+  font-weight: bold;
 }
