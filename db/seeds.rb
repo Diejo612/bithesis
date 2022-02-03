@@ -11,16 +11,16 @@ User.create(first_name: 'Jean', last_name: 'Pier', role: 'student', email: 'jean
 User.create(first_name: 'Usuario Prueba', last_name: 'Admitido', email: 'user_admited@email.com', password: '1234567', admited: true)
 
 puts 'Creando Lines'
-Line.create(name: 'Linea principal', icon_tag: '<i class="fas fa-flag"></i>', abrv: 'linea1')
-Line.create(name: 'Idea de la investigación', icon_tag: '<i class="far fa-lightbulb"></i>', abrv: 'linea2')
-Line.create(name: 'Marco teorico', icon_tag: '<i class="far fa-lightbulb"></i>', abrv: 'linea3')
-Line.create(name: 'El problema', icon_tag: '<i class="far fa-lightbulb"></i>', abrv: 'linea4')
-Line.create(name: 'Marco metodologico', icon_tag: '<i class="far fa-lightbulb"></i>', abrv: 'linea5')
-Line.create(name: 'Resultados de la investigación', icon_tag: '<i class="far fa-lightbulb"></i>', abrv: 'linea6')
-Line.create(name: 'Diseño de la investigación', icon_tag: '<i class="far fa-lightbulb"></i>', abrv: 'linea7')
-Line.create(name: 'Finales', icon_tag: '<i class="far fa-lightbulb"></i>', abrv: 'linea8')
-Line.create(name: 'Defensa de tesis', icon_tag: '<i class="far fa-lightbulb"></i>', abrv: 'linea9')
-Line.create(name: 'Estación servicios adicionales', icon_tag: '<i class="far fa-lightbulb"></i>', abrv: 'linea10')
+Line.create(name: 'Linea principal', icon_tag: 'fas fa-flag', abrv: 'linea1')
+Line.create(name: 'Idea de la investigación', icon_tag: 'far fa-lightbulb', abrv: 'linea2')
+Line.create(name: 'Marco teorico', icon_tag: 'far fa-lightbulb', abrv: 'linea3')
+Line.create(name: 'El problema', icon_tag: 'far fa-lightbulb', abrv: 'linea4')
+Line.create(name: 'Marco metodologico', icon_tag: 'far fa-lightbulb', abrv: 'linea5')
+Line.create(name: 'Resultados de la investigación', icon_tag: 'far fa-lightbulb', abrv: 'linea6')
+Line.create(name: 'Diseño de la investigación', icon_tag: 'far fa-lightbulb', abrv: 'linea7')
+Line.create(name: 'Finales', icon_tag: 'far fa-lightbulb', abrv: 'linea8')
+Line.create(name: 'Defensa de tesis', icon_tag: 'far fa-lightbulb', abrv: 'linea9')
+Line.create(name: 'Estación servicios adicionales', icon_tag: 'far fa-lightbulb', abrv: 'linea10')
 
 puts 'Creando station'
 station1 = Station.new(name: 'Bienvenida', line_id: 1, abrv: 'st1')
