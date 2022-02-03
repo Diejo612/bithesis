@@ -17,7 +17,7 @@
                       input_html: { autocomplete: "current-password" },
                       label: false,
                       placeholder: 'Contraseña' %>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%= f.input :remember_me, label: 'Recuérdame', as: :boolean if devise_mapping.rememberable? %>
         </div>
         <%= render "devise/shared/links" %>
 
