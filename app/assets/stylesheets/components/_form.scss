@@ -6,7 +6,7 @@
 .login {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  height: 93vh;
+  height: calc(100vh - 60px);
 }
 .container-form {
   display: flex;
@@ -56,6 +56,10 @@
 
 .form-login {
   width: 55%;
+  h2 {
+    font-size: 48px;
+    font-weight: bold;
+  }
 }
 
 input {
