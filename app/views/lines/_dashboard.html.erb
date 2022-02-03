@@ -8,6 +8,17 @@
         </h3>
       </div>
     <% end %>
+      <div class="bar-lines">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <% @lines.each_with_index do |line, i| %>
+            <% if i.zero? %>
+              <a class="nav-link active" id="v-pills-<%= line.abrv %>-tab" data-toggle="pill" href="#v-pills-<%= line.abrv %>" role="tab" aria-controls="v-pills-<%= line.abrv %>" aria-selected="true"><%= line.name %></a>
+            <% else %>
+              <a class="nav-link" id="v-pills-<%= line.abrv %>-tab" data-toggle="pill" href="#v-pills-<%= line.abrv %>" role="tab" aria-controls="v-pills-<%= line.abrv %>" aria-selected="false"><%= line.name %></a>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
   </div>
   <div class="main-dashboard">
     <div class='main-header'>
@@ -24,5 +35,72 @@
       </div>
     </div>
     <div class="bar-space"></div>
+    <div class="tab-content" id="v-pills-tabContent">
+          <% @lines.each_with_index do |line,i| %>
+              <% if i.zero? %>
+                <div class="tab-pane fade show active" id="v-pills-<%= line.abrv %>" role="tabpanel" aria-labelledby="v-pills-<%= line.abrv %>-tab">
+                  <h3><%= line.name %></h3>
+
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <%= line.stations.each_with_index do |station,i| %>
+                        <% if i.zero? %>
+                          <a class="nav-link active" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="true"><%= station.name %></a>
+                        <% else %>
+                          <a class="nav-link" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="false"><%= station.name %></a>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  </nav>
+
+                  <div class="tab-content" id="nav-tabContent">
+                    <%= line.stations.each_with_index do |station,i| %>
+                        <% if i.zero? %>
+                          <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                            <h4>
+                            Contenido de la estación
+                            </h4>
+                          </div>
+                        <% else %>
+                          <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                            <h4>
+                            Contenido de la estación
+                            </h4>
+                          </div>
+                        <% end %>
+                    <% end %>
+                  </div>
+
+                </div>
+              <% else %>
+                <div class="tab-pane fade" id="v-pills-<%= line.abrv %>" role="tabpanel" aria-labelledby="v-pills-<%= line.abrv %>-tab">
+                  <h3><%= line.name %></h3>
+
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <%= line.stations.each_with_index do |station,i| %>
+                        <% if i.zero? %>
+                          <a class="nav-link active" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="true"><%= station.name %></a>
+                        <% else %>
+                          <a class="nav-link" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="false"><%= station.name %></a>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  </nav>
+
+                  <div class="tab-content" id="nav-tabContent">
+                    <%= line.stations.each_with_index do |station,i| %>
+                        <% if i.zero? %>
+                          <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">...</div>
+                        <% else %>
+                          <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">...</div>
+                        <% end %>
+                    <% end %>
+                  </div>
+
+                </div>
+              <% end %>
+          <% end %>
+        </div>
   </div>
 </div>
