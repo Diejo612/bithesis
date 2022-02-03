@@ -12,9 +12,9 @@
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
           <% @lines.each_with_index do |line, i| %>
             <% if i.zero? %>
-              <a class="nav-link active" id="v-pills-<%= line.abrv %>-tab" data-toggle="pill" href="#v-pills-<%= line.abrv %>" role="tab" aria-controls="v-pills-<%= line.abrv %>" aria-selected="true"><%= line.name %></a>
+              <a class="nav-link active" id="v-pills-<%= line.abrv %>-tab" data-toggle="pill" href="#v-pills-<%= line.abrv %>" role="tab" aria-controls="v-pills-<%= line.abrv %>" aria-selected="true"><i class="<%= line.icon_tag %>"></i></a>
             <% else %>
-              <a class="nav-link" id="v-pills-<%= line.abrv %>-tab" data-toggle="pill" href="#v-pills-<%= line.abrv %>" role="tab" aria-controls="v-pills-<%= line.abrv %>" aria-selected="false"><%= line.name %></a>
+              <a class="nav-link" id="v-pills-<%= line.abrv %>-tab" data-toggle="pill" href="#v-pills-<%= line.abrv %>" role="tab" aria-controls="v-pills-<%= line.abrv %>" aria-selected="false"><i class="<%= line.icon_tag %>"></i></a>
             <% end %>
           <% end %>
         </div>
@@ -43,7 +43,7 @@
 
                   <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                      <%= line.stations.each_with_index do |station,i| %>
+                      <% line.stations.each_with_index do |station,i| %>
                         <% if i.zero? %>
                           <a class="nav-link active" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="true"><%= station.name %></a>
                         <% else %>
@@ -54,7 +54,7 @@
                   </nav>
 
                   <div class="tab-content" id="nav-tabContent">
-                    <%= line.stations.each_with_index do |station,i| %>
+                    <% line.stations.each_with_index do |station,i| %>
                         <% if i.zero? %>
                           <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
                             <h4>
@@ -78,7 +78,7 @@
 
                   <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                      <%= line.stations.each_with_index do |station,i| %>
+                      <% line.stations.each_with_index do |station,i| %>
                         <% if i.zero? %>
                           <a class="nav-link active" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="true"><%= station.name %></a>
                         <% else %>
@@ -89,7 +89,7 @@
                   </nav>
 
                   <div class="tab-content" id="nav-tabContent">
-                    <%= line.stations.each_with_index do |station,i| %>
+                    <% line.stations.each_with_index do |station,i| %>
                         <% if i.zero? %>
                           <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">...</div>
                         <% else %>
