@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Source+Sans+Pro:wght@600&family=Ubuntu:wght@300&display=swap');
 .card {
   box-shadow: 2px 2px 3px rgb(124, 119, 119);
-  width: 240px;
+  width: 278px;
   height: 340px;
   border: 0px;
   h5 {
-    color: #957fef;
+    color: #6543ee;
     font-family: 'Poppins', sans-serif;
+    text-align: center;
   }
   p {
     font-family: 'Poppins', sans-serif;
+
   }
 }
 
@@ -27,11 +29,6 @@
 .card-text-2 p {
   font-family: 'Poppins', sans-serif;
   font-size: 25px;
-}
-
-.card-text-2{
-  padding: 97px;
-  padding-top: 308px;
 }
 
 .card-home {
@@ -69,10 +66,11 @@
   }
 }
 
+
+
 .interview-info {
   padding: 100px;
 }
-
 
 .card-recurso {
   display: grid;
@@ -143,4 +141,24 @@
 .container-recurso-2 h1 {
   color: #8240FF;
   font-weight: bold;
+}
+
+.rounded {
+  width: 10%;
+  height: 10%;
+}
+
+.card-final {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card-final-2 {
+  box-shadow: 2px 2px 3px rgb(124, 119, 119);
+  background-color: yellow;
+}
+
+.card-text-3 {
+  padding-left: 2rem;
+  text-align: right;
 }
