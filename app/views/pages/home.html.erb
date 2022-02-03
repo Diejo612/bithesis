@@ -18,8 +18,8 @@
 </div>
 
 <div class="container my-5">
-  <div class="row ml-1">
-    <div class="col-4 p-5">
+  <div class="d-flex justify-content-between">
+    <div>
       <div class="card m-2 p-0">
         <%= image_tag "card-1.jpg"%>
         <div class="card-body">
@@ -29,7 +29,7 @@
 
       </div>
     </div>
-    <div class="col-4 p-5">
+    <div>
       <div class="card m-2 p-0">
         <%= image_tag "card-2.jpg"%>
         <div class="card-body">
@@ -38,7 +38,7 @@
         </div>
       </div>
     </div>
-    <div class="col-4 p-5">
+    <div>
       <div class="card m-2 p-0">
         <%= image_tag "card-3.jpg"%>
         <div class="card-body">
@@ -50,20 +50,67 @@
   </div>
 </div>
 
-<div class="conteiner cards">
-  <div class="card-text-2 ">
-    <h2>Conoce a nuestro equipo</h2>
-    <p>Estamos encantados de ayudarte y acompañarte en el desarrollo de tu tesis, para que logres el tan anhelado grado académico para tu futuro.</p>
+<div class="container d-flex" id="conocenos">
+  <div class="d-flex align-items-center card-text-2">
+    <div>
+      <h2>Conoce a nuestro equipo</h2>
+      <p>Estamos encantados de ayudarte y acompañarte en el desarrollo de tu tesis, para que logres el tan anhelado grado académico para tu futuro.</p>
+    </div>
   </div>
-  <div class="card-img row row-cols-2">
-    <div class="col d-flex align-items-center">
+  <div class="d-flex">
+    <div class="d-flex align-items-center">
       <%= image_tag "person_1.jpg" %>
     </div>
-    <div class="col">
+    <div>
       <%= image_tag "person_2.jpg" %>
       <%= image_tag "person_3.jpg" %>
     </div>
   </div>
 </div>
+
+<div class="container d-flex card-final">
+  <div class="cards-final w-50">
+    <div class="card-final-2">
+      <h4>Nombre y apellido</h4>
+      <p>02/02/2022</p>
+      <hr>
+      <div class="d-flex">
+        <div>
+          <p>Tema de tesis (carrera)</p>
+          <p>Descripción de todo el comentario y experiencia</p>
+        </div>
+        <%= image_tag "perfil.jpg", class:"rounded" %>
+      </div>
+    </div>
+    <div class="card-final-2">
+      <h4>Nombre y apellido</h4>
+      <p>02/02/2022</p>
+      <div class="d-flex">
+        <div>
+          <p>Tema de tesis (carrera)</p>
+          <p>Descripción de todo el comentario y experiencia</p>
+        </div>
+        <%= image_tag "perfil.jpg", class:"rounded" %>
+    </div>
+    <div class="card-final-2">
+      <h4>Nombre y apellido</h4>
+      <p>02/02/2022</p>
+      <div class="d-flex">
+        <div>
+          <p>Tema de tesis (carrera)</p>
+          <p>Descripción de todo el comentario y experiencia</p>
+        </div>
+        <%= image_tag "perfil.jpg", class:"rounded" %>
+      </div>
+     </div>
+    </div>
+  </div>
+
+  <div class="card-text-3 w-50">
+    <h5>Testimonios de nuestros asesorados</h5>
+    <p>Nuestra mayor motivación es hacer de tu tesis un paso de tu proyecto de vida, y nos alegra aún más si con cada tesis ayudamos a mejorar la sociedad.</p>
+  </div>
+</div>
+
 
 <%= render 'shared/footer' %>

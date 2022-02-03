@@ -1,0 +1,31 @@
+.recursos-grid {
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+}
+
+.recursos-card {
+  display: flex;
+  background-color: white;
+  box-shadow: 3px 4px 17px rgb(124, 119, 119);
+  margin: 3%;
+  padding: 5%;
+  h5 {
+  color: #8240FF;
+  text-align: center;
+  }
+  h6 {
+  color: #0ed49f;
+  font-family: 'Poppins', sans-serif;
+  }
+  p {
+  text-align: justify;
+  }
+}
+
+.recursos-card-content {
+  width: 100%;
+}
