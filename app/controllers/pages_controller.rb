@@ -10,8 +10,11 @@ class PagesController < ApplicationController
 
   def cursos
   end
-  
+
   def about
   @user = current_user
+  end
+
+  def articulo1
   end
 end
