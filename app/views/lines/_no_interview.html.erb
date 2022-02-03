@@ -1,7 +1,35 @@
-<div class='container-entrevista'>
-  <h1>Programa tu entrevista</h1>
+<div class='container-dashboard'>
+  <div class='sidebar'>
+    <%= link_to '/' do %>
+      <div class="logo-tipo">
+        <%= image_tag 'logo.png' %>
+        <h3>
+          Bi.Thesis
+        </h3>
+      </div>
+    <% end %>
+  </div>
+  <div class="main-dashboard">
+    <div class='main-header'>
+      <h1>
+        Welcome <span><%= current_user.first_name %></span>
+      </h1>
+      <div class="avatar-btn">
+        <i class="fas fa-bars"></i>
+        <% if current_user.photo.key %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+            <% else %>
+              <%= image_tag 'avatar-default.jpg', class: "avatar" %>
+            <% end %>
+      </div>
+    </div>
+    <div class="bar-space"></div>
+    <div class='container-entrevista'>
+      <h1>Programa tu entrevista</h1>
 
-  <p>Aún no has programado tu entrevista, haz click al siguiente link y elige la fecha de la reunión.</p>
+      <p>Aún no has programado tu entrevista, haz click al siguiente link y elige la fecha de la reunión.</p>
 
-  <%= link_to "Programar reunión", new_interview_path, class: 'btn-yours' %>
+      <%= link_to "Programar reunión", new_interview_path, class: 'btn-yours' %>
+    </div>
+  </div>
 </div>
