@@ -23,19 +23,19 @@ Line.create(name: 'Defensa de tesis', icon_tag: 'far fa-lightbulb', abrv: 'linea
 Line.create(name: 'Estación servicios adicionales', icon_tag: 'far fa-lightbulb', abrv: 'linea10')
 
 puts 'Creando station'
-station1 = Station.new(name: 'Bienvenida', line_id: 1, abrv: 'st1')
+station1 = Station.new(name: 'Bienvenida', line_id: 1, abrv: 'st1', comment: "Bienvenid@ a tu plataforma de acompañamiento personalizado para el desarrollo de la tesis, en el vídeo visualizarás una pequeña demostración de la plataforma para que te familiarices con su funcionamiento")
 station1.save
-station2 = Station.new(name: 'Lineamientos generales', line_id: 1, abrv: 'st2')
+station2 = Station.new(name: 'Lineamientos generales', line_id: 1, abrv: 'st2', comment: "Descubre los lineamientos de funcionamiento de Bi-Thesis para estar todos los involucrados en armonía y así tu proceso sea exitoso. ¡Siempre estaremos contigo!")
 station2.save
-station3 = Station.new(name: 'Pre work', line_id: 1, abrv: 'st3')
+station3 = Station.new(name: 'Pre work', line_id: 1, abrv: 'st3', comment: "Muy bien ahora que estás familiarizado con la plataforma y conoces las normas de funcionamiento, vamos a empezar con la nivelación de los conocimientos básicos para que empieces tu tesis con buen pie")
 station3.save
-station4 = Station.new(name: 'Definición de variables', line_id: 2, abrv: 'st4')
+station4 = Station.new(name: 'Definición de variables', line_id: 2, abrv: 'st4', comment: "¡Ahora si!, vamos a concretar tema de investigación")
 station4.save
-station5 = Station.new(name: 'Viabilidad', line_id: 2, abrv: 'st5')
+station5 = Station.new(name: 'Viabilidad', line_id: 2, abrv: 'st5', comment: "Una vez con tema(s) seleccionados, debemos analizar otros factores para determinar si todo lo que queremos hacer es posible")
 station5.save
-station6 = Station.new(name: 'Proyección de escenarios y medología', line_id: 2, abrv: 'st6')
+station6 = Station.new(name: 'Proyección de escenarios y medología', line_id: 2, abrv: 'st6', comment: "¡Muy bien!, ya con todos los escenarios considerados, vamos proyectar los caminos a seguir")
 station6.save
-station7 = Station.new(name: 'Concreción ante proyecto', line_id: 2, abrv: 'st7')
+station7 = Station.new(name: 'Concreción ante proyecto', line_id: 2, abrv: 'st7', comment: "¡Felicidades!, si haz llegado hasta esta estación, significa que tiene todo lo necesario para proponer el anteproyecto. ¡Manos a la obra!")
 station7.save
 station8 = Station.new(name: 'Antecedentes', line_id: 3, abrv: 'st8')
 station8.save
@@ -83,7 +83,7 @@ station29 = Station.new(name: 'Anexos', line_id: 8, abrv: 'st29')
 station29.save
 station30 = Station.new(name: 'Apéndices', line_id: 8, abrv: 'st30')
 station30.save
-station31 = Station.new(name: 'Preparación de la defensa', line_id: 9, abrv: 'st31')
+station31 = Station.new(name: 'Preparación de la defensa', line_id: 9, abrv: 'st31', comment: "¡Muchas felicidades!, ¿Viste que si es posible culminar tu tesis?, ahora a demostrar todo lo que aprendiste y aportaste gracias a tu proyecto de investigación,lee estos lineamientos y ensayemos tu presentación para que sea una experiencia inolvidable")
 station31.save
 station32 = Station.new(name: 'Análisis estadístico', line_id: 10, abrv: 'st32')
 station32.save
