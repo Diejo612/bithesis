@@ -105,3 +105,7 @@ station37 = Station.new(name: 'Revisión de normas de cita', line_id: 10, abrv: 
 station37.save
 station38 = Station.new(name: 'Revisión de normas de presentación', line_id: 10, abrv: 'st38', content: "Apliquemos las normas de presentación acorde a tu institución educativa")
 station38.save
+
+puts 'Cargando videos'
+
+task1 = Task.new(station_id: 2, type: 'lecture', video_url: 'https://www.loom.com/embed/7127b494d626479497e0c4c82e35627f')
