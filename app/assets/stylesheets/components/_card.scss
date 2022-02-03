@@ -72,3 +72,13 @@
 .interview-info {
   padding: 100px;
 }
+
+.card-recurso {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
+.img-recurso {
+  width: 292px;
+  height: 180px;
+}
