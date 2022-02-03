@@ -61,7 +61,13 @@
                               <p>
                               <%= station.content %>
                               </p>
-
+                              <% if station.tasks %>
+                                <% station.tasks.each do |task| %>
+                                  <div class='container-video'>
+                                    <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                  </div>
+                                <% end %>
+                              <% end %>
                             </div>
                           </div>
                         <% else %>
@@ -70,6 +76,12 @@
                               <p>
                               <%= station.content %>
                               </p>
+                              <% if station.tasks %>
+                                <% station.tasks.each do |task| %>
+                                  <div class='container-video'>
+                                    <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                  </div>                                <% end %>
+                              <% end %>
                             </div>
                           </div>
                         <% end %>
@@ -101,6 +113,12 @@
                               <p>
                                 <%= station.content %>
                               </p>
+                              <% if station.tasks %>
+                                <% station.tasks.each do |task| %>
+                                  <div class='container-video'>
+                                    <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                  </div>                                <% end %>
+                              <% end %>
                             </div>
                           </div>
                         <% else %>
@@ -109,6 +127,12 @@
                               <p>
                                 <%= station.content %>
                               </p>
+                              <% if station.tasks %>
+                                <% station.tasks.each do |task| %>
+                                  <div class='container-video'>
+                                    <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                  </div>                                <% end %>
+                              <% end %>
                             </div>
                           </div>
                         <% end %>
