@@ -7,6 +7,10 @@ class PagesController < ApplicationController
   def recursos
   end
 
+
+  def cursos
+  end
+  
   def about
   @user = current_user
   end
