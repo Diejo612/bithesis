@@ -26,6 +26,12 @@ puts 'Asignando cursos a usuario prueba'
 
 Assignation.create(user_id: 5, line_id: 1, completed: false)
 Assignation.create(user_id: 5, line_id: 2, completed: false)
+Assignation.create(user_id: 5, line_id: 3, completed: false)
+Assignation.create(user_id: 5, line_id: 4, completed: false)
+Assignation.create(user_id: 5, line_id: 5, completed: false)
+Assignation.create(user_id: 5, line_id: 6, completed: false)
+Assignation.create(user_id: 5, line_id: 7, completed: false)
+Assignation.create(user_id: 5, line_id: 8, completed: false)
 Assignation.create(user_id: 5, line_id: 9, completed: false)
 
 puts 'Creando station'
