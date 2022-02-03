@@ -57,15 +57,20 @@
                     <% line.stations.each_with_index do |station,i| %>
                         <% if i.zero? %>
                           <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
-                            <h4>
-                            <%= station.content %>
-                            </h4>
+                            <div class="content-dash">
+                              <p>
+                              <%= station.content %>
+                              </p>
+
+                            </div>
                           </div>
                         <% else %>
                           <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
-                            <h4>
-                            <%= station.content %>
-                            </h4>
+                            <div class="content-dash">
+                              <p>
+                              <%= station.content %>
+                              </p>
+                            </div>
                           </div>
                         <% end %>
                     <% end %>
@@ -91,9 +96,21 @@
                   <div class="tab-content" id="nav-tabContent">
                     <% line.stations.each_with_index do |station,i| %>
                         <% if i.zero? %>
-                          <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab"><h4><%= station.content %></h4></div>
+                          <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                            <div class="content-dash">
+                              <p>
+                                <%= station.content %>
+                              </p>
+                            </div>
+                          </div>
                         <% else %>
-                          <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab"><h4><%= station.content %></h4></div>
+                          <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                            <div class="content-dash">
+                              <p>
+                                <%= station.content %>
+                              </p>
+                            </div>
+                          </div>
                         <% end %>
                     <% end %>
                   </div>

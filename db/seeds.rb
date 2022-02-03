@@ -24,6 +24,7 @@ Line.create(name: 'Estación servicios adicionales', icon_tag: 'fas fa-tasks', a
 
 puts 'Asignando cursos a usuario prueba'
 
+Assignation.create(user_id: 5, line_id: 1, completed: false)
 Assignation.create(user_id: 5, line_id: 2, completed: false)
 Assignation.create(user_id: 5, line_id: 9, completed: false)
 
