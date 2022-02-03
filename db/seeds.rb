@@ -108,4 +108,7 @@ station38.save
 
 puts 'Cargando videos'
 
-task1 = Task.new(station_id: 2, type: 'lecture', video_url: 'https://www.loom.com/embed/7127b494d626479497e0c4c82e35627f')
+Task.create(station_id: 4, tipo: 'video', video_url: 'https://www.loom.com/embed/7127b494d626479497e0c4c82e35627f')
+Task.create(station_id: 5, tipo: 'video', video_url: 'https://www.loom.com/embed/6d7ad28dc51f4246a9155904b750ea76')
+Task.create(station_id: 5, tipo: 'video', video_url: 'https://www.loom.com/embed/0bc9cea925014e0686e86f93e6ebe946')
+Task.create(station_id: 31, tipo: 'video', video_url: 'https://www.loom.com/embed/011d94b6ee034f1b88d4f5eac5a64998')
