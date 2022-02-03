@@ -1,0 +1,32 @@
+<div class='container-dashboard'>
+  <div class='sidebar'>
+    <%= link_to '/' do %>
+      <div class="logo-tipo">
+        <%= image_tag 'logo.png' %>
+        <h3>
+          Bi.Thesis
+        </h3>
+      </div>
+    <% end %>
+  </div>
+  <div class="main-dashboard">
+    <div class='main-header'>
+      <h1>
+        Welcome <span><%= current_user.first_name %></span>
+      </h1>
+      <div class="avatar-btn">
+        <i class="fas fa-bars"></i>
+        <% if current_user.photo.key %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+            <% else %>
+              <%= image_tag 'avatar-default.jpg', class: "avatar" %>
+            <% end %>
+      </div>
+    </div>
+    <div class="bar-space"></div>
+    <div class='interview-info'>
+      <h1>Reunión confirmada</h1>
+      Tu cita ha sido programada para el <%= @date %>
+    </div>
+  </div>
+</div>
