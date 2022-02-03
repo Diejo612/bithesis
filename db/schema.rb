@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_01_223822) do
+ActiveRecord::Schema.define(version: 2022_02_03_155106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 2022_02_01_223822) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "icon_tag"
+    t.string "abrv"
   end
 
   create_table "stations", force: :cascade do |t|
@@ -77,6 +79,7 @@ ActiveRecord::Schema.define(version: 2022_02_01_223822) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "abrv"
     t.index ["line_id"], name: "index_stations_on_line_id"
   end
 
@@ -115,6 +118,8 @@ ActiveRecord::Schema.define(version: 2022_02_01_223822) do
     t.string "university"
     t.string "level_instruction"
     t.string "phone"
+    t.boolean "admited", default: false
+    t.boolean "set_interview", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
