@@ -37,65 +37,65 @@ station6 = Station.new(name: 'Proyección de escenarios y medología', line_id: 
 station6.save
 station7 = Station.new(name: 'Concreción ante proyecto', line_id: 2, abrv: 'st7', comment: "¡Felicidades!, si haz llegado hasta esta estación, significa que tiene todo lo necesario para proponer el anteproyecto. ¡Manos a la obra!")
 station7.save
-station8 = Station.new(name: 'Antecedentes', line_id: 3, abrv: 'st8')
+station8 = Station.new(name: 'Antecedentes', line_id: 3, abrv: 'st8', comment: "Ésta es una de las estaciones más importantes, ya que concretaremos los antecedentes que sustentarán tu idea y con la que compararás tus resultados")
 station8.save
-station9 = Station.new(name: 'Bases teóricas', line_id: 3, abrv: 'st9')
+station9 = Station.new(name: 'Bases teóricas', line_id: 3, abrv: 'st9', comment: "Gracias a los antecedentes, más la búsqueda de bibliografía, procederemos a desarrollar los aspectos teóricos que fundamentan tu idea de investigación y el porqué de su elección")
 station9.save
-station10 = Station.new(name: 'Operacionalización de la variable', line_id: 3, abrv: 'st10')
+station10 = Station.new(name: 'Operacionalización de la variable', line_id: 3, abrv: 'st10', comment: "Ahora sí llegamos al esqueleto de la tesis, muy de la mano con tu asesor lo lograremos armar y toda la tesis estará encaminada, así que con calma y perseverancia iniciemos esta estación tan crucial")
 station10.save
-station11 = Station.new(name: 'Borrador de hipótesis', line_id: 3, abrv: 'st11')
+station11 = Station.new(name: 'Borrador de hipótesis', line_id: 3, abrv: 'st11', comment: "Dibujemos un sistema de hipótesis tentativo")
 station11.save
-station12 = Station.new(name: 'Planteamiento', line_id: 4, abrv: 'st12')
+station12 = Station.new(name: 'Planteamiento', line_id: 4, abrv: 'st12', comment: "Como ahora eres un experto en el tema, podrás contarle a cualquiera en qué consiste tu tesis, eso haremos en el planteamiento")
 station12.save
-station13 = Station.new(name: 'Objetivos de la investigación', line_id: 4, abrv: 'st13')
+station13 = Station.new(name: 'Objetivos de la investigación', line_id: 4, abrv: 'st13', comment: "Los adelantamos en la operacionalización,pero se presentan formalmente en esta parte de la tesis")
 station13.save
-station14 = Station.new(name: 'Sistemas de hipótesis', line_id: 4, abrv: 'st14')
+station14 = Station.new(name: 'Sistemas de hipótesis', line_id: 4, abrv: 'st14', comment: "Corroboremos la redacción y presentación de las hipótesis que nos planteamos al inicio para formalizarlas")
 station14.save
-station15 = Station.new(name: 'Justificación', line_id: 4, abrv: 'st15')
+station15 = Station.new(name: 'Justificación', line_id: 4, abrv: 'st15', comment: "Es elemental en la fase de planteamiento, justificar tu idea de investigación. Vamos por ello.")
 station15.save
-station16 = Station.new(name: 'Delimitación', line_id: 4, abrv: 'st16')
+station16 = Station.new(name: 'Delimitación', line_id: 4, abrv: 'st16', comment: "Sé que ya te encanta tu tesis, pero es necesario explicar cuáles serán nuestros límites de actuación")
 station16.save
-station17 = Station.new(name: 'Limitaciones', line_id: 4, abrv: 'st17')
+station17 = Station.new(name: 'Limitaciones', line_id: 4, abrv: 'st17', comment: "Es natural que toda tesis tenga limitaciones, ya que no podemos con una sola tesis investigar el mundo entero, eso es lo que explicaremos en esta parte, no te inquiete ni pienses que es una desventaja, todo lo contraio, es exponer de manera responsable que se debe considerar de nuestro trabajo para su replicabilidad")
 station17.save
-station18 = Station.new(name: 'Enfoque cuantitativo', line_id: 5, abrv: 'st18')
+station18 = Station.new(name: 'Enfoque cuantitativo', line_id: 5, abrv: 'st18', comment: "Como te he comentado desde el principio, dependiendo del tema, contexto y tus habilidades, definiremos si lo mejor para ti es el paradigma cuantitativo y todo lo que repercute en el proyecto")
 station18.save
-station19 = Station.new(name: 'Enfoque cualitativo', line_id: 5, abrv: 'st19')
+station19 = Station.new(name: 'Enfoque cualitativo', line_id: 5, abrv: 'st19', comment: "Como te he comentado desde el principio, dependiendo del tema, contexto y tus habilidades, definiremos si lo mejor para ti es el paradigma cuanlitativo y todo lo que repercute en el proyecto")
 station19.save
-station20 = Station.new(name: 'Enfoque mixto', line_id: 5, abrv: 'st20')
+station20 = Station.new(name: 'Enfoque mixto', line_id: 5, abrv: 'st20', comment: "Como te he comentado desde el principio, dependiendo del tema, contexto y tus habilidades, definiremos si lo mejor para ti es el paradigma mixto y todo lo que repercute en el proyecto")
 station20.save
-station21 = Station.new(name: 'Analisis', line_id: 6, abrv: 'st21')
+station21 = Station.new(name: 'Analisis', line_id: 6, abrv: 'st21', comment: "¡Excelente!, una vez con la data levantada, vamos a presentar de manera atractiva los resultados de tu investigación")
 station21.save
-station22 = Station.new(name: 'Discusión', line_id: 6, abrv: 'st22')
+station22 = Station.new(name: 'Discusión', line_id: 6, abrv: 'st22', comment: "Una vez expuestos los resultados, vamos dar el mpaximo esfuerzo ya que incluiremos tu opinión profesional de los resultados encontrados")
 station22.save
-station23 = Station.new(name: 'Introduccion', line_id: 7, abrv: 'st23')
+station23 = Station.new(name: 'Introduccion', line_id: 7, abrv: 'st23', comment: "Ahora que tenemos el diagnóstico para nuestro diseño, vamos a presentarlo")
 station23.save
-station24 = Station.new(name: 'Justificación', line_id: 7, abrv: 'st24')
+station24 = Station.new(name: 'Justificación', line_id: 7, abrv: 'st24', comment: "Para tu diseño, es necesario explicar en base al diagnóstico la necesidad y pertinencia del diseño que propones")
 station24.save
-station25 = Station.new(name: 'Propuesta', line_id: 7, abrv: 'st25')
+station25 = Station.new(name: 'Propuesta', line_id: 7, abrv: 'st25', comment: "Ahora si, es turno de presentar tu propuesta con el mayor detalle posible")
 station25.save
-station26 = Station.new(name: 'Conclusiones', line_id: 8, abrv: 'st26')
+station26 = Station.new(name: 'Conclusiones', line_id: 8, abrv: 'st26', comment: "Vamos a ir cerrando la tesis, dando respuesta a los objetivos específicos, no te olvides de cerrar con el objetivo general")
 station26.save
-station27 = Station.new(name: 'Recomendaciones', line_id: 8, abrv: 'st27')
+station27 = Station.new(name: 'Recomendaciones', line_id: 8, abrv: 'st27', comment: "No se debe cerrar todo un proceso investigativo sin comentar los aspectos de mejora tanto para la situación investigada como para la academia")
 station27.save
-station28 = Station.new(name: 'Lista de Referencias', line_id: 8, abrv: 'st28')
+station28 = Station.new(name: 'Lista de Referencias', line_id: 8, abrv: 'st28', comment: "Démosle un vistazo a mis amigas las referencias bibliográficas, deben estar todas, completas y bien armadas")
 station28.save
-station29 = Station.new(name: 'Anexos', line_id: 8, abrv: 'st29')
+station29 = Station.new(name: 'Anexos', line_id: 8, abrv: 'st29', comment: "Chequeemos si corresponde incluir anexos")
 station29.save
-station30 = Station.new(name: 'Apéndices', line_id: 8, abrv: 'st30')
+station30 = Station.new(name: 'Apéndices', line_id: 8, abrv: 'st30', comment: "Chequeemos si corresponde incluir apéndices")
 station30.save
 station31 = Station.new(name: 'Preparación de la defensa', line_id: 9, abrv: 'st31', comment: "¡Muchas felicidades!, ¿Viste que si es posible culminar tu tesis?, ahora a demostrar todo lo que aprendiste y aportaste gracias a tu proyecto de investigación,lee estos lineamientos y ensayemos tu presentación para que sea una experiencia inolvidable")
 station31.save
-station32 = Station.new(name: 'Análisis estadístico', line_id: 10, abrv: 'st32')
+station32 = Station.new(name: 'Análisis estadístico', line_id: 10, abrv: 'st32', comment: "Necesitas ayuda para los análisis estadísiticos de tu tesis. Aquí te los damos")
 station32.save
-station33 = Station.new(name: 'Análisis cualitativo', line_id: 10, abrv: 'st33')
+station33 = Station.new(name: 'Análisis cualitativo', line_id: 10, abrv: 'st33', comment: "Necesitas ayuda para los análisis cualitativos de tu tesis. Aquí te los damos")
 station33.save
-station34 = Station.new(name: 'Diseño de instrumentos', line_id: 10, abrv: 'st34')
+station34 = Station.new(name: 'Diseño de instrumentos', line_id: 10, abrv: 'st34', comment: "Todo lo que necesitas saber para el diseño de instrumentos de investigación")
 station34.save
-station35 = Station.new(name: 'Software antiplagio', line_id: 10, abrv: 'st35')
+station35 = Station.new(name: 'Software antiplagio', line_id: 10, abrv: 'st35', comment: "No hay nada como estar tranquilo de que todo lo que debe ir citado, citado aparezca, cerciorémonos de eso aquí")
 station35.save
-station36 = Station.new(name: 'Revisión de redacción y estilo', line_id: 10, abrv: 'st36')
+station36 = Station.new(name: 'Revisión de redacción y estilo', line_id: 10, abrv: 'st36', comment: "¿Te cuesta la redacción científica?. No te preocupes aquí te sumnistramos los lineamientos")
 station36.save
-station37 = Station.new(name: 'Revisión de normas de cita', line_id: 10, abrv: 'st37')
+station37 = Station.new(name: 'Revisión de normas de cita', line_id: 10, abrv: 'st37', comment: "Aquí aprenderás los lineamientos de las normas de citación")
 station37.save
-station38 = Station.new(name: 'Revisión de normas de presentación', line_id: 10, abrv: 'st38')
+station38 = Station.new(name: 'Revisión de normas de presentación', line_id: 10, abrv: 'st38', comment: "Apliquemos las normas de presentación acorde a tu institución educativa")
 station38.save
