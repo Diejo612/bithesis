@@ -97,18 +97,19 @@
 }
 
 .rounded {
-  width: 10%;
-  height: 10%;
+  width: 20%;
 }
 
 .card-final {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background: #E2D8FF;
 }
 
 .card-final-2 {
   box-shadow: 2px 2px 3px rgb(124, 119, 119);
-  background-color: yellow;
+  background-color: white;
+  padding: 3%;
 }
 
 .card-text-3 {
@@ -124,4 +125,17 @@
 .card-title:hover {
   color: #8240FF;
   text-decoration: none;
+}
+
+.card-text-final p {
+  color: #8240FF;
+}
+
+.card-articulo {
+  box-shadow: 2px 2px 3px rgb(124, 119, 119);
+  padding: 3%;
+  background: #FFE67D;
+  h5{
+    text-align: justify;
+  }
 }
