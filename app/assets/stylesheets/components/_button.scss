@@ -20,3 +20,9 @@
   border: none !important;
   margin: 0 auto;
 }
+
+.center {
+  width: 110px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
