@@ -1,3 +1,4 @@
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://icdn.dtcn.com/image/digitaltrends_es/university-student-1872810_1280-1280x853.jpg);">
   <div class="container">
     <h1>Bienvenido a Bi-Thesis</h1>
@@ -5,7 +6,6 @@
     <%= link_to 'Solicita una entrevista', new_user_registration_path, class: 'btn-yours' %>
   </div>
 </div>
-
 
 <div class="container card-home align-items-center">
   <div class="card-text-3">
@@ -49,79 +49,96 @@
   </div>
 </div>
 
-<div class="container d-flex" id="conocenos">
-  <div class="d-flex align-items-center card-text-2">
-    <div>
-      <h2>Conoce a nuestro equipo</h2>
-      <p>Estamos encantados de ayudarte y acompañarte en el desarrollo de tu tesis, para que logres el tan anhelado grado académico para tu futuro.</p>
+<div class="container" id="conocenos">
+  <div class="row">
+    <div class="col-12 col-md-6 d-flex align-items-center">
+      <div class="card-text-2">
+        <h2>Conoce a nuestro equipo</h2>
+        <p>Estamos encantados de ayudarte y acompañarte en el desarrollo de tu tesis, para que logres el tan anhelado grado académico para tu futuro.</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="grid-team">
+        <%= image_tag "foto_jean.jpg", class:"grid-team-img" %>
+        <%= image_tag "foto_mel.jpg", class:"grid-team-img" %>
+        <%= image_tag "foto_jhon.jpg", class:"grid-team-img" %>
+        <%= image_tag "foto_maria.jpg", class:"grid-team-img" %>
+      </div>
     </div>
   </div>
-  <div class="d-flex">
-    <div class="d-flex align-items-center">
-      <%= image_tag "person_1.jpg" %>
-    </div>
-    <div>
-      <%= image_tag "person_2.jpg" %>
-      <%= image_tag "person_3.jpg" %>
-    </div>
-  </div>
+  <br>
 </div>
 
-<div class="container d-flex card-final align-items-center">
-  <div class="cards-final w-50">
-    <div class="card-final-2">
-      <div class="d-flex  justify-content-between">
-        <h5>Nombre y apellido</h5>
-        <p>02/02/2022</p>
-      </div>
-      <hr>
-      <div class="d-flex justify-content-between">
-        <div class="card-text-final">
-          <p>Tema de tesis (carrera)</p>
-          <h6>Descripción de todo el comentario y experiencia</h6>
+<div class="background-container-final">
+  <div class="container d-flex card-final align-items-center">
+    <div class="cards-final w-50">
+      <br>
+      <div class="card-final-2">
+        <div class="d-flex nombre-text">
+          <%= image_tag "robert_campos.png", class:"rounded" %>
+          <h5>Robert Campos</h5>
         </div>
-        <%= image_tag "perfil.jpg", class:"rounded" %>
+        <div class="linea-separacion">
+        </div>
+        <div class="d-flex">
+          <div class="card-text-final">
+            <div class="d-flex justify-content-between">
+              <p>Contaduría Pública (carrera)</p>
+              <p><strong>20/03/2015</strong></p>
+            </div>
+            <div class="text-user">
+              <h6>"La profe María (así le decía cuando me ayudó) es una persona muy dedicada, apasionada a su profesión y no deja por fuera su buen sentido del humor. Define muy bien cómo un profesional debe actuar y desempeñarse, recuerdo que en ocasiones podría no estar de acuerdo con algunas correcciones que me hacía con mi tesis pero sabía que el único motivo era que yo...</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="card-final-2">
+        <div class="d-flex nombre-text">
+          <%= image_tag "robert_campos.png", class:"rounded" %>
+          <h5>Juan Manuel Reyes</h5>
+        </div>
+        <div class="linea-separacion">
+        </div>
+        <div class="d-flex">
+          <div class="card-text-final">
+            <div class="d-flex justify-content-between">
+              <p>Médico cirujano (carrera)</p>
+              <p><strong>18/06/2017</strong></p>
+            </div>
+            <div class="text-user">
+              <h6>"Estuve intentando realizar mi tesis por un año de medicina con especialidad en cirugía, pero mis ocupaciones y falta de apoyo no me permitieron avanzar en el proceso, así que busque la ayuda de www.servicioasesoriatesis.com y me apoyaron con todo el proceso completo, incluyendo avances, correcciones..."</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="card-final-2">
+        <div class="d-flex nombre-text">
+          <%= image_tag "robert_campos.png", class:"rounded" %>
+          <h5>Andrés Felipe Iriarte</h5>
+        </div>
+        <div class="linea-separacion">
+        </div>
+        <div class="d-flex">
+          <div class="card-text-final">
+            <div class="d-flex justify-content-between">
+              <p>Ingeniero de sistemas</p>
+              <p><strong>11/02/2018</strong></p>
+            </div>
+            <div class="text-user">
+              <h6>"Necesitaba ayuda con mi tesis de ingeniería de sistemas desde cero, no tenía tema ni nada. Busqué la ayuda de www.servicioasesoriatesis.com y me apoyaron desde el principio hasta el final. su ayuda es profesional con personal idóneo y del mas alto nivel académico. Sin ninguna duda tienen un excelente...</h6>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <br>
-    <div class="card-final-2">
-      <div class="d-flex  justify-content-between">
-        <h5>Nombre y apellido</h5>
-        <p>02/02/2022</p>
-      </div>
-      <hr>
-      <div class="d-flex justify-content-between">
-        <div class="card-text-final">
-          <p>Tema de tesis (carrera)</p>
-          <h6>Descripción de todo el comentario y experiencia</h6>
-        </div>
-        <%= image_tag "perfil.jpg", class:"rounded" %>
-      </div>
-    </div>
-    <br>
-    <div class="card-final-2">
-      <div class="d-flex  justify-content-between">
-        <h5>Nombre y apellido</h5>
-        <p>02/02/2022</p>
-      </div>
-      <hr>
-      <div class="d-flex justify-content-between">
-        <div class="card-text-final ">
-          <p>Tema de tesis (carrera)</p>
-          <h6>Descripción de todo el comentario y experiencia</h6>
-        </div>
-        <%= image_tag "perfil.jpg", class:"rounded" %>
-      </div>
+    <div class="card-text-3 w-50">
+      <h5>Testimonios de nuestros asesorados</h5>
+      <p>Nuestra mayor motivación es hacer de tu tesis un paso de tu proyecto de vida, y nos alegra aún más si con cada tesis ayudamos a mejorar la sociedad.</p>
     </div>
   </div>
+  <br>
 </div>
-
-
-  <div class="card-text-3 w-50">
-    <h5>Testimonios de nuestros asesorados</h5>
-    <p>Nuestra mayor motivación es hacer de tu tesis un paso de tu proyecto de vida, y nos alegra aún más si con cada tesis ayudamos a mejorar la sociedad.</p>
-  </div>
-</div>
-<br>
 
 <%= render 'shared/footer' %>

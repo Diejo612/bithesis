@@ -1,1 +1,39 @@
-// Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Source+Sans+Pro:wght@600&family=Ubuntu:wght@300&display=swap');
+.linea-separacion {
+  margin: 10px;
+  margin-bottom: 1rem;
+  border-top: 1px solid #8240FF;
+  width: 100%;
+  height: 10px;
+}
+.grid-team {
+  display: grid;
+  flex-grow: 1;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+}
+.grid-team-img {
+  max-width: 100%;
+  box-shadow: 2px 2px 3px rgb(124, 119, 119);
+}
+
+.fecha strong {
+  color: black;
+}
+
+.text-user {
+  text-align: justify;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nombre-text h5 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.card-final-2 img.rounded {
+  width: 24px;
+}
