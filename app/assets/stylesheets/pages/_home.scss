@@ -1,1 +1,165 @@
-// Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Source+Sans+Pro:wght@600&family=Ubuntu:wght@300&display=swap');
+.linea-separacion {
+  margin: 10px;
+  margin-bottom: 1rem;
+  border-top: 1px solid #8240FF;
+  width: 100%;
+  height: 10px;
+}
+.grid-team {
+  display: grid;
+  flex-grow: 1;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+}
+.grid-team-img {
+  max-width: 100%;
+  box-shadow: 2px 2px 3px rgb(124, 119, 119);
+}
+
+.fecha strong {
+  color: black;
+}
+
+.text-user {
+  text-align: justify;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nombre-text h5 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.card-final-2 img.rounded {
+  width: 24px;
+}
+
+
+
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+ }
+.card-text-2 h2 {
+  font-family: 'Poppins', sans-serif;
+  color: #6543ee;
+  font-size: 41px;
+  font-weight: bold;
+ }
+
+.card-text-2 p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 25px;
+}
+
+.card-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
+
+.img-home {
+  width: 570px;
+  height: 380px;
+}
+
+.card-text-3 h5 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 41px;
+  font-weight: bold;
+  color: #6543ee;
+}
+
+.card-text-3 p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 25px;
+}
+.container-entrevista {
+  padding: 100px;
+  h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+
+  p {
+    margin-bottom: 30px;
+  }
+}
+
+
+.interview-info {
+  padding: 100px;
+}
+
+.card-recurso {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
+.img-recurso {
+  width: 472px;
+  height: 292px;
+}
+
+.card-text-recurso h5 {
+  color: #8240FF;
+}
+
+.container-recurso h1 {
+  color: #8240FF;
+  font-weight: bold;
+}
+.container-recurso-2 h1 {
+  color: #8240FF;
+  font-weight: bold;
+}
+
+.rounded {
+  width: 20%;
+}
+
+.card-final {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #E2D8FF;
+}
+
+.card-final-2 {
+  box-shadow: 2px 2px 3px rgb(124, 119, 119);
+  background-color: white;
+  padding: 3%;
+}
+
+.card-text-3 {
+  padding-left: 2rem;
+  text-align: right;
+}
+
+.card-title {
+  color: #8240FF;
+  text-decoration: none;
+}
+
+.card-title:hover {
+  color: #8240FF;
+  text-decoration: none;
+}
+
+.card-text-final p {
+  color: #8240FF;
+}
+
+.card-articulo {
+  box-shadow: 2px 2px 3px rgb(124, 119, 119);
+  padding: 3%;
+  background: #FFE67D;
+  h5{
+    text-align: justify;
+  }
+}
