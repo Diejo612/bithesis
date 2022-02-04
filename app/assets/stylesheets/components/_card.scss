@@ -67,7 +67,6 @@
 }
 
 
-
 .interview-info {
   padding: 100px;
 }
@@ -81,7 +80,54 @@
   width: 472px;
   height: 292px;
 }
+.container-dashboard {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
 
+.main-dashboard {
+  flex-grow: 1;
+  padding: 25px 50px;
+  background-color: #FCFBFF;
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      color: #8240FF;
+      font-size: 36px;
+      font-weight: 500;
+      span{
+        color: black
+      }
+    }
+    .avatar-btn {
+      width: 130px;
+      height: 50px;
+      border: 1px solid #8240FF;
+      border-radius: 15px;
+      padding: 10px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      i {
+        color: #8240FF;
+        font-size: 25px;
+      }
+      img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+  .bar-space {
+    width: 100%;
+    height: 25px;
+    border-bottom: 1px solid #D7C3FF;
+    margin-bottom: 20px;
+  }
+}
 
 .card-text-recurso h5 {
   color: #8240FF;
@@ -103,13 +149,16 @@
 .card-final {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: #E2D8FF;
 }
 
 .card-final-2 {
   box-shadow: 2px 2px 3px rgb(124, 119, 119);
   background-color: white;
   padding: 3%;
+}
+
+.background-container-final {
+  background: #E2D8FF;
 }
 
 .card-text-3 {
