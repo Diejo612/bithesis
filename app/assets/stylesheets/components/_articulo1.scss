@@ -1,26 +1,62 @@
-.container-articulo1 {
-
-    width: 60%;
-    margin: 0 auto;
-    font-size: 25px;
-    h1 {
-    color: #957fef;
-    }
-    h2 {
-    color: #629D64;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Source+Sans+Pro:wght@600&family=Ubuntu:wght@300&display=swap');
+.title {
+  color: #0ed49f;
+  font-size: 23px;
 }
+
+.title-1 {
+  color: #8240FF;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
 }
 
 .img-articulo1 {
-    width: 1029px;
-    height: 501px;
-    top: 406px;
-    vertical-align: middle;
+  width: 32%;
+  box-shadow: 3px 4px 17px rgb(124, 119, 119);
+  margin: 2%;
 }
 
-.img-articulo1a {
-    width: 695px;
-    height: 489px;
-    left: 369px;
-    top: 1203px;
+.centro_articulo {
+  margin: 3%;
+  align-items: center;
+  padding: 2%;
+}
+.centro_articulo h4 {
+  font-weight: bold;
+  text-align: justify;
+  font-family: 'Poppins', sans-serif;
+}
+
+.centro_articulo p{
+  text-align: justify;
+}
+
+.img-articulo1-2 {
+  width: 22%;
+  box-shadow: 3px 4px 17px rgb(124, 119, 119);
+  margin: 2%;
+}
+
+.text-subtitulo h4 {
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+.text-secundario {
+  text-align: justify;
+}
+
+.text-subtitulo-2 h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+.text-subtitulo-2 p {
+  font-family: 'Poppins', sans-serif;
+  text-align: justify;
+}
+
+.text-subtitulo-2 {
+  padding: 5%;
 }
