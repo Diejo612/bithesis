@@ -26,12 +26,6 @@ puts 'Asignando cursos a usuario prueba'
 
 Assignation.create(user_id: 5, line_id: 1, completed: false)
 Assignation.create(user_id: 5, line_id: 2, completed: false)
-Assignation.create(user_id: 5, line_id: 3, completed: false)
-Assignation.create(user_id: 5, line_id: 4, completed: false)
-Assignation.create(user_id: 5, line_id: 5, completed: false)
-Assignation.create(user_id: 5, line_id: 6, completed: false)
-Assignation.create(user_id: 5, line_id: 7, completed: false)
-Assignation.create(user_id: 5, line_id: 8, completed: false)
 Assignation.create(user_id: 5, line_id: 9, completed: false)
 
 puts 'Creando station'
@@ -114,6 +108,8 @@ station38.save
 
 puts 'Cargando videos'
 
+Task.create(station_id: 1, tipo: 'video', video_url: 'https://www.loom.com/embed/3afd75e7fe5c4d96860892480e63e6e3')
+Task.create(station_id: 4, tipo: 'video', video_url: 'https://www.loom.com/embed/7127b494d626479497e0c4c82e35627f')
 Task.create(station_id: 4, tipo: 'video', video_url: 'https://www.loom.com/embed/7127b494d626479497e0c4c82e35627f')
 Task.create(station_id: 5, tipo: 'video', video_url: 'https://www.loom.com/embed/6d7ad28dc51f4246a9155904b750ea76')
 Task.create(station_id: 5, tipo: 'video', video_url: 'https://www.loom.com/embed/0bc9cea925014e0686e86f93e6ebe946')
