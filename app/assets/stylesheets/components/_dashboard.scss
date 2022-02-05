@@ -1,7 +1,95 @@
+i {
+  transition: all .2s ease-in;
+}
+a {
+    color: #a371ff;
+    text-decoration: none;
+    background-color: transparent;
+    &:hover {
+      color: #b48bff;
+    }
+}
+
+.disabled {
+  color: rgb(182, 182, 182) !important;
+}
+
+.completed {
+      color: #1CD1A1 !important;
+
+}
+
+.nav-link.completed.active {
+      color: #1CD1A1 !important;
+}
+
+// .completed.nav-link.active {
+//   color: #ffffff !important;
+// }
+.nav-pills .nav-link.active{
+  color: #8240FF;
+  background-color: #ffffff !important;
+  i {
+    font-size: 24px;
+  }
+}
+
+
+.title-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .status-line {
+    color: rgb(134, 134, 134);
+    i {
+      color: #1CD1A1;
+    }
+  }
+}
+
+
+
+.content {
+  display: flex;
+  gap: 10px;
+  .tab-content{
+    flex-grow: 1;
+    width: 100%;
+  }
+  .content-side {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+    .box-progress{
+      height: 73px;
+      // border: 1px solid #b48bff;
+      box-shadow: 0 0 5px #b48bff;
+      border-radius: 5px;
+      padding: 10px;
+    }
+    .box-chat, .box-interview{
+      width: 100%;
+      flex-grow: 1;
+      // border: 1px solid #b48bff;
+      box-shadow: 0 0 5px #b48bff;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: white;
+      transition: box-shadow 0.1s linear;
+      &:hover {
+        box-shadow: 0 0 10px #b48bff;
+      }
+    }
+  }
+}
+
+
 .content-dash {
   background-color: white !important;
   width: 100%;
-  border: 1px solid #8240FF;
+  box-shadow: 0 0 5px #b48bff;
   padding: 25px 25px;
   border-radius: 5px;
   height: 70vh;
@@ -9,7 +97,7 @@
 }
 
 .container-video {
-  width: 60%;
+  width: 90%;
   margin: 30px auto;
 }
 
@@ -22,7 +110,7 @@
 .main-dashboard {
   flex-grow: 1;
   padding: 25px 50px;
-  background-color: #FCFBFF;
+  background-color: #f7f6fc;
   .main-header {
     display: flex;
     justify-content: space-between;
@@ -38,7 +126,7 @@
     .avatar-btn {
       width: 100px;
       height: 50px;
-      border: 1px solid #8240FF;
+      border: 1px solid #c3a3ff;
       border-radius: 15px;
       padding: 10px 10px;
       display: flex;
