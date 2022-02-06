@@ -4,7 +4,7 @@
   <% if current_user.admited %>
     <%= render 'dashboard' %>
   <% else %>
-    <% if current_user.set_interview %>
+    <% if Interview.where(user: current_user).count > 0 %>
        <%= render 'interview_confirmed' %>
     <% else %>
       <%= render 'no_interview' %>

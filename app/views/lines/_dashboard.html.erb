@@ -55,11 +55,9 @@
                         <% if line.assignations.where(user: current_user).first.completed %>
                           <p><i class="far fa-check-circle"></i> Línea completada</p>
                           <% else %>
-                          <% if line.assignations.where(user: current_user).first.status == 'proceso' %>
-                            Línea en proceso
-                          <% elsif line.assignations.where(user: current_user).first.status == 'inicio' %>
-                            Línea aún no iniciada
-                          <% end %>
+                          <div class='progress-circles'>
+                              <%= sanitize '<i class="fas fa-circle"></i>'*line.stations.count  %>
+                          </div>
                         <% end %>
                       </div>
                     </div>
@@ -138,11 +136,9 @@
                         <% if line.assignations.where(user: current_user).first.completed %>
                           <p><i class="far fa-check-circle"></i> Línea completada</p>
                           <% else %>
-                          <% if line.assignations.where(user: current_user).first.status == 'proceso' %>
-                            Línea en proceso
-                          <% elsif line.assignations.where(user: current_user).first.status == 'inicio' %>
-                            Línea aún no iniciada
-                          <% end %>
+                            <div class='progress-circles'>
+                              <%= sanitize '<i class="fas fa-circle"></i>'*line.stations.count  %>
+                            </div>
                         <% end %>
                       </div>
                     </div>

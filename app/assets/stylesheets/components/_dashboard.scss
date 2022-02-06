@@ -6,7 +6,7 @@ a {
     text-decoration: none;
     background-color: transparent;
     &:hover {
-      color: #b48bff;
+      color: #9c66ff;
     }
 }
 
@@ -27,13 +27,18 @@ a {
 //   color: #ffffff !important;
 // }
 .nav-pills .nav-link.active{
-  color: #8240FF;
+  color: #7124ff;
   background-color: #ffffff !important;
   i {
     font-size: 24px;
   }
 }
 
+.progress-circles {
+  display: flex;
+  gap: 10px;
+  color: #00B182;
+}
 
 .title-line {
   display: flex;

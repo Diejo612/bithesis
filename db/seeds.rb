@@ -8,7 +8,7 @@ User.create(first_name: 'María', last_name: 'Henriquez', role: 'teacher', email
 User.create(first_name: 'Mel', last_name: 'Valle', role: 'student', email: 'mel@email.com', password: '1234567')
 User.create(first_name: 'Jhon', last_name: 'Figueroa', role: 'student', email: 'jh@email.com', password: '1234567')
 User.create(first_name: 'Jean', last_name: 'Pier', role: 'student', email: 'jean_pier@email.com', password: '1234567')
-User.create(first_name: 'Usuario Prueba', last_name: 'Admitido', email: 'user_admited@email.com', password: '1234567', admited: true)
+User.create(first_name: 'Cristiano Ronaldo', last_name: 'Dos Santos Aveiro', email: 'user_admited@email.com', password: '1234567', admited: true)
 
 puts 'Creando Lines'
 Line.create(name: 'Linea principal', icon_tag: 'fas fa-flag', abrv: 'linea1')
