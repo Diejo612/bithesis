@@ -1,8 +1,10 @@
 class LinesController < ApplicationController
 
   def index
-    if current_user.assignation
+    @lines_all = Line.all
+    if current_user.assignation.count > 0
       @lines = current_user.assignation.map { |a| a.line }
+      @active_line = @lines.first.id - 1
     end
     unless current_user.role == 'teacher'
       @interview = Interview.where(user: current_user).last

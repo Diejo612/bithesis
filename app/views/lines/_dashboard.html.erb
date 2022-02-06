@@ -10,11 +10,12 @@
     <% end %>
       <div class="bar-lines">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-          <% @lines.each_with_index do |line, i| %>
-            <% if i.zero? %>
-              <a class="nav-link active text-center mb-3" id="v-pills-<%= line.abrv %>-tab" data-toggle="pill" href="#v-pills-<%= line.abrv %>" role="tab" aria-controls="v-pills-<%= line.abrv %>" aria-selected="true" data-placement="right" title="<%= line.name%>"><i class="<%= line.icon_tag %>"></i></a>
+          <% @lines_all.each_with_index do |line, i| %>
+            <% completed = line.assignations.where(user: current_user).first.completed if @lines.include? line %>
+            <% if i == @active_line %>
+              <a class="nav-link text-center <%= 'completed' if completed %> active mb-3 <%= 'disabled' unless @lines.include? line %>" id="v-pills-<%= line.abrv %>-tab" data-toggle="pill" href="#v-pills-<%= line.abrv %>" role="tab" aria-controls="v-pills-<%= line.abrv %>" aria-selected="true" data-placement="right" title="<%= line.name%>"><i class="<%= line.icon_tag %>"></i></a>
             <% else %>
-              <a class="nav-link text-center mb-3" id="v-pills-<%= line.abrv %>-tab" data-toggle="pill" href="#v-pills-<%= line.abrv %>" role="tab" aria-controls="v-pills-<%= line.abrv %>" aria-selected="false" title="<%= line.name%>" ><i class="<%= line.icon_tag %>"></i></a>
+              <a class="nav-link text-center <%= 'completed' if completed %> mb-3 <%= 'disabled' unless @lines.include? line %>" id="v-pills-<%= line.abrv %>-tab" data-toggle="pill" href="#v-pills-<%= line.abrv %>" role="tab" aria-controls="v-pills-<%= line.abrv %>" aria-selected="false" title="<%= line.name%>" ><i class="<%= line.icon_tag %>"></i></a>
             <% end %>
           <% end %>
         </div>
@@ -40,113 +41,183 @@
 
     </div>
     <div class="bar-space"></div>
-    <div class="tab-content" id="v-pills-tabContent">
-          <% @lines.each_with_index do |line,i| %>
-              <% if i.zero? %>
-                <div class="tab-pane fade show active" id="v-pills-<%= line.abrv %>" role="tabpanel" aria-labelledby="v-pills-<%= line.abrv %>-tab">
-                  <h3><%= line.name %></h3>
+    <div class='content'>
+      <div class="tab-content" id="v-pills-tabContent">
+            <% @lines.each_with_index do |line,i| %>
+                <% if i.zero? %>
+                  <div class="tab-pane fade show active" id="v-pills-<%= line.abrv %>" role="tabpanel" aria-labelledby="v-pills-<%= line.abrv %>-tab">
+                    <div class='title-line'>
+                      <h3><%= line.name %></h3>
 
-                  <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                      <% line.stations.each_with_index do |station,i| %>
-                        <% if i.zero? %>
-                          <a class="nav-link active" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="true"><%= station.name %></a>
-                        <% else %>
-                          <a class="nav-link" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="false"><%= station.name %></a>
+                    <%# Estatus de la línea %>
+
+                      <div class="status-line">
+                        <% if line.assignations.where(user: current_user).first.completed %>
+                          <p><i class="far fa-check-circle"></i> Línea completada</p>
+                          <% else %>
+                          <div class='progress-circles'>
+                              <%= sanitize '<i class="fas fa-circle"></i>'*line.stations.count  %>
+                          </div>
                         <% end %>
-                      <% end %>
+                      </div>
                     </div>
-                  </nav>
 
-                  <div class="tab-content" id="nav-tabContent">
-                    <% line.stations.each_with_index do |station,i| %>
-                        <% if i.zero? %>
-                          <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
-                            <div class="content-dash">
-                              <p>
-                              <%= station.content %>
-                              </p>
-                              <% if station.tasks %>
-                                <% station.tasks.each do |task| %>
-                                  <div class='container-video'>
-                                    <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-                                  </div>
+                    <%# Generar pestañas con nombres de estaciones %>
+
+                    <nav>
+                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <% line.stations.each_with_index do |station,i| %>
+                          <% if i.zero? %>
+                            <a class="nav-link active" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="true"><%= station.name %></a>
+                          <% else %>
+                            <a class="nav-link" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="false"><%= station.name %></a>
+                          <% end %>
+                        <% end %>
+                      </div>
+                    </nav>
+
+
+                    <%# Contenido de las estaciones %>
+
+                    <div class="tab-content" id="nav-tabContent">
+                      <% line.stations.each_with_index do |station,i| %>
+                          <% if i.zero? %>
+                            <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                              <div class="content-dash">
+                                <p>
+                                <%= station.content %>
+                                </p>
+                                <%# <iframe src="http://docs.google.com/gview?url=http://www.educoas.org/portal/bdigital/contenido/valzacchi/ValzacchiCapitulo-2New.pdf&embedded=true" style="width:100%; height:700px;" frameborder="0" ></iframe> %>
+                                <% if station.tasks %>
+                                  <% station.tasks.each do |task| %>
+                                    <div class="card-task">
+                                      <% if task.tipo == 'video' %>
+                                        <div class='container-video'>
+                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                        </div>
+                                      <% end %>
+                                    </div>
+                                  <% end %>
                                 <% end %>
-                              <% end %>
+                              </div>
                             </div>
-                          </div>
-                        <% else %>
-                          <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
-                            <div class="content-dash">
-                              <p>
-                              <%= station.content %>
-                              </p>
-                              <% if station.tasks %>
-                                <% station.tasks.each do |task| %>
-                                  <div class='container-video'>
-                                    <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-                                  </div>                                <% end %>
-                              <% end %>
+                          <% else %>
+                            <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                              <div class="content-dash">
+                                <p>
+                                <%= station.content %>
+                                </p>
+                                <% if station.tasks %>
+                                  <% station.tasks.each do |task| %>
+                                    <div class="card-task">
+                                      <% if task.tipo == 'video' %>
+                                        <div class='container-video'>
+                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                        </div>
+                                      <% end %>
+                                    </div>
+                                  <% end %>
+                                <% end %>
+                              </div>
                             </div>
-                          </div>
-                        <% end %>
-                    <% end %>
-                  </div>
-
-                </div>
-              <% else %>
-                <div class="tab-pane fade" id="v-pills-<%= line.abrv %>" role="tabpanel" aria-labelledby="v-pills-<%= line.abrv %>-tab">
-                  <h3><%= line.name %></h3>
-
-                  <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                      <% line.stations.each_with_index do |station,i| %>
-                        <% if i.zero? %>
-                          <a class="nav-link active" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="true"><%= station.name %></a>
-                        <% else %>
-                          <a class="nav-link" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="false"><%= station.name %></a>
-                        <% end %>
+                          <% end %>
                       <% end %>
                     </div>
-                  </nav>
 
-                  <div class="tab-content" id="nav-tabContent">
-                    <% line.stations.each_with_index do |station,i| %>
-                        <% if i.zero? %>
-                          <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
-                            <div class="content-dash">
-                              <p>
-                                <%= station.content %>
-                              </p>
-                              <% if station.tasks %>
-                                <% station.tasks.each do |task| %>
-                                  <div class='container-video'>
-                                    <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-                                  </div>                                <% end %>
-                              <% end %>
-                            </div>
-                          </div>
-                        <% else %>
-                          <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
-                            <div class="content-dash">
-                              <p>
-                                <%= station.content %>
-                              </p>
-                              <% if station.tasks %>
-                                <% station.tasks.each do |task| %>
-                                  <div class='container-video'>
-                                    <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-                                  </div>                                <% end %>
-                              <% end %>
-                            </div>
-                          </div>
-                        <% end %>
-                    <% end %>
                   </div>
+                <% else %>
+                  <div class="tab-pane fade" id="v-pills-<%= line.abrv %>" role="tabpanel" aria-labelledby="v-pills-<%= line.abrv %>-tab">
+                    <div class='title-line'>
+                      <h3><%= line.name %></h3>
 
-                </div>
-              <% end %>
-          <% end %>
+                      <%# Estatus de la línea %>
+
+                      <div class="status-line">
+                        <% if line.assignations.where(user: current_user).first.completed %>
+                          <p><i class="far fa-check-circle"></i> Línea completada</p>
+                          <% else %>
+                            <div class='progress-circles'>
+                              <%= sanitize '<i class="fas fa-circle"></i>'*line.stations.count  %>
+                            </div>
+                        <% end %>
+                      </div>
+                    </div>
+                    <nav>
+
+                    <%# Pestañas de staciones %>
+
+                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <% line.stations.each_with_index do |station,i| %>
+                          <% if i.zero? %>
+                            <a class="nav-link active" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="true"><%= station.name %></a>
+                          <% else %>
+                            <a class="nav-link" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="false"><%= station.name %></a>
+                          <% end %>
+                        <% end %>
+                      </div>
+                    </nav>
+
+                    <%# Contenido %>
+
+                    <div class="tab-content" id="nav-tabContent">
+                      <% line.stations.each_with_index do |station,i| %>
+                          <% if i.zero? %>
+                            <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                              <div class="content-dash">
+                                <p>
+                                  <%= station.content %>
+                                </p>
+                                <% if station.tasks %>
+                                  <% station.tasks.each do |task| %>
+                                    <div class="card-task">
+                                      <% if task.tipo == 'video' %>
+                                        <div class='container-video'>
+                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                        </div>
+                                      <% end %>
+                                    </div>
+                                  <% end %>
+                                <% end %>
+                              </div>
+                            </div>
+                          <% else %>
+                            <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                              <div class="content-dash">
+                                <p>
+                                  <%= station.content %>
+                                </p>
+                                <% if station.tasks %>
+                                  <% station.tasks.each do |task| %>
+                                    <div class="card-task">
+                                      <% if task.tipo == 'video' %>
+                                        <div class='container-video'>
+                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                        </div>
+                                      <% end %>
+                                    </div>
+                                  <% end %>
+                                <% end %>
+                              </div>
+                            </div>
+                          <% end %>
+                      <% end %>
+                    </div>
+
+                  </div>
+                <% end %>
+            <% end %>
+          </div>
+      <div class="content-side">
+        <div class="box-progress">
+          Acá ira la barra de progreso
         </div>
+        <div class="box-chat">
+          <h3>Acá irá el chat</h3>
+        </div>
+        <div class="box-interview">
+          <h4>Acá ira el calendario para entrevistas</h4>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

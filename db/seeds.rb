@@ -8,7 +8,7 @@ User.create(first_name: 'María', last_name: 'Henriquez', role: 'teacher', email
 User.create(first_name: 'Mel', last_name: 'Valle', role: 'student', email: 'mel@email.com', password: '1234567')
 User.create(first_name: 'Jhon', last_name: 'Figueroa', role: 'student', email: 'jh@email.com', password: '1234567')
 User.create(first_name: 'Jean', last_name: 'Pier', role: 'student', email: 'jean_pier@email.com', password: '1234567')
-User.create(first_name: 'Usuario Prueba', last_name: 'Admitido', email: 'user_admited@email.com', password: '1234567', admited: true)
+User.create(first_name: 'Cristiano Ronaldo', last_name: 'Dos Santos Aveiro', email: 'user_admited@email.com', password: '1234567', admited: true)
 
 puts 'Creando Lines'
 Line.create(name: 'Linea principal', icon_tag: 'fas fa-flag', abrv: 'linea1')
@@ -24,9 +24,12 @@ Line.create(name: 'Estación servicios adicionales', icon_tag: 'fas fa-tasks', a
 
 puts 'Asignando cursos a usuario prueba'
 
-Assignation.create(user_id: 5, line_id: 1, completed: false)
-Assignation.create(user_id: 5, line_id: 2, completed: false)
-Assignation.create(user_id: 5, line_id: 9, completed: false)
+Assignation.create(user_id: 5, line_id: 1, completed: true, status: 'proceso')
+Assignation.create(user_id: 5, line_id: 2, completed: false, status: 'proceso')
+Assignation.create(user_id: 5, line_id: 3, completed: false, status: 'inicio')
+Assignation.create(user_id: 5, line_id: 4, completed: false, status: 'inicio')
+Assignation.create(user_id: 5, line_id: 5, completed: false, status: 'inicio')
+Assignation.create(user_id: 5, line_id: 9, completed: false, status: 'inicio')
 
 puts 'Creando station'
 station1 = Station.new(name: 'Bienvenida', line_id: 1, abrv: 'st1', content: "Bienvenid@ a tu plataforma de acompañamiento personalizado para el desarrollo de la tesis, en el vídeo visualizarás una pequeña demostración de la plataforma para que te familiarices con su funcionamiento")
@@ -110,7 +113,8 @@ puts 'Cargando videos'
 
 Task.create(station_id: 1, tipo: 'video', video_url: 'https://www.loom.com/embed/3afd75e7fe5c4d96860892480e63e6e3')
 Task.create(station_id: 4, tipo: 'video', video_url: 'https://www.loom.com/embed/7127b494d626479497e0c4c82e35627f')
-Task.create(station_id: 4, tipo: 'video', video_url: 'https://www.loom.com/embed/7127b494d626479497e0c4c82e35627f')
 Task.create(station_id: 5, tipo: 'video', video_url: 'https://www.loom.com/embed/6d7ad28dc51f4246a9155904b750ea76')
 Task.create(station_id: 5, tipo: 'video', video_url: 'https://www.loom.com/embed/0bc9cea925014e0686e86f93e6ebe946')
 Task.create(station_id: 31, tipo: 'video', video_url: 'https://www.loom.com/embed/011d94b6ee034f1b88d4f5eac5a64998')
+
+puts 'Cargando documentos'
