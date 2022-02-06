@@ -32,7 +32,13 @@ Assignation.create(user_id: 5, line_id: 5, completed: false, status: 'inicio')
 Assignation.create(user_id: 5, line_id: 9, completed: false, status: 'inicio')
 
 puts 'Creando station'
-station1 = Station.new(name: 'Bienvenida', line_id: 1, abrv: 'st1', content: "Bienvenid@ a tu plataforma de acompañamiento personalizado para el desarrollo de la tesis, en el vídeo visualizarás una pequeña demostración de la plataforma para que te familiarices con su funcionamiento")
+
+content1 = '
+  <h3> Bienvenidos a la stacion ... </h3>
+  <p> DASDASDasddasdasdas </p>
+'
+
+station1 = Station.new(name: 'Bienvenida', line_id: 1, abrv: 'st1', content: content1)
 station1.save
 station2 = Station.new(name: 'Lineamientos generales', line_id: 1, abrv: 'st2', content: "Descubre los lineamientos de funcionamiento de Bi-Thesis para estar todos los involucrados en armonía y así tu proceso sea exitoso. ¡Siempre estaremos contigo!")
 station2.save
