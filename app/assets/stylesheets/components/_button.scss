@@ -1,14 +1,16 @@
 .btn-yours {
   color: black;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   background: #ffdc5e;
-  padding: 6px 20px;
+  padding: 9px 20px;
   border-radius: 16px;
   text-decoration: none;
 }
 
 .btn-yours:hover {
   text-decoration: none;
-  color: black;
+  color: blue;
   background: #ffe67d;
 }
 
@@ -29,15 +31,17 @@
 
 .btn-yours-2 {
   color: black;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   background: #ffdc5e;
-  padding: 11px 22px;
-  border-radius: 16px;
+  padding: 18px 26px;
+  border-radius: 27px;
   text-decoration: none;
 }
 
 .btn-yours-2:hover {
   text-decoration: none;
-  color: black;
+  color: blue;
   background: #ffe67d;
 }
 
