@@ -10,7 +10,7 @@
   <div class="card-perfil-2 ">
     <div class="container">
       <div class="row">
-        <div class="col-8">
+        <div class="col-6">
           <h5><strong>Nombres y apellidos</strong></h5>
           <p><i class="fas fa-angle-right fecha"></i><%= "#{@user.first_name} #{@user.last_name}" %></p>
           <h5><strong>Correo electrónico</strong></h5>
@@ -22,7 +22,7 @@
           <h5><strong>Celular</strong></h5>
           <p><i class="fas fa-angle-right fecha"></i><%= current_user.phone %></p>
         </div>
-        <div class="col-4">
+        <div class="col-6">
         <% if current_user.photo %>
           <%= cl_image_tag current_user.photo.key, width:"300" %>
         <% else %>
