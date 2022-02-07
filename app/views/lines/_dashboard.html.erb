@@ -40,6 +40,7 @@
         </div>
 
     </div>
+
     <div class="bar-space"></div>
     <div class='content'>
       <div class="tab-content" id="v-pills-tabContent">
@@ -57,8 +58,8 @@
                           <% else %>
                           <div class='progress-circles'>
                             <% line.stations.each do |station| %>
-                              <%# StationStatus.where() %>
-                              <%= sanitize '<i class="fas fa-circle"></i>' %>
+                              <% st = StationStatus.where(station: station, user: current_user) %>
+                              <%= sanitize "<i class='fas fa-circle #{ st.first.completed ? 'green' : 'green-2' }'></i>" %>
                             <% end %>
                           </div>
                         <% end %>
@@ -96,9 +97,16 @@
                                     <div class="card-task">
                                       <% if task.tipo == 'video' %>
                                         <div class='container-video'>
-                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                                         </div>
                                       <% end %>
+                                      <div data-controller='completed-controller' >
+                                        <% if task.auto_check %>
+                                          <% status = TaskStatus.where(user: current_user, task: task).first %>
+                                          <label for="completed"> Marcar como terminado</label>
+                                          <input type="checkbox" name="completed" id="completed" data-target='checkbox' data-action='click=>completed#update_status_task' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
+                                        <% end %>
+                                      </div>
                                     </div>
                                   <% end %>
                                 <% end %>
@@ -115,8 +123,12 @@
                                     <div class="card-task">
                                       <% if task.tipo == 'video' %>
                                         <div class='container-video'>
-                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                                         </div>
+                                      <% end %>
+                                      <% if task.auto_check %>
+                                        <label for="completed"> Marcar como terminado</label>
+                                        <input type="checkbox" name="completed" id="completed">
                                       <% end %>
                                     </div>
                                   <% end %>
@@ -140,7 +152,10 @@
                           <p><i class="far fa-check-circle"></i> Línea completada</p>
                           <% else %>
                             <div class='progress-circles'>
-                              <%= sanitize '<i class="fas fa-circle"></i>'*line.stations.count  %>
+                              <% line.stations.each do |station| %>
+                                <% st = StationStatus.where(station: station, user:current_user) %>
+                                  <%= sanitize "<i class='fas fa-circle #{ st.first.completed ? 'green' : 'green-2' }'></i>" %>
+                              <% end %>
                             </div>
                         <% end %>
                       </div>
@@ -175,8 +190,12 @@
                                     <div class="card-task">
                                       <% if task.tipo == 'video' %>
                                         <div class='container-video'>
-                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                                         </div>
+                                      <% end %>
+                                      <% if task.auto_check %>
+                                        <label for="completed"> Marcar como terminado</label>
+                                        <input type="checkbox" name="completed" id="completed">
                                       <% end %>
                                     </div>
                                   <% end %>
@@ -194,8 +213,12 @@
                                     <div class="card-task">
                                       <% if task.tipo == 'video' %>
                                         <div class='container-video'>
-                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.video_url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                                         </div>
+                                      <% end %>
+                                      <% if task.auto_check %>
+                                        <label for="completed"> Marcar como terminado</label>
+                                        <input type="checkbox" name="completed" id="completed">
                                       <% end %>
                                     </div>
                                   <% end %>
