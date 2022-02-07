@@ -56,7 +56,10 @@
                           <p><i class="far fa-check-circle"></i> Línea completada</p>
                           <% else %>
                           <div class='progress-circles'>
-                              <%= sanitize '<i class="fas fa-circle"></i>'*line.stations.count  %>
+                            <% line.stations.each do |station| %>
+                              <%# StationStatus.where() %>
+                              <%= sanitize '<i class="fas fa-circle"></i>' %>
+                            <% end %>
                           </div>
                         <% end %>
                       </div>

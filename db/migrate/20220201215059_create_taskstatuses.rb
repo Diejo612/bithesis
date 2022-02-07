@@ -4,6 +4,7 @@ class CreateTaskstatuses < ActiveRecord::Migration[6.1]
       t.references :task, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
       t.boolean :completed
+      t.text :comment
 
       t.timestamps
     end
