@@ -4,11 +4,13 @@ puts 'Creando avatar'
 # avatar = URI.open('https://images.unsplash.com/photo-1631203928493-a4e4eb2b8da1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80')
 
 puts 'Creando Usuarios'
-User.create(first_name: 'María', last_name: 'Henriquez', role: 'teacher', email: 'maria@email.com', password: '1234567')
-User.create(first_name: 'Mel', last_name: 'Valle', role: 'student', email: 'mel@email.com', password: '1234567')
-User.create(first_name: 'Jhon', last_name: 'Figueroa', role: 'student', email: 'jh@email.com', password: '1234567')
-User.create(first_name: 'Jean', last_name: 'Pier', role: 'student', email: 'jean_pier@email.com', password: '1234567')
-User.create(first_name: 'Cristiano Ronaldo', last_name: 'Dos Santos Aveiro', email: 'user_admited@email.com', password: '1234567', admited: true)
+User.create(first_name: 'María', last_name: 'Henriquez', teacher: true, email: 'maria@email.com', password: '1234567')
+User.create(first_name: 'Mel', last_name: 'Valle', email: 'mel@email.com', password: '1234567')
+User.create(first_name: 'Jhon', last_name: 'Figueroa', email: 'jh@email.com', password: '1234567')
+User.create(first_name: 'Jean', last_name: 'Pier', email: 'jean_pier@email.com', password: '1234567')
+User.create(first_name: 'Jon', last_name: 'Snow',
+            university: 'Winterfell', level_instruction: 'Lord Commander',
+            email: 'user_admited@email.com', password: '1234567', admited: true)
 
 puts 'Creando Lines'
 Line.create(name: 'Linea principal', icon_tag: 'fas fa-flag', abrv: 'linea1')
@@ -25,11 +27,11 @@ Line.create(name: 'Estación servicios adicionales', icon_tag: 'fas fa-tasks', a
 puts 'Asignando cursos a usuario prueba'
 
 Assignation.create(user_id: 5, line_id: 1, completed: true)
-Assignation.create(user_id: 5, line_id: 2, completed: false)
-Assignation.create(user_id: 5, line_id: 3, completed: false)
-Assignation.create(user_id: 5, line_id: 4, completed: false)
-Assignation.create(user_id: 5, line_id: 5, completed: false)
-Assignation.create(user_id: 5, line_id: 9, completed: false)
+Assignation.create(user_id: 5, line_id: 2)
+Assignation.create(user_id: 5, line_id: 3)
+Assignation.create(user_id: 5, line_id: 4)
+Assignation.create(user_id: 5, line_id: 5)
+Assignation.create(user_id: 5, line_id: 9)
 
 puts 'Creando station'
 
@@ -149,10 +151,19 @@ station38.save
 
 puts 'Cargando videos'
 
-Task.create(station_id: 1, tipo: 'video', video_url: 'https://www.loom.com/embed/3afd75e7fe5c4d96860892480e63e6e3')
-Task.create(station_id: 4, tipo: 'video', video_url: 'https://www.loom.com/embed/7127b494d626479497e0c4c82e35627f')
-Task.create(station_id: 5, tipo: 'video', video_url: 'https://www.loom.com/embed/6d7ad28dc51f4246a9155904b750ea76')
-Task.create(station_id: 5, tipo: 'video', video_url: 'https://www.loom.com/embed/0bc9cea925014e0686e86f93e6ebe946')
-Task.create(station_id: 31, tipo: 'video', video_url: 'https://www.loom.com/embed/011d94b6ee034f1b88d4f5eac5a64998')
+Task.create(station_id: 1, tipo: 'video', url: 'https://www.loom.com/embed/3afd75e7fe5c4d96860892480e63e6e3', auto_check: true)
+Task.create(station_id: 4, tipo: 'video', url: 'https://www.loom.com/embed/7127b494d626479497e0c4c82e35627f', auto_check: true)
+Task.create(station_id: 5, tipo: 'video', url: 'https://www.loom.com/embed/6d7ad28dc51f4246a9155904b750ea76', auto_check: true)
+Task.create(station_id: 5, tipo: 'video', url: 'https://www.loom.com/embed/0bc9cea925014e0686e86f93e6ebe946', auto_check: true)
+Task.create(station_id: 31, tipo: 'video', url: 'https://www.loom.com/embed/011d94b6ee034f1b88d4f5eac5a64998', auto_check: true)
 
 puts 'Generando tablas status'
+
+Assignation.where(user_id: 5).map { |a| a.line }.each do |line|
+  line.stations.each do |s|
+    StationStatus.create(user_id: 5, station: s)
+    s.tasks.each do |t|
+      TaskStatus.create(user_id: 5, task: t)
+    end
+  end
+end

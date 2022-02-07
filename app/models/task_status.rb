@@ -1,4 +1,4 @@
-class Taskstatus < ApplicationRecord
+class TaskStatus < ApplicationRecord
   belongs_to :task
   belongs_to :user
 end

@@ -1,25 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Source+Sans+Pro:wght@600&family=Ubuntu:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Source+Sans+Pro:wght@600&family=Ubuntu:wght@300&display=swap");
 .img-cursos {
   width: 30%;
 }
 
 .card-cursos-2 {
-  box-shadow: 2px 2px 3px rgb(124, 119, 119);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   border: 0px;
+  border-radius: 10px;
+  width: 500px;
+  height: 250px;
+  img {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
   h5 {
     color: #6543ee;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     text-align: center;
   }
   p {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 }
+
 .card-cursos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card-curso {
-  padding: 10%;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    text-align: justify;
+  }
+}
+
+.mt-7 {
+  margin-top: 5rem;
+}
+
+.texto_presentacion h1 {
+  color: #6543ee;
 }
