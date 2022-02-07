@@ -24,19 +24,15 @@ Line.create(name: 'Estación servicios adicionales', icon_tag: 'fas fa-tasks', a
 
 puts 'Asignando cursos a usuario prueba'
 
-Assignation.create(user_id: 5, line_id: 1, completed: true, status: 'proceso')
-Assignation.create(user_id: 5, line_id: 2, completed: false, status: 'proceso')
-Assignation.create(user_id: 5, line_id: 3, completed: false, status: 'inicio')
-Assignation.create(user_id: 5, line_id: 4, completed: false, status: 'inicio')
-Assignation.create(user_id: 5, line_id: 5, completed: false, status: 'inicio')
-Assignation.create(user_id: 5, line_id: 9, completed: false, status: 'inicio')
+Assignation.create(user_id: 5, line_id: 1, completed: true)
+Assignation.create(user_id: 5, line_id: 2, completed: false)
+Assignation.create(user_id: 5, line_id: 3, completed: false)
+Assignation.create(user_id: 5, line_id: 4, completed: false)
+Assignation.create(user_id: 5, line_id: 5, completed: false)
+Assignation.create(user_id: 5, line_id: 9, completed: false)
 
 puts 'Creando station'
 
-content1 = '
-  <h3> Bienvenidos a la stacion ... </h3>
-  <p> DASDASDasddasdasdas </p>
-'
 
 station1 = Station.new(name: 'Bienvenida', line_id: 1, abrv: 'st1', content: content1)
 station1.save
@@ -123,4 +119,4 @@ Task.create(station_id: 5, tipo: 'video', video_url: 'https://www.loom.com/embed
 Task.create(station_id: 5, tipo: 'video', video_url: 'https://www.loom.com/embed/0bc9cea925014e0686e86f93e6ebe946')
 Task.create(station_id: 31, tipo: 'video', video_url: 'https://www.loom.com/embed/011d94b6ee034f1b88d4f5eac5a64998')
 
-puts 'Cargando documentos'
+puts 'Generando tablas status'
