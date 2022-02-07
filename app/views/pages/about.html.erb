@@ -23,7 +23,11 @@
           <p><i class="fas fa-angle-right fecha"></i><%= current_user.phone %></p>
         </div>
         <div class="col-4">
-          <%= image_tag "andre_felipe.jpg", width:"300" %>
+        <% if current_user.photo %>
+          <%= cl_image_tag current_user.photo.key, width:"300" %>
+        <% else %>
+          <%= image_tag "avatar-default.jpg", width:"300" %>
+        <% end %>
         </div>
       </div>
     </div>
