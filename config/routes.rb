@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'create_meetings/name:string'
   devise_for :users
   root to: 'pages#home'
   get '/recursos', to: "pages#recursos", as: 'recursos'
