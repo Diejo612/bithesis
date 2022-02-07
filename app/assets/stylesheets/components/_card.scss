@@ -1,17 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Source+Sans+Pro:wght@600&family=Ubuntu:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Source+Sans+Pro:wght@600&family=Ubuntu:wght@300&display=swap");
+body {
+  background-color: #eee;
+}
+
 .card {
-  box-shadow: 2px 2px 3px rgb(124, 119, 119);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   width: 278px;
   height: 340px;
   border: 0px;
   h5 {
     color: #6543ee;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     text-align: center;
   }
   p {
-    font-family: 'Poppins', sans-serif;
-
+    font-family: "Poppins", sans-serif;
   }
   transition: all 0.1s linear;
 
@@ -23,42 +28,44 @@
   }
 }
 
-#conocenos{
+#conocenos {
   position: relative;
 }
 
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
- }
+}
 
 .card-text-2 h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #6543ee;
   font-size: 41px;
   font-weight: bold;
- }
+}
 
 .card-text-2 p {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 25px;
 }
 
 .card-home {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 50px;
+  display: flex;
+  position: relative;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // grid-gap: 50px;
 }
 
 .card-text-3 h5 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 41px;
   font-weight: bold;
   color: #6543ee;
 }
 
 .card-text-3 p {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 25px;
 }
 .container-entrevista {
@@ -85,7 +92,7 @@
 }
 
 .card-text-recurso h5 {
-  color: #8240FF;
+  color: #8240ff;
 }
 
 .rounded {
@@ -108,25 +115,32 @@
   text-align: right;
 }
 
+.card-home .card-text-3 {
+  position: absolute;
+  width: 400px;
+  top: 50px;
+  left: 50px;
+}
+
 .card-title {
-  color: #8240FF;
+  color: #8240ff;
   text-decoration: none;
 }
 
 .card-title:hover {
-  color: #8240FF;
+  color: #8240ff;
   text-decoration: none;
 }
 
 .card-text-final p {
-  color: #8240FF;
+  color: #8240ff;
 }
 
 .card-articulo {
   box-shadow: 2px 2px 3px rgb(124, 119, 119);
   padding: 3%;
-  background: #FFE67D;
-  h5{
+  background: #ffe67d;
+  h5 {
     text-align: justify;
   }
 }

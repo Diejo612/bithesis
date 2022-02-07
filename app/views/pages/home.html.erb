@@ -8,19 +8,17 @@
 </div>
 
 <div class="container card-home align-items-center">
-  <div class="card-text-3">
+  <div class="card-text-3" data-aos="fade-up" data-aos-duration="1000">
     <h5>Desarrollar tu tesis si es posible</h5>
     <p>Te presentamos la mejor plataforma de acompañamiento</p>
   </div>
-  <div>
     <%= image_tag "graduacion_home.jpg", class:"img-home" %>
-  </div>
 </div>
 
 <div class="container my-5">
   <div class="d-flex justify-content-between">
     <div>
-      <div class="card m-2 p-0">
+      <div class="card m-2 p-0" data-aos="fade-right" data-aos-duration="1000">
         <%= image_tag "card-1.jpg"%>
         <div class="card-body">
           <h5><%= link_to 'Recursos gratuitos', recursos_path, class: "card-title" %></h5>
@@ -29,7 +27,7 @@
       </div>
     </div>
     <div>
-      <div class="card m-2 p-0">
+      <div class="card m-2 p-0" data-aos="fade-down" data-aos-duration="1000">
         <%= image_tag "card-2.jpg"%>
         <div class="card-body">
           <h5 class="card-title">Nuestros cursos</h5>
@@ -38,7 +36,7 @@
       </div>
     </div>
     <div>
-      <div class="card m-2 p-0">
+      <div class="card m-2 p-0" data-aos="fade-left" data-aos-duration="1000">
         <%= image_tag "card-3.jpg"%>
         <div class="card-body">
           <h5><%= link_to 'Bi-Thesis Premium', new_user_registration_path, class: "card-title" %></h5>
@@ -58,11 +56,19 @@
       </div>
     </div>
     <div class="col-12 col-md-6">
-      <div class="grid-team">
-        <%= image_tag "foto_jean.jpg", class:"grid-team-img" %>
-        <%= image_tag "foto_mel.jpg", class:"grid-team-img" %>
-        <%= image_tag "foto_jhon.jpg", class:"grid-team-img" %>
-        <%= image_tag "foto_maria.jpg", class:"grid-team-img" %>
+      <div class="grid-team" data-aos="fade-left" data-aos-duration="1000">
+        <div class="foto_jean">
+          <%= image_tag "foto_jean.jpg", class:"grid-team-img" %>
+        </div>
+        <div class="foto_mel">
+          <%= image_tag "foto_mel.jpg", class:"grid-team-img" %>
+        </div>
+        <div class="foto_jhon">
+          <%= image_tag "foto_jhon.jpg", class:"grid-team-img" %>
+        </div>
+        <div class="foto_mm">
+          <%= image_tag "foto_maria.jpg", class:"grid-team-img" %>
+        </div>
       </div>
     </div>
   </div>
