@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_06_215351) do
+ActiveRecord::Schema.define(version: 2022_02_07_153042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2022_02_06_215351) do
   create_table "assignations", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "line_id", null: false
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["line_id"], name: "index_assignations_on_line_id"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2022_02_06_215351) do
   create_table "station_statuses", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "station_id", null: false
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["station_id"], name: "index_station_statuses_on_station_id"
@@ -92,25 +92,27 @@ ActiveRecord::Schema.define(version: 2022_02_06_215351) do
     t.index ["line_id"], name: "index_stations_on_line_id"
   end
 
+  create_table "task_statuses", force: :cascade do |t|
+    t.bigint "task_id", null: false
+    t.bigint "user_id", null: false
+    t.boolean "completed", default: false
+    t.text "comment"
+    t.string "document_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["task_id"], name: "index_task_statuses_on_task_id"
+    t.index ["user_id"], name: "index_task_statuses_on_user_id"
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.bigint "station_id", null: false
     t.string "tipo"
     t.string "description"
-    t.string "video_url"
+    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "auto_check", default: false
     t.index ["station_id"], name: "index_tasks_on_station_id"
-  end
-
-  create_table "taskstatuses", force: :cascade do |t|
-    t.bigint "task_id", null: false
-    t.bigint "user_id", null: false
-    t.boolean "completed"
-    t.text "comment"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["task_id"], name: "index_taskstatuses_on_task_id"
-    t.index ["user_id"], name: "index_taskstatuses_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -127,6 +129,7 @@ ActiveRecord::Schema.define(version: 2022_02_06_215351) do
     t.string "university"
     t.string "level_instruction"
     t.string "phone"
+    t.boolean "teacher", default: false
     t.boolean "admited", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -140,7 +143,7 @@ ActiveRecord::Schema.define(version: 2022_02_06_215351) do
   add_foreign_key "station_statuses", "stations"
   add_foreign_key "station_statuses", "users"
   add_foreign_key "stations", "lines"
+  add_foreign_key "task_statuses", "tasks"
+  add_foreign_key "task_statuses", "users"
   add_foreign_key "tasks", "stations"
-  add_foreign_key "taskstatuses", "tasks"
-  add_foreign_key "taskstatuses", "users"
 end
