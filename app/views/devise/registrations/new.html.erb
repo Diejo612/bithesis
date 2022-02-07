@@ -1,9 +1,12 @@
-<div class="background-register">
-
+<div class="espacio-navbar">
+</div>
+<div class="background-perfil">
 </div>
 
 <div class='container-register'>
-  <h1>Primero completa el siguiente formulario</h1>
+  <div class="title-perfil text-center">
+    <h1>Primero completa el siguiente formulario</h1>
+  </div>
   <div class="form-register">
     <h2>Datos personales</h2>
 
@@ -28,7 +31,7 @@
                       autofocus: true,
                       input_html: { autocomplete: "university" },
                       label: false,
-                      placeholder: 'University' %>
+                      placeholder: 'Universidad' %>
           <%= f.input :level_instruction,
                       required: true,
                       autofocus: true,
@@ -40,8 +43,7 @@
                       autofocus: true,
                       input_html: { autocomplete: "phone" },
                       label: false,
-                      placeholder: 'Phone' %>
-          <%= f.input :photo, as: :file, label: false %>
+                      placeholder: 'Celular' %>
           <%= f.input :email,
                       required: true,
                       autofocus: true,

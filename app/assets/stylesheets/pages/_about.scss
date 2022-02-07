@@ -1,18 +1,16 @@
 .title-perfil {
   color: white;
   font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .card-perfil-2 {
   padding: 3%;
   background: white;
-  margin: 121px;
+  margin: auto;
   width: 75%;
-}
-
-.img-perfil {
-  width: 47%;
-  height: 233px;
+  padding-bottom: 2px;
 }
 
 .container-perfil {
@@ -32,4 +30,12 @@
   justify-content: center;
   align-items: center;
   background-color: #FFFFFF;
+}
+
+.card-perfil-2 h5 {
+  color: #8240FF;
+}
+
+.fecha {
+  padding-right: 2%;
 }
