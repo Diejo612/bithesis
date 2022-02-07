@@ -12,38 +12,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
-.background-register{
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+.background-register {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
   height: 500px;
   background-position: 100% 10%;
   background-size: cover;
 }
 
-.container-register{
+.container-register {
   width: 60%;
   margin: 0 auto;
   margin-top: -300px;
-  h1{
+  h1 {
     font-weight: bold;
     color: white;
   }
 }
 
 .form-register {
-  background-color:#FCFBFF;
+  background-color: #fcfbff;
   margin: 35px auto;
   padding: 30px 50px;
   h2 {
     font-weight: bold;
     font-size: 24px;
   }
-  input{
+  input {
     width: 100%;
     font-size: 14px !important;
-    color: black
+    color: black;
   }
 }
 
@@ -53,7 +54,6 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 0px 40px;
 }
-
 
 .form-login {
   width: 55%;
@@ -65,27 +65,36 @@
 
 input {
   border-radius: 15px !important;
-  border: 1px solid #C4A5FF !important;
+  border: 1px solid #c4a5ff !important;
   &:focus {
-    border: 0px solid #C4A5FF !important;
-    box-shadow: 0 0 0 0.2rem #C4A5FF !important;
+    border: 0px solid #c4a5ff !important;
+    box-shadow: 0 0 0 0.2rem #c4a5ff !important;
   }
 }
 
 .form-check {
-  color: #8240FF;
+  color: #8240ff;
   #user_remember_me {
-    border: 1px solid #8240FF !important;
+    border: 1px solid #8240ff !important;
   }
 }
 
 .btn-yellow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   display: block;
   width: 150px;
   height: 40px;
-  background-color: #FFE67D;
+  background-color: #ffe67d;
   border: none !important;
   margin: 0 auto;
+}
+
+.btn-yellow:hover {
+  text-decoration: none;
+  color: blue;
+  background: #ffe67d;
 }
 
 .form-login a {
@@ -93,9 +102,9 @@ input {
   font-weight: lighter !important;
 }
 
-
 .background-perfil {
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
   height: 300px;
   background-position: 38%;
   background-size: cover;
