@@ -34,23 +34,55 @@ Assignation.create(user_id: 5, line_id: 9, completed: false, status: 'inicio')
 puts 'Creando station'
 
 content1 = '
-  <h3> Bienvenidos a la stacion ... </h3>
-  <p> DASDASDasddasdasdas </p>
+  <h3> <strong>¡Bienvenidos a la Línea Principal!</strong> </h3>
+  <h4> <strong>Indicaciones:</strong> Por favor, visualiza el video para ir después a la pestaña <i class="fas fa-arrow-circle-right"></i> "Lineamientos Generales" </h4>
+'
+content2 = '
+  <h3> Descubre los lineamientos de funcionamiento de Bi-Thesis para estar todos los involucrados en armonía y así tu proceso sea exitoso. <strong>¡Siempre estaremos contigo!")</strong> </h3>
+  <br>
+  <h4> <strong>Indicaciones:</strong> Por favor, visualiza el video para ir después a la pestaña <i class="fas fa-arrow-circle-right"></i> "Pre Work" </h4>
+'
+content3 = '
+  <h4> <strong>¡Muy bien!</strong> Ahora que estás familiarizado con la plataforma y conoces las normas de funcionamiento, vamos a empezar con la nivelación de los conocimientos básicos para que empieces tu tesis con buen pie </h4>
+'
+content4 = '
+  <h3> <strong>¡Ahora si!</strong> vamos a concretar tema de investigación </h3>
+  <h4> <strong>Indicaciones:</strong> Por favor, visualiza el video para ir después a la pestaña <i class="fas fa-arrow-circle-right"></i> "Viabilidad" </h4>
+'
+content5 = '
+  <h3> Una vez con tema(s) seleccionados, debemos analizar otros factores para determinar si todo lo que queremos hacer es posible </h3>
+  <br>
+  <h4> <strong>Indicaciones:</strong> Por favor, visualiza el video para ir después a la pestaña <i class="fas fa-arrow-circle-right"></i> "Proyección de escenarios y metodología" </h4>
+'
+content6 = '
+  <h3><strong>¡Muy bien!</strong> Ya con todos los escenarios considerados, vamos proyectar los caminos a seguir </h3>
+  <br>
+  <h4> <strong>Indicaciones:</strong> Por favor, llena el siguiente formulario y cárgalo para que tu asesor lo revise, después dirígete a la pestaña <i class="fas fa-arrow-circle-right"></i> "Concreción anteproyecto" </h4>
+'
+content7 = '
+  <h3><strong>¡Felicidades!</strong> si haz llegado hasta esta estación, significa que tiene todo lo necesario para proponer el anteproyecto. ¡Manos a la obra! </h3>
+  <br>
+  <h4> <strong>Indicaciones:</strong> Por favor, carga el documento con el anteproyecto y solicita una entrevista con tu asesor para revisarlo </h4>
+'
+content8 = '
+  <h3><strong>¡Muchas felicidades!</strong> ¿Viste que si es posible culminar tu tesis?, ahora a demostrar todo lo que aprendiste y aportaste gracias a tu proyecto de investigación,lee estos lineamientos y ensayemos tu presentación para que sea una experiencia inolvidable! </h3>
+  <br>
+  <h4> <strong>Indicaciones:</strong> Por favor, carga el documento con la presentación de la defensa y solicita una entrevista con tu asesor para ensayar. ¡Manos a la obra! </h4>
 '
 
 station1 = Station.new(name: 'Bienvenida', line_id: 1, abrv: 'st1', content: content1)
 station1.save
-station2 = Station.new(name: 'Lineamientos generales', line_id: 1, abrv: 'st2', content: "Descubre los lineamientos de funcionamiento de Bi-Thesis para estar todos los involucrados en armonía y así tu proceso sea exitoso. ¡Siempre estaremos contigo!")
+station2 = Station.new(name: 'Lineamientos generales', line_id: 1, abrv: 'st2', content: content2)
 station2.save
-station3 = Station.new(name: 'Pre work', line_id: 1, abrv: 'st3', content: "Muy bien ahora que estás familiarizado con la plataforma y conoces las normas de funcionamiento, vamos a empezar con la nivelación de los conocimientos básicos para que empieces tu tesis con buen pie")
+station3 = Station.new(name: 'Pre work', line_id: 1, abrv: 'st3', content: content3)
 station3.save
-station4 = Station.new(name: 'Definición de variables', line_id: 2, abrv: 'st4', content: "¡Ahora si!, vamos a concretar tema de investigación")
+station4 = Station.new(name: 'Definición de variables', line_id: 2, abrv: 'st4', content: content4)
 station4.save
-station5 = Station.new(name: 'Viabilidad', line_id: 2, abrv: 'st5', content: "Una vez con tema(s) seleccionados, debemos analizar otros factores para determinar si todo lo que queremos hacer es posible")
+station5 = Station.new(name: 'Viabilidad', line_id: 2, abrv: 'st5', content: content5)
 station5.save
-station6 = Station.new(name: 'Proyección de escenarios y medología', line_id: 2, abrv: 'st6', content: "¡Muy bien!, ya con todos los escenarios considerados, vamos proyectar los caminos a seguir")
+station6 = Station.new(name: 'Proyección de escenarios y metodología', line_id: 2, abrv: 'st6', content: content6)
 station6.save
-station7 = Station.new(name: 'Concreción ante proyecto', line_id: 2, abrv: 'st7', content: "¡Felicidades!, si haz llegado hasta esta estación, significa que tiene todo lo necesario para proponer el anteproyecto. ¡Manos a la obra!")
+station7 = Station.new(name: 'Concreción ante proyecto', line_id: 2, abrv: 'st7', content: content7)
 station7.save
 station8 = Station.new(name: 'Antecedentes', line_id: 3, abrv: 'st8', content: "Ésta es una de las estaciones más importantes, ya que concretaremos los antecedentes que sustentarán tu idea y con la que compararás tus resultados")
 station8.save
@@ -98,7 +130,7 @@ station29 = Station.new(name: 'Anexos', line_id: 8, abrv: 'st29', content: "Cheq
 station29.save
 station30 = Station.new(name: 'Apéndices', line_id: 8, abrv: 'st30', content: "Chequeemos si corresponde incluir apéndices")
 station30.save
-station31 = Station.new(name: 'Preparación de la defensa', line_id: 9, abrv: 'st31', content: "¡Muchas felicidades!, ¿Viste que si es posible culminar tu tesis?, ahora a demostrar todo lo que aprendiste y aportaste gracias a tu proyecto de investigación,lee estos lineamientos y ensayemos tu presentación para que sea una experiencia inolvidable")
+station31 = Station.new(name: 'Preparación de la defensa', line_id: 9, abrv: 'st31', content: content8)
 station31.save
 station32 = Station.new(name: 'Análisis estadístico', line_id: 10, abrv: 'st32', content: "Necesitas ayuda para los análisis estadísiticos de tu tesis. Aquí te los damos")
 station32.save
