@@ -10,9 +10,11 @@
 .recursos-card {
   display: flex;
   background-color: white;
-  box-shadow: 3px 4px 17px rgb(124, 119, 119);
   margin: 3%;
   padding: 5%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   h5 {
   color: #8240FF;
   text-align: center;
@@ -26,6 +28,13 @@
   }
 }
 
+.recursos-card:hover {
+  transform: scale(1.05) rotate(-1deg);
+  border-radius: 5px;
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: rgb(215, 193, 233) 0 1px 2px,rgb(212, 188, 226) 0 2px 4px,rgb(215, 178, 240) 0 4px 8px,rgb(227, 194, 247) 0 8px 16px,rgb(229, 187, 245) 0 16px 32px;
+}
+
 .recursos-card-content {
   width: 100%;
 }
@@ -33,6 +42,9 @@
 .img-recurso {
   width: 472px;
   height: 292px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .container-recurso h1 {

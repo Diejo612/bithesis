@@ -52,9 +52,6 @@ body {
 .card-home {
   display: flex;
   position: relative;
-  // display: grid;
-  // grid-template-columns: 1fr 1fr;
-  // grid-gap: 50px;
 }
 
 .card-text-3 h5 {
@@ -137,7 +134,9 @@ body {
 }
 
 .card-articulo {
-  box-shadow: 2px 2px 3px rgb(124, 119, 119);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   padding: 3%;
   background: #ffe67d;
   h5 {
@@ -154,4 +153,10 @@ body {
   &:hover {
     box-shadow: 0 0 10px #c1b6ff;
   }
+}
+
+.card-text-recurso {
+  padding: 4%;
+  margin: 4%;
+  padding-bottom: 6%;
 }
