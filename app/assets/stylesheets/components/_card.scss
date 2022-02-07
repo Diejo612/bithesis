@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Source+Sans+Pro:wght@600&family=Ubuntu:wght@300&display=swap');
-
-
 .card {
   box-shadow: 2px 2px 3px rgb(124, 119, 119);
   width: 278px;
@@ -33,6 +31,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
  }
+
 .card-text-2 h2 {
   font-family: 'Poppins', sans-serif;
   color: #6543ee;
@@ -49,11 +48,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
-}
-
-.img-home {
-  width: 570px;
-  height: 380px;
 }
 
 .card-text-3 h5 {
@@ -80,8 +74,6 @@
   }
 }
 
-
-
 .interview-info {
   padding: 100px;
 }
@@ -91,23 +83,9 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
 }
-.img-recurso {
-  width: 472px;
-  height: 292px;
-}
-
 
 .card-text-recurso h5 {
   color: #8240FF;
-}
-
-.container-recurso h1 {
-  color: #8240FF;
-  font-weight: bold;
-}
-.container-recurso-2 h1 {
-  color: #8240FF;
-  font-weight: bold;
 }
 
 .rounded {
@@ -117,7 +95,6 @@
 .card-final {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: #E2D8FF;
 }
 
 .card-final-2 {
