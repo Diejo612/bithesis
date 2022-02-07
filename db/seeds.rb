@@ -36,40 +36,40 @@ Assignation.create(user_id: 5, line_id: 9)
 puts 'Creando station'
 
 content1 = '
-  <h3> <strong>¡Bienvenidos a la Línea Principal!</strong> </h3>
-  <h4> <strong>Indicaciones:</strong> Por favor, visualiza el video para ir después a la pestaña <i class="fas fa-arrow-circle-right"></i> "Lineamientos Generales" </h4>
+  <h4> <strong>¡Bienvenidos a la Línea Principal!</strong> </h4>
+  <p> <strong>Indicaciones:</strong> Por favor, visualiza el video para ir después a la pestaña <i class="fas fa-arrow-circle-right"></i> "Lineamientos Generales" </p>
 '
 content2 = '
-  <h3> Descubre los lineamientos de funcionamiento de Bi-Thesis para estar todos los involucrados en armonía y así tu proceso sea exitoso. <strong>¡Siempre estaremos contigo!")</strong> </h3>
+  <h4> Descubre los lineamientos de funcionamiento de Bi-Thesis para estar todos los involucrados en armonía y así tu proceso sea exitoso. <strong>¡Siempre estaremos contigo!")</strong> </h4>
   <br>
-  <h4> <strong>Indicaciones:</strong> Por favor, visualiza el video para ir después a la pestaña <i class="fas fa-arrow-circle-right"></i> "Pre Work" </h4>
+  <p> <strong>Indicaciones:</strong> Por favor, visualiza el video para ir después a la pestaña <i class="fas fa-arrow-circle-right"></i> "Pre Work" </p>
 '
 content3 = '
   <h4> <strong>¡Muy bien!</strong> Ahora que estás familiarizado con la plataforma y conoces las normas de funcionamiento, vamos a empezar con la nivelación de los conocimientos básicos para que empieces tu tesis con buen pie </h4>
 '
 content4 = '
-  <h3> <strong>¡Ahora si!</strong> vamos a concretar tema de investigación </h3>
-  <h4> <strong>Indicaciones:</strong> Por favor, visualiza el video para ir después a la pestaña <i class="fas fa-arrow-circle-right"></i> "Viabilidad" </h4>
+  <h4> <strong>¡Ahora si!</strong> vamos a concretar tema de investigación </h4>
+  <p> <strong>Indicaciones:</strong> Por favor, visualiza el video para ir después a la pestaña <i class="fas fa-arrow-circle-right"></i> "Viabilidad" </p>
 '
 content5 = '
-  <h3> Una vez con tema(s) seleccionados, debemos analizar otros factores para determinar si todo lo que queremos hacer es posible </h3>
+  <h4> Una vez con tema(s) seleccionados, debemos analizar otros factores para determinar si todo lo que queremos hacer es posible </h4>
   <br>
-  <h4> <strong>Indicaciones:</strong> Por favor, visualiza el video para ir después a la pestaña <i class="fas fa-arrow-circle-right"></i> "Proyección de escenarios y metodología" </h4>
+  <p> <strong>Indicaciones:</strong> Por favor, visualiza el video para ir después a la pestaña <i class="fas fa-arrow-circle-right"></i> "Proyección de escenarios y metodología" </p>
 '
 content6 = '
-  <h3><strong>¡Muy bien!</strong> Ya con todos los escenarios considerados, vamos proyectar los caminos a seguir </h3>
+  <h4><strong>¡Muy bien!</strong> Ya con todos los escenarios considerados, vamos proyectar los caminos a seguir </h4>
   <br>
-  <h4> <strong>Indicaciones:</strong> Por favor, llena el siguiente formulario y cárgalo para que tu asesor lo revise, después dirígete a la pestaña <i class="fas fa-arrow-circle-right"></i> "Concreción anteproyecto" </h4>
+  <p> <strong>Indicaciones:</strong> Por favor, llena el siguiente formulario y cárgalo para que tu asesor lo revise, después dirígete a la pestaña <i class="fas fa-arrow-circle-right"></i> "Concreción anteproyecto" </p>
 '
 content7 = '
-  <h3><strong>¡Felicidades!</strong> si haz llegado hasta esta estación, significa que tiene todo lo necesario para proponer el anteproyecto. ¡Manos a la obra! </h3>
+  <h4><strong>¡Felicidades!</strong> si haz llegado hasta esta estación, significa que tiene todo lo necesario para proponer el anteproyecto. ¡Manos a la obra! </h4>
   <br>
-  <h4> <strong>Indicaciones:</strong> Por favor, carga el documento con el anteproyecto y solicita una entrevista con tu asesor para revisarlo </h4>
+  <p> <strong>Indicaciones:</strong> Por favor, carga el documento con el anteproyecto y solicita una entrevista con tu asesor para revisarlo </p>
 '
 content8 = '
-  <h3><strong>¡Muchas felicidades!</strong> ¿Viste que si es posible culminar tu tesis?, ahora a demostrar todo lo que aprendiste y aportaste gracias a tu proyecto de investigación,lee estos lineamientos y ensayemos tu presentación para que sea una experiencia inolvidable! </h3>
+  <h4><strong>¡Muchas felicidades!</strong> ¿Viste que si es posible culminar tu tesis?, ahora a demostrar todo lo que aprendiste y aportaste gracias a tu proyecto de investigación,lee estos lineamientos y ensayemos tu presentación para que sea una experiencia inolvidable! </h4>
   <br>
-  <h4> <strong>Indicaciones:</strong> Por favor, carga el documento con la presentación de la defensa y solicita una entrevista con tu asesor para ensayar. ¡Manos a la obra! </h4>
+  <p> <strong>Indicaciones:</strong> Por favor, carga el documento con la presentación de la defensa y solicita una entrevista con tu asesor para ensayar. ¡Manos a la obra! </p>
 '
 
 station1 = Station.new(name: 'Bienvenida', line_id: 1, abrv: 'st1', content: content1)
