@@ -6,7 +6,7 @@ class LinesController < ApplicationController
       @lines = current_user.assignation.map { |a| a.line }
       @active_line = @lines.first.id - 1
     end
-    unless current_user.role == 'teacher'
+    unless current_user.teacher
       @interview = Interview.where(user: current_user).last
       if @interview
         @date = @interview.date
