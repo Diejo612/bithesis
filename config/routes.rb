@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/nuevos_cursos', to: "pages#nuevos_cursos", as: 'nuevos_cursos'
   resources :lines, only: [:index, :show]
   resources :task_statuses, only: [:update]
+  resources :station_statuses, only: [:update]
   resources :interviews, only: [ :new, :create]
   resources :meetings, only: [ :new, :create]
   get '/about', to: 'pages#about'
