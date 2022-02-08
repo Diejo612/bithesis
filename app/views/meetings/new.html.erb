@@ -1,0 +1,11 @@
+
+<div class="container">
+  <div class='form'>
+  <h1>Elige tu día de reservación</h1>
+    <%= simple_form_for [@meeting] do |f| %>
+      <%= f.input :start_time, label: 'Elige una hora' %>
+       <%= f.input :end_time, label: 'Elige una hora' %>
+      <%= f.button :submit, class: 'btn btn-primary', value: 'Reserva' %>
+    <% end %>
+  </div>
+</div>
