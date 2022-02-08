@@ -104,7 +104,7 @@
                                       <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>">
                                         <% if task.auto_check %>
                                           <label for="completed">Marcar como terminado</label>
-                                          <input type="checkbox" name="completed" id="completed" data-completed-target='checkbox' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
+                                          <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
                                         <% end %>
                                       </div>
                                     </div>
@@ -126,10 +126,13 @@
                                           <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                                         </div>
                                       <% end %>
-                                      <% if task.auto_check %>
-                                        <label for="completed"> Marcar como terminado</label>
-                                        <input type="checkbox" name="completed" id="completed">
-                                      <% end %>
+                                      <% status = TaskStatus.where(user: current_user, task: task).first %>
+                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>">
+                                        <% if task.auto_check %>
+                                          <label for="completed">Marcar como terminado</label>
+                                          <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
+                                        <% end %>
+                                      </div>
                                     </div>
                                   <% end %>
                                 <% end %>
@@ -193,10 +196,13 @@
                                           <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                                         </div>
                                       <% end %>
-                                      <% if task.auto_check %>
-                                        <label for="completed"> Marcar como terminado</label>
-                                        <input type="checkbox" name="completed" id="completed">
-                                      <% end %>
+                                      <% status = TaskStatus.where(user: current_user, task: task).first %>
+                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>">
+                                        <% if task.auto_check %>
+                                          <label for="completed">Marcar como terminado</label>
+                                          <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
+                                        <% end %>
+                                      </div>
                                     </div>
                                   <% end %>
                                 <% end %>
@@ -216,10 +222,13 @@
                                           <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                                         </div>
                                       <% end %>
-                                      <% if task.auto_check %>
-                                        <label for="completed"> Marcar como terminado</label>
-                                        <input type="checkbox" name="completed" id="completed">
-                                      <% end %>
+                                      <% status = TaskStatus.where(user: current_user, task: task).first %>
+                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>">
+                                        <% if task.auto_check %>
+                                          <label for="completed">Marcar como terminado</label>
+                                          <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
+                                        <% end %>
+                                      </div>
                                     </div>
                                   <% end %>
                                 <% end %>
