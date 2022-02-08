@@ -48,7 +48,7 @@
                 <% if i.zero? %>
                   <div class="tab-pane fade show active" id="v-pills-<%= line.abrv %>" role="tabpanel" aria-labelledby="v-pills-<%= line.abrv %>-tab">
                     <div class='title-line'>
-                      <h3><%= line.name %></h3>
+                      <h2><%= line.name %></h2>
 
                     <%# Estatus de la línea %>
 
@@ -100,11 +100,11 @@
                                           <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                                         </div>
                                       <% end %>
-                                      <div data-controller='completed-controller' >
+                                      <% status = TaskStatus.where(user: current_user, task: task).first %>
+                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>">
                                         <% if task.auto_check %>
-                                          <% status = TaskStatus.where(user: current_user, task: task).first %>
-                                          <label for="completed"> Marcar como terminado</label>
-                                          <input type="checkbox" name="completed" id="completed" data-target='checkbox' data-action='click=>completed#update_status_task' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
+                                          <label for="completed">Marcar como terminado</label>
+                                          <input type="checkbox" name="completed" id="completed" data-completed-target='checkbox' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
                                         <% end %>
                                       </div>
                                     </div>
@@ -143,7 +143,7 @@
                 <% else %>
                   <div class="tab-pane fade" id="v-pills-<%= line.abrv %>" role="tabpanel" aria-labelledby="v-pills-<%= line.abrv %>-tab">
                     <div class='title-line'>
-                      <h3><%= line.name %></h3>
+                      <h2><%= line.name %></h2>
 
                       <%# Estatus de la línea %>
 
@@ -233,7 +233,7 @@
                 <% end %>
             <% end %>
           </div>
-      <div class="content-side">
+      <%# <div class="content-side">
         <div class="box-progress">
           Acá ira la barra de progreso
         </div>
@@ -243,7 +243,7 @@
         <div class="box-interview">
           <h4>Acá ira el calendario para entrevistas</h4>
         </div>
-      </div>
+      </div> %>
     </div>
   </div>
 </div>
