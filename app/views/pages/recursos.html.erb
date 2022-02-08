@@ -5,20 +5,18 @@
     <br>
     <h1 class="text-center">Publicación más reciente</h1>
     <br>
-    <div class="row align-items-center">
-      <div class="col-12 col-md-6">
-        <%= image_tag "text.jpg", class:"img-recurso img-fluid" %>
+    <div class="card-recurso align-items-center">
+      <div>
+        <%= image_tag "text.jpg", class:"img-recurso" %>
       </div>
-      <div class="col-12 col-md-6">
-        <div class="card-text-recurso">
-          <div class="d-flex  justify-content-between">
-            <p>Martes 18 Mayo, 2021</p>
-            <p>Autor: Mariamer henriquez</p>
-          </div>
-          <h5>¿Por dónde empezar?</h5>
-          <p class="text-justify">¿Te sientes abrumado por el proyecto de investigación? No te preocupes aquí te enseñamos los primeros pasos.</p>
-          <%= link_to 'Mas detalles',articulo1_path, class: 'btn-yours' %>
+      <div class="card-text-recurso">
+        <div class="d-flex  justify-content-between">
+          <p>Martes 18 Mayo, 2021</p>
+          <p>Autor: Mariamer henriquez</p>
         </div>
+        <h5>¿Por dónde empezar?</h5>
+        <p class="text-justify">¿Te sientes abrumado por el proyecto de investigación? No te preocupes aquí te enseñamos los primeros pasos.</p>
+        <%= link_to 'Mas detalles',articulo1_path, class: 'btn-yours' %>
       </div>
     </div>
   </div>
@@ -27,71 +25,59 @@
   <div class="container">
     <div class="container-recurso-2">
       <h1 class="text-center">Artículos de interés</h1>
-      <div class="row">
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="recursos-card">
-            <div class="recursos-card-content">
+      <div class="recursos-grid">
+        <div class="recursos-card">
+          <div class="recursos-card-content">
+          <h6><strong>IDEA DE INVESTIGACIÓN</strong></h6>
+          <h5>Plan de crecimiento</h5>
+          <p>Si vas a desarrollar un trabajo de investigación para optar por un grado academico, convierte esto en tu plan de crecimiento.</p>
+          <p><strong>Autor:</strong> Mariamer Henriquez</p>
+          <p><strong>Jueves 09 Septiembre, 2020</strong></p>
+          </div>
+        </div>
+        <div class="recursos-card">
+          <div class="recursos-card-content">
             <h6><strong>IDEA DE INVESTIGACIÓN</strong></h6>
-            <h5>Plan de crecimiento</h5>
-            <p>Si vas a desarrollar un trabajo de investigación para optar por un grado academico, convierte esto en tu plan de crecimiento.</p>
+            <h5>¿Dónde buscar?</h5>
+            <p>Una vez tenemos claro el tema de investigación, es importante encontrar la fundamentación teórica necesaria para tu proyecto.</p>
             <p><strong>Autor:</strong> Mariamer Henriquez</p>
-            <p><strong>Jueves 09 Septiembre, 2020</strong></p>
-            </div>
+            <p><strong>Lunes 30 Octubre, 2019</strong></p>
           </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="recursos-card">
-            <div class="recursos-card-content">
-              <h6><strong>IDEA DE INVESTIGACIÓN</strong></h6>
-              <h5>¿Dónde buscar?</h5>
-              <p>Una vez tenemos claro el tema de investigación, es importante encontrar la fundamentación teórica necesaria para tu proyecto.</p>
-              <p><strong>Autor:</strong> Mariamer Henriquez</p>
-              <p><strong>Lunes 30 Octubre, 2019</strong></p>
-            </div>
+        <div class="recursos-card">
+          <div class="recursos-card-content">
+            <h6><strong>¿SE PUEDE?</strong></h6>
+            <h5>¿Por dónde empezar?</h5>
+            <p>Probablemente tenemos el proyecto ideal, pero, ¿se puede?, aquí te enseñamos los facotres a considerar para no morir en el intento.</p>
+            <p><strong>Autor:</strong> Mariamer Henriquez</p>
+            <p><strong>Sábado 3 Septiembre, 2018</strong></p>
           </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="recursos-card">
-            <div class="recursos-card-content">
-              <h6><strong>¿SE PUEDE?</strong></h6>
-              <h5>¿Por dónde empezar?</h5>
-              <p>Probablemente tenemos el proyecto ideal, pero, ¿se puede?, aquí te enseñamos los facotres a considerar para no morir en el intento.</p>
-              <p><strong>Autor:</strong> Mariamer Henriquez</p>
-              <p><strong>Sábado 3 Septiembre, 2018</strong></p>
-            </div>
+        <div class="recursos-card">
+          <div class="recursos-card-content">
+            <h6><strong>ORIGINALIDAD</strong></h6>
+            <h5>¿Plagio?</h5>
+            <p>Todo lo que debes saber para evitarlo.</p>
+            <p><strong>Autor:</strong> Mariamer Henriquez</p>
+            <p><strong>Domingo 19 Septiembre, 2017</strong></p>
           </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="recursos-card">
-            <div class="recursos-card-content">
-              <h6><strong>ORIGINALIDAD</strong></h6>
-              <h5>¿Plagio?</h5>
-              <p>Todo lo que debes saber para evitarlo.</p>
-              <p><strong>Autor:</strong> Mariamer Henriquez</p>
-              <p><strong>Domingo 19 Septiembre, 2017</strong></p>
-            </div>
+        <div class="recursos-card">
+          <div class="recursos-card-content">
+            <h6><strong>DESARROLLO DEL PROYECTO</strong></h6>
+            <h5>La asesoría de la investigación</h5>
+            <p>Todo lo que debes tener en cuenta para organizar y aprovechar al máxima las entrevistas con tu asesor.</p>
+            <p><strong>Autor:</strong> Mariamer Henriquez</p>
+            <p><strong>Lunes 02 Septiembre, 2015</strong></p>
           </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="recursos-card">
-            <div class="recursos-card-content">
-              <h6><strong>DESARROLLO DEL PROYECTO</strong></h6>
-              <h5>La asesoría de la investigación</h5>
-              <p>Todo lo que debes tener en cuenta para organizar y aprovechar al máxima las entrevistas con tu asesor.</p>
-              <p><strong>Autor:</strong> Mariamer Henriquez</p>
-              <p><strong>Lunes 02 Septiembre, 2015</strong></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="recursos-card">
-            <div class="recursos-card-content">
-              <h6><strong>DESARROLLO DEL PROYECTO</strong></h6>
-              <h5>Organización</h5>
-              <p>Resumimos aquí los que debes considerar para organizar tu tiempo en el desarrollo de la tesis y avanzar acorde a lo planificado.</p>
-              <p><strong>Autor:</strong> Mariamer Henriquez</p>
-              <p><strong>Martes 13 Mayo, 2012</strong></p>
-            </div>
+        <div class="recursos-card">
+          <div class="recursos-card-content">
+            <h6><strong>DESARROLLO DEL PROYECTO</strong></h6>
+            <h5>Organización</h5>
+            <p>Resumimos aquí los que debes considerar para organizar tu tiempo en el desarrollo de la tesis y avanzar acorde a lo planificado.</p>
+            <p><strong>Autor:</strong> Mariamer Henriquez</p>
+            <p><strong>Martes 13 Mayo, 2012</strong></p>
           </div>
         </div>
       </div>
