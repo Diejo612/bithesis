@@ -1,44 +1,134 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8">
-        <% if @alummni.photo.key.nil? %>
-        <% else %>
-            <p><%= cl_image_tag(@alummni.photo.key, width: "250") %></p>
-        <% end %>
+<div class='container-dashboard'>
+  <div class='sidebar'>
+    <%= link_to '/' do %>
+      <div class="logo-tipo">
+        <%= image_tag 'logo.png' %>
+        <h3>
+          Bi.Thesis
+        </h3>
+      </div>
+    <% end %>
+  </div>
+  <div class="main-dashboard">
+    <div class='main-header'>
+      <h1>
+        Bienvenida <span><%= current_user.first_name %></span>
+      </h1>
+      <div class="avatar-btn dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">
+        <%# <i class="fas fa-bars"></i> %>
+        <% if current_user.photo.key %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+            <% else %>
+              <%= image_tag 'avatar-default.jpg', class: "avatar" %>
+            <% end %>
+      </div>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <%= link_to "Mi perfil", about_path, class: "dropdown-item" %>
+          <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
     </div>
-    <div class="col-4">
-      <p>Nombre: <%= @alummni.first_name %> <%= @alummni.last_name %></p>
-      <p>Email: <%= @alummni.email %></p>
-      <p>Universidad: <%= @alummni.university %></p>
-      <p>Grado de Instrucción: <%= @alummni.level_instruction %></p>
-      <p>Teléfono: <%= @alummni.phone %></p>
-      <p>Fecha de Ingreso: <%= @alummni.created_at %></p>
+
+    <div class="bar-space">
     </div>
+      <!-- Inicio tabla datos personales alummni -->
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4 text-center p-5">
+                    <div class="row">
+                        <div class="col">
+                            <% if @alummni.photo.key.nil? %>
+                            <% else %>
+                                <%= cl_image_tag(@alummni.photo.key, class: "img-fluid") %>
+                            <% end %>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-4">
+                            <th><strong>Nombre:</strong></th>
+                        </div>
+                        <div class="col-8">
+                            <th><%= @alummni.first_name %> <%= @alummni.last_name %></th>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-4">
+                            
+                            <th><strong>Email:</strong></th>
+                        </div>
+                        <div class="col-8">
+                            <th><%= @alummni.email %></th>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-4">                            
+                            <th><strong>Universidad:</strong></th>
+                        </div>
+                        <div class="col-8">                            
+                            <th><%= @alummni.university %></th>
+                        </div>
+                    </div>
+                     <div class="row align-items-center">
+                        <div class="col-4">                            
+                            <th><strong>Grado de Instrucción:</strong></th>
+                        </div>
+                        <div class="col-8">                            
+                            <th><%= @alummni.level_instruction %></th>
+                        </div>
+                    </div>
+                     <div class="row align-items-center">
+                        <div class="col-4">                            
+                            <th><strong>Teléfono:</strong></th>
+                        </div>
+                        <div class="col-8">                            
+                            <th><%= @alummni.phone %></th>
+                        </div>
+                    </div>
+                     <div class="row align-items-center">
+                        <div class="col-4">                            
+                            <th><strong>Fecha de Ingreso:</strong></th>
+                        </div>
+                        <div class="col-8">                            
+                            <th><%= @alummni.created_at %></th>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="container">
+                    <h1>Líneas</h1>
+                    <table class="table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Línea</th>
+                            <th scope="col" class="text-center">Estado</th>
+                        </tr>
+                        </thead>
+                        <% @assignations.each do |assignation| %>
+                        <tbody>
+                        <tr>
+                            <td><%= assignation.line_id %></td>
+                            <td><%= assignation.line.name %></td>
+                                <% if assignation.completed == true %>
+                                    <td class="text-center"><i class="fas fa-check"></i></td>
+                                <% else %>
+                                    <td class="text-center"><i class="fas fa-x"></i></td>
+                                <% end %>
+                        </tr>
+                        <% end %>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- Fin de la tabla datos alummnis -->
+    
   </div>
 </div>
 
-<div class="container">
-  <h1>Líneas</h1>
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">No.</th>
-        <th scope="col">Línea</th>
-        <th scope="col">Estado</th>
-      </tr>
-    </thead>
-    <% @assignations.each do |assignation| %>
-    <tbody>
-      <tr>
-        <td><%= assignation.line_id %></td>
-        <td><%= assignation.line.name %></td>
-            <% if assignation.completed == true %>
-                <td><i class="fas fa-check"></i></td>
-            <% else %>
-                <td><i class="fas fa-x"></i></td>
-            <% end %>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
 </div>
+
+
+
