@@ -12,5 +12,12 @@ class LinesController < ApplicationController
         @date = @interview.date
       end
     end
+
+  @dashboard= User.all
+  end
+
+  def show
+    @alummni= User.find(params[:id])
+    @status= Assignation.where(user_id: @alummni.id)
   end
 end
