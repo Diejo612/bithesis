@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2022_02_08_144101) do
   create_table "station_statuses", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "station_id", null: false
-    t.boolean "completed", default: false
+    t.boolean "cl", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["station_id"], name: "index_station_statuses_on_station_id"

@@ -13,11 +13,11 @@ class LinesController < ApplicationController
       end
     end
 
-  @dashboard= User.all
+  @dashboard= User.where(teacher: false)
   end
 
   def show
-    @alummni= User.find(params[:id])
-    @status= Assignation.where(user_id: @alummni.id)
+    @alummni = User.find(params[:id])
+    @assignations = Assignation.where(user_id: @alummni.id)
   end
 end

@@ -1,10 +1,44 @@
-<p><%= @alummni.photo.key %></p>
-<%= @alummni.first_name %>
-<%= @alummni.last_name %>
-<%= @alummni.email %>
-<%= @alummni.university %>
-<%= @alummni.level_instruction %>
-<%= @alummni.phone %>
-<%= @alummni.created_at %>
-<%= @status.line_id %>
-<%= @status.completed %>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+        <% if @alummni.photo.key.nil? %>
+        <% else %>
+            <p><%= cl_image_tag(@alummni.photo.key, width: "250") %></p>
+        <% end %>
+    </div>
+    <div class="col-4">
+      <p>Nombre: <%= @alummni.first_name %> <%= @alummni.last_name %></p>
+      <p>Email: <%= @alummni.email %></p>
+      <p>Universidad: <%= @alummni.university %></p>
+      <p>Grado de Instrucción: <%= @alummni.level_instruction %></p>
+      <p>Teléfono: <%= @alummni.phone %></p>
+      <p>Fecha de Ingreso: <%= @alummni.created_at %></p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Líneas</h1>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Línea</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <% @assignations.each do |assignation| %>
+    <tbody>
+      <tr>
+        <td><%= assignation.line_id %></td>
+        <td><%= assignation.line.name %></td>
+            <% if assignation.completed == true %>
+                <td><i class="fas fa-check"></i></td>
+            <% else %>
+                <td><i class="fas fa-x"></i></td>
+            <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
