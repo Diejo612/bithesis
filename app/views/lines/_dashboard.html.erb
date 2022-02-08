@@ -233,7 +233,7 @@
                 <% end %>
             <% end %>
           </div>
-      <%# <div class="content-side">
+      <div class="content-side">
         <div class="box-progress">
           Acá ira la barra de progreso
         </div>
@@ -242,8 +242,11 @@
         </div>
         <div class="box-interview">
           <h4>Acá ira el calendario para entrevistas</h4>
+          <%= month_calendar do |date| %>
+            <%= date %>
+          <% end %>
         </div>
-      </div> %>
+      </div>
     </div>
   </div>
 </div>
