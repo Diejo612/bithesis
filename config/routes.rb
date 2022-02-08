@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get '/recursos', to: "pages#recursos", as: 'recursos'
   get '/articulo1', to: "pages#articulo1", as: 'articulo1'
   get '/cursos', to: "pages#cursos", as: 'cursos'
-  get '/nuevos_cursos', to: "pages#nuevos_cursos", as: 'nuevos_cursos'
   resources :lines, only: [:index, :show]
   resources :task_statuses, only: [:update]
   resources :interviews, only: [ :new, :create]
