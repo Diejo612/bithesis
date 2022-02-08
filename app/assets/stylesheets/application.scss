@@ -7,13 +7,13 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "simple_calendar";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
 body {
   background-color: #eee;
 }
