@@ -242,9 +242,18 @@
         </div>
         <div class="box-interview">
           <h4>Acá ira el calendario para entrevistas</h4>
-          <%= month_calendar do |date| %>
-            <%= date %>
-          <% end %>
+         <div class="calendar-container">
+            <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
+              <%= date %>
+
+              <% meetings.each do |meeting| %>
+                <div class="meeting">
+                  <p><%= meeting.name %></p>
+                  <small><%= meeting.time unless meeting.multi_days? %></small>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

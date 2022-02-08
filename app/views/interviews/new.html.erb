@@ -6,9 +6,17 @@
   <h1>Elige la fecha y hora para tu reunión</h1>
   <div class="form-register">
     <h2>Datos personales</h2>
-      <%= simple_form_for @interview do |f| %>
-        <%= f.input :date %>
-        <%= f.button :submit, class: 'btn-yellow' %>
-      <% end %>
+     <div class="calendar-container">
+        <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
+          <%= date %>
+
+          <% meetings.each do |meeting| %>
+            <div class="meeting">
+              <p><%= meeting.name %></p>
+              <small><%= meeting.time unless meeting.multi_days? %></small>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
   </div>
 </div>
