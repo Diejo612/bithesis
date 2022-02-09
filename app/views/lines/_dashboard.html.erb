@@ -104,7 +104,7 @@
                                         </div>
                                       <% else %>
                                           <%= simple_form_for task do |f| %>
-                                          <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %> 
+                                          <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %>
                                           <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
                                           <% end %>
                                           <div>
@@ -148,7 +148,7 @@
                                         </div>
                                       <% else %>
                                           <%= simple_form_for task do |f| %>
-                                            <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %> 
+                                            <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %>
                                             <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
                                           <% end %>
                                           <div>
@@ -233,7 +233,7 @@
                                         </div>
                                       <% else %>
                                         <%= simple_form_for task do |f| %>
-                                          <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %> 
+                                          <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %>
                                           <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
                                         <% end %>
                                         <div>
@@ -275,7 +275,7 @@
                                         </div>
                                       <% else %>
                                           <%= simple_form_for task do |f| %>
-                                          <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %> 
+                                          <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %>
                                           <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
                                           <% end %>
                                           <div>
@@ -308,10 +308,49 @@
           </div>
       <div class="content-side">
         <div class="box-chat">
-          <h3>Acá irá el chat</h3>
+          <div class="container">
+            <div class="row clearfix">
+              <div class="col-lg-12">
+                <div class="chat-app">
+                  <div class="chat">
+                    <div class="chat-history">
+                      <ul class="m-b-0">
+                        <li class="clearfix">
+                            <div class="message-data text-right">
+                                <span class="message-data-time">10:10 AM, Hoy</span>
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                            </div>
+                            <div class="message other-message float-right"> Hola Jhon, ¿cómo estás? ¿Cómo va tu avance? </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="message-data">
+                                <span class="message-data-time">10:12 AM, Hoy</span>
+                            </div>
+                            <div class="message my-message">¿Nos reunimos hoy?</div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="message-data">
+                                <span class="message-data-time">10:15 AM, Hoy</span>
+                            </div>
+                            <div class="message my-message">El proyecto ya ha sido terminado y tengo resultados para mostrarte.</div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="chat-message clearfix">
+                        <div class="input-group mb-0">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-solid fa-paper-plane"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Enter text here...">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="box-interview">
-          <h4>Acá ira el calendario para entrevistas</h4>
          <div class="calendar-container">
             <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
               <%= date %>
