@@ -5,19 +5,18 @@ export default class extends Controller {
   static targets = ["completed"];
 
   connect() {
-    console.log(this.checkboxTarget)
+    // console.log(this.completedTarget)
   }
 
 
-
   update_status() {
-    console.log(this.data.get('station-id'))
+    // console.log(this.data.get('station-id'))
     let formData = new FormData();
     formData.append("completed[completed]", this.completedTarget.checked);
+
     fetch(this.data.get("update-url"), {
       body: formData,
       method: "PATCH",
-      // dataType: "script",
       credentials: "include",
       headers: {
         "X-CSRF-Token": csrfToken(),
@@ -25,7 +24,7 @@ export default class extends Controller {
       },
     });
 
-    fetch(`/station_statuses/${this.data.get("station-id")}`, {
+    fetch(this.data.get("status-id"), {
       method: "PATCH",
       body: formData,
       credentials: "include",
@@ -34,8 +33,10 @@ export default class extends Controller {
         Accept: "application/json",
       },
     }).then(response => response.json()).then((data) => {
+      console.log(data)
       if (data.inserted_item) {
-        document.querySelector('.status-line').innerHTML = data.inserted_item;
+        console.log(data.inserted_item);
+        document.querySelector('.status').innerHTML = data.inserted_item;
       }
     });
   }

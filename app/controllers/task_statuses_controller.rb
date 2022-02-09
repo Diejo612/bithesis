@@ -3,11 +3,6 @@ class TaskStatusesController < ApplicationController
     @task = TaskStatus.find(params[:id])
     @task.update task_params
     @task.save
-    # respond_to do |format|
-    #   format.js
-    #   format.html
-    #   format.json
-    # end
   end
 
   private
