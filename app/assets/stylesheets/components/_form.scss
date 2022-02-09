@@ -96,7 +96,7 @@ input {
 
 .btn-yellow:hover {
   text-decoration: none;
-  color: blueviolet;
+  color: blue;
   background: #ffe67d;
 }
 
@@ -121,6 +121,7 @@ input {
 .container-edit {
   padding: 4% !important;
   background-color: white;
+
   overflow: auto;
 }
 
@@ -128,6 +129,7 @@ input {
   background-image: url(https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
   background-size: cover;
   background-position: 30% 37%;
+
 }
 
 .edit-photo-user {

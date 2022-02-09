@@ -174,3 +174,8 @@ Assignation.where(user_id: 5).map { |a| a.line }.each do |line|
     end
   end
 end
+
+puts 'Dias predeterminados'
+
+Meeting.create(start_time: DateTime.new(2022,02,8,3,00,00,"-05:00"), end_time: DateTime.new(2022,02,8,5,30,00,"-05:00") , user_id: 5)
+Meeting.create(start_time: DateTime.new(2022,03,8,3,00,00,"-05:00"), end_time: DateTime.new(2022,03,8,4,00,00,"-05:00") , user_id: 5)
