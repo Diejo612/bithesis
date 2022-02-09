@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get '/cursos', to: "pages#cursos", as: 'cursos'
   resources :lines, only: [:index, :show]
   resources :task_statuses, only: [:update]
+  resources :station_statuses, only: [:update]
   resources :interviews, only: [ :new, :create]
+  resources :meetings, only: [ :new, :create]
   get '/about', to: 'pages#about'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

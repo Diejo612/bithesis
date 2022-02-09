@@ -1,14 +1,26 @@
-<div class="background-register">
-
+<div class="espacio-navbar">
+</div>
+<div class="background-perfil">
 </div>
 
 <div class='container-register'>
-  <h1>Elige la fecha y hora para tu reunión</h1>
-  <div class="form-register">
-    <h2>Datos personales</h2>
-      <%= simple_form_for @interview do |f| %>
-        <%= f.input :date %>
-        <%= f.button :submit, class: 'btn-yellow' %>
+  <h1 class="text-center">Elige la fecha y hora para tu reunión</h1>
+  <div class="form-entrevista d-flex justify-content-between">
+    <div class="calendar-container">
+      <h3>Elige el día</h3>
+      <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
+      <%= date %>
+
       <% end %>
+      <% @meetings.each do |meeting| %>
+        <div class="meeting">
+          <p><%= meeting.name %></p>
+          <small><%= meeting.time unless meeting.multi_days? %></small>
+          </div>
+        <% end %>
+    </div>
+    <div>
+      <h3>Elige la hora</h3>
+    </div>
   </div>
 </div>

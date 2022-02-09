@@ -1,0 +1,38 @@
+.simple-calendar {
+  table {
+    min-height: 80vh;
+  }
+  .today {
+    background-color: #FAF3DD;
+  }
+}
+
+.meeting {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+.meeting:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.form-entrevista {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: white;
+  width: auto;
+  padding: 5%;
+}
+
+.container-register h1 {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+tbody {
+  background-color: #1EDD88;
+}
