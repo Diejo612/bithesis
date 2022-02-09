@@ -8,7 +8,7 @@ User.create(first_name: 'María', last_name: 'Henriquez', teacher: true, email: 
 User.create(first_name: 'Mel', last_name: 'Valle', email: 'mel@email.com', password: '1234567')
 User.create(first_name: 'Jhon', last_name: 'Figueroa', email: 'jh@email.com', password: '1234567')
 User.create(first_name: 'Jean', last_name: 'Pier', email: 'jean_pier@email.com', password: '1234567')
-User.create(first_name: 'Jon', last_name: 'Snow',
+User.create(first_name: 'Jon Snow', last_name: 'Stark',
             university: 'Winterfell', level_instruction: 'Lord Commander',
             email: 'user_admited@email.com', password: '1234567', admited: true).photo.attach(io: avatar, filename: 'jon snow', content_type: 'image/png')
 
@@ -45,7 +45,7 @@ content2 = '
   <p> <strong>Indicaciones:</strong> Por favor, visualiza el video para ir después a la pestaña <i class="fas fa-arrow-circle-right"></i> "Pre Work" </p>
 '
 content3 = '
-  <h4> <strong>¡Muy bien!</strong> Ahora que estás familiarizado con la plataforma y conoces las normas de funcionamiento, vamos a empezar con la nivelación de los conocimientos básicos para que empieces tu tesis con buen pie </h4>
+  <p> <strong>¡Muy bien!</strong> Ahora que estás familiarizado con la plataforma y conoces las normas de funcionamiento, vamos a empezar con la nivelación de los conocimientos básicos para que empieces tu tesis con buen pie </p>
 '
 content4 = '
   <h4> <strong>¡Ahora si!</strong> vamos a concretar tema de investigación </h4>
