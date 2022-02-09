@@ -1,0 +1,12 @@
+<div class="status-line">
+  <% if line.assignations.where(user: current_user).first.completed %>
+    <p><i class="far fa-check-circle"></i> Línea completada</p>
+    <% else %>
+    <div class='progress-circles'>
+      <% line.stations.each do |station| %>
+        <% st = StationStatus.where(station: station, user: current_user) %>
+        <%= sanitize "<i class='fas fa-circle #{ st.first.completed ? 'green' : 'green-2' }'></i>" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

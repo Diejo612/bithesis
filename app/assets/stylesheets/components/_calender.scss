@@ -19,3 +19,20 @@
   background: #1BCB7F;
   color: white;
 }
+
+.form-entrevista {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: white;
+  width: auto;
+  padding: 5%;
+}
+
+.container-register h1 {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+tbody {
+  background-color: #1EDD88;
+}
