@@ -51,8 +51,17 @@
                       <h2><%= line.name %></h2>
 
                     <%# Estatus de la línea %>
-                      <div class='status'>
-                        <%= render 'status_line', line: line %>
+                      <div class="status-line">
+                        <% if line.assignations.where(user: current_user).first.completed %>
+                          <p><i class="far fa-check-circle"></i> Línea completada</p>
+                          <%# else %>
+                          <%# <div class='progress-circles'> %>
+                            <%# line.stations.each do |station| %>
+                              <%# st = StationStatus.where(station: station, user: current_user) %>
+                              <%#= sanitize "<i class='fas fa-circle #{ st.first.completed ? 'green' : 'green-2' }'></i>" %>
+                            <%# end %>
+                          <%# </div> %>
+                        <% end %>
                       </div>
                     </div>
 
@@ -124,7 +133,7 @@
 
                                       <% status = TaskStatus.where(user: current_user, task: task).first %>
                                       <%# controler %>
-                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id=<%= st_status.id %>>
+                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
                                         <% if task.auto_check %>
                                           <label for="completed">Marcar como terminado</label>
                                           <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
@@ -147,8 +156,17 @@
 
                       <%# Estatus de la línea %>
 
-                      <div class='status'>
-                        <%= render 'status_line', line: line %>
+                      <div class="status-line">
+                        <% if line.assignations.where(user: current_user).first.completed %>
+                          <p><i class="far fa-check-circle"></i> Línea completada</p>
+                          <%# else %>
+                          <%# <div class='progress-circles'> %>
+                            <%# line.stations.each do |station| %>
+                              <%# st = StationStatus.where(station: station, user: current_user) %>
+                              <%#= sanitize "<i class='fas fa-circle #{ st.first.completed ? 'green' : 'green-2' }'></i>" %>
+                            <%# end %>
+                          <%# </div> %>
+                        <% end %>
                       </div>
                     </div>
                     <nav>
@@ -187,7 +205,7 @@
                                       <% st_status = StationStatus.where(user: current_user, station: station).first %>
                                       <% status = TaskStatus.where(user: current_user, task: task).first %>
                                       <%# controler %>
-                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id=<%= st_status.id %>>
+                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
                                         <% if task.auto_check %>
                                           <label for="completed">Marcar como terminado</label>
                                           <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
@@ -215,7 +233,7 @@
                                       <% st_status = StationStatus.where(user: current_user, station: station).first %>
                                       <% status = TaskStatus.where(user: current_user, task: task).first %>
                                       <%# controler %>
-                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id=<%= st_status.id %>>
+                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
                                         <% if task.auto_check %>
                                           <label for="completed">Marcar como terminado</label>
                                           <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
