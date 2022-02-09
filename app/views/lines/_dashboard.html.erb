@@ -103,7 +103,15 @@
                                           <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
                                         </div>
                                       <% else %>
-                                          Sube tu tarea
+                                          <%= simple_form_for task do |f| %>
+                                          <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %> 
+                                          <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
+                                          <% end %>
+                                          <div>
+                                            <% if task.photo.key %>
+                                              <%= cl_image_tag task.photo.key %>
+                                            <% end %>
+                                          </div>
                                       <% end %>
                                       <% st_status = StationStatus.where(user: current_user, station: station).first %>
 
@@ -139,7 +147,15 @@
                                           <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
                                         </div>
                                       <% else %>
-                                          Sube tu tarea
+                                          <%= simple_form_for task do |f| %>
+                                            <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %> 
+                                            <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
+                                          <% end %>
+                                          <div>
+                                            <% if task.photo.key %>
+                                              <%= cl_image_tag task.photo.key %>
+                                            <% end %>
+                                          </div>
                                       <% end %>
                                       <% st_status = StationStatus.where(user: current_user, station: station).first %>
 
@@ -218,7 +234,15 @@
                                           <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
                                         </div>
                                       <% else %>
-                                          Sube tu tarea
+                                        <%= simple_form_for task do |f| %>
+                                          <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %> 
+                                          <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
+                                        <% end %>
+                                        <div>
+                                            <% if task.photo.key %>
+                                              <%= cl_image_tag task.photo.key %>
+                                            <% end %>
+                                        </div>
                                       <% end %>
                                       <% st_status = StationStatus.where(user: current_user, station: station).first %>
                                       <% status = TaskStatus.where(user: current_user, task: task).first %>
@@ -252,7 +276,15 @@
                                           <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
                                         </div>
                                       <% else %>
-                                          Sube tu tarea
+                                          <%= simple_form_for task do |f| %>
+                                          <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %> 
+                                          <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
+                                          <% end %>
+                                          <div>
+                                            <% if task.photo.key %>
+                                              <i class='fas fa-file-word'></i>
+                                            <% end %>
+                                          </div>
                                       <% end %>
                                       <% st_status = StationStatus.where(user: current_user, station: station).first %>
                                       <% status = TaskStatus.where(user: current_user, task: task).first %>
