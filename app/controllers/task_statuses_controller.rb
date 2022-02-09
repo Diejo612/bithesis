@@ -8,7 +8,7 @@ class TaskStatusesController < ApplicationController
   private
 
   def task_params
-    params.require(:completed).permit(:completed)
+    params.require(:completed).permit(:completed, :photo)
   end
 
 end
