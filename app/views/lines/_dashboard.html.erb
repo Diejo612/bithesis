@@ -50,11 +50,22 @@
                 <div class='title-line'>
                   <h2><%= line.name %></h2>
 
-                <%# Estatus de la línea %>
-                  <div class='status'>
-                    <%= render 'status_line', line: line %>
-                  </div>
-                </div>
+
+                    <%# Estatus de la línea %>
+                      <div class="status-line">
+                        <% if line.assignations.where(user: current_user).first.completed %>
+                          <p><i class="far fa-check-circle"></i> Línea completada</p>
+                          <%# else %>
+                          <%# <div class='progress-circles'> %>
+                            <%# line.stations.each do |station| %>
+                              <%# st = StationStatus.where(station: station, user: current_user) %>
+                              <%#= sanitize "<i class='fas fa-circle #{ st.first.completed ? 'green' : 'green-2' }'></i>" %>
+                            <%# end %>
+                          <%# </div> %>
+                        <% end %>
+                      </div>
+                    </div>
+
 
                 <%# Generar pestañas con nombres de estaciones %>
 
@@ -71,7 +82,42 @@
                 </nav>
 
 
+
                 <%# Contenido de las estaciones %>
+
+                    <div class="tab-content" id="nav-tabContent">
+                      <% line.stations.each_with_index do |station,i| %>
+                          <% if i.zero? %>
+                            <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                              <div class="content-dash">
+                                <p>
+                                <%= sanitize station.content %>
+                                </p>
+                                <%# <iframe src="http://docs.google.com/gview?url=http://www.educoas.org/portal/bdigital/contenido/valzacchi/ValzacchiCapitulo-2New.pdf&embedded=true" style="width:100%; height:700px;" frameborder="0" ></iframe> %>
+                                <% if station.tasks %>
+                                  <% station.tasks.each do |task| %>
+                                    <div class="card-task">
+                                      <% if task.tipo == 'video' %>
+                                        <div class='container-video'>
+                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                        </div>
+                                      <% elsif task.tipo == 'file' %>
+                                        <div class='container-video'>
+                                          <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
+                                        </div>
+                                      <% else %>
+                                          <%= simple_form_for task do |f| %>
+                                          <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %> 
+                                          <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
+                                          <% end %>
+                                          <div>
+                                            <% if task.photo.key %>
+                                              <%= cl_image_tag task.photo.key %>
+                                            <% end %>
+                                          </div>
+                                      <% end %>
+                                      <% st_status = StationStatus.where(user: current_user, station: station).first %>
+
 
                 <div class="tab-content" id="nav-tabContent">
                   <% line.stations.each_with_index do |station,i| %>
@@ -90,34 +136,49 @@
                                       <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                                     </div>
                                   <% end %>
-                                  <% st_status = StationStatus.where(user: current_user, station: station).first %>
 
-                                  <% status = TaskStatus.where(user: current_user, task: task).first %>
-                                  <%# controler %>
-                                  <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
-                                    <% if task.auto_check %>
-                                      <label for="completed">Marcar como terminado</label>
-                                      <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' <%= 'checked' if status.completed %> >
-                                    <% end %>
-                                  </div>
-                                  <%# ---- %>
-                                </div>
-                              <% end %>
-                            <% end %>
-                          </div>
-                        </div>
-                      <% else %>
-                        <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
-                          <div class="content-dash">
-                            <p>
-                            <%= sanitize station.content %>
-                            </p>
-                            <% if station.tasks %>
-                              <% station.tasks.each do |task| %>
-                                <div class="card-task">
-                                  <% if task.tipo == 'video' %>
-                                    <div class='container-video'>
-                                      <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                <% end %>
+                              </div>
+                            </div>
+                          <% else %>
+                            <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                              <div class="content-dash">
+                                <p>
+                                <%= sanitize station.content %>
+                                </p>
+                                <% if station.tasks %>
+                                  <% station.tasks.each do |task| %>
+                                    <div class="card-task">
+                                      <% if task.tipo == 'video' %>
+                                        <div class='container-video'>
+                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                        </div>
+                                      <% elsif task.tipo == 'file' %>
+                                        <div class='container-video'>
+                                          <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
+                                        </div>
+                                      <% else %>
+                                          <%= simple_form_for task do |f| %>
+                                            <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %> 
+                                            <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
+                                          <% end %>
+                                          <div>
+                                            <% if task.photo.key %>
+                                              <%= cl_image_tag task.photo.key %>
+                                            <% end %>
+                                          </div>
+                                      <% end %>
+                                      <% st_status = StationStatus.where(user: current_user, station: station).first %>
+
+                                      <% status = TaskStatus.where(user: current_user, task: task).first %>
+                                      <%# controler %>
+                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
+                                        <% if task.auto_check %>
+                                          <label for="completed">Marcar como terminado</label>
+                                          <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
+                                        <% end %>
+                                      </div>
+
                                     </div>
                                   <% end %>
                                   <% st_status = StationStatus.where(user: current_user, station: station).first %>
@@ -147,11 +208,22 @@
 
                   <%# Estatus de la línea %>
 
-                  <div class='status'>
-                    <%= render 'status_line', line: line %>
-                  </div>
-                </div>
-                <nav>
+
+                      <div class="status-line">
+                        <% if line.assignations.where(user: current_user).first.completed %>
+                          <p><i class="far fa-check-circle"></i> Línea completada</p>
+                          <%# else %>
+                          <%# <div class='progress-circles'> %>
+                            <%# line.stations.each do |station| %>
+                              <%# st = StationStatus.where(station: station, user: current_user) %>
+                              <%#= sanitize "<i class='fas fa-circle #{ st.first.completed ? 'green' : 'green-2' }'></i>" %>
+                            <%# end %>
+                          <%# </div> %>
+                        <% end %>
+                      </div>
+                    </div>
+                    <nav>
+
 
                 <%# Pestañas de staciones %>
 
@@ -168,48 +240,89 @@
 
                 <%# Contenido %>
 
-                <div class="tab-content" id="nav-tabContent">
-                  <% line.stations.each_with_index do |station,i| %>
-                      <% if i.zero? %>
-                        <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
-                          <div class="content-dash">
-                            <p>
-                              <%= sanitize station.content %>
-                            </p>
-                            <% if station.tasks %>
-                              <% station.tasks.each do |task| %>
-                                <div class="card-task">
-                                  <% if task.tipo == 'video' %>
-                                    <div class='container-video'>
-                                      <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+                    <div class="tab-content" id="nav-tabContent">
+                      <% line.stations.each_with_index do |station,i| %>
+                          <% if i.zero? %>
+                            <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                              <div class="content-dash">
+                                <p>
+                                  <%= sanitize station.content %>
+                                </p>
+                                <% if station.tasks %>
+                                  <% station.tasks.each do |task| %>
+                                    <div class="card-task">
+                                      <% if task.tipo == 'video' %>
+                                        <div class='container-video'>
+                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                        </div>
+                                      <% elsif task.tipo == 'file' %>
+                                        <div class='container-video'>
+                                          <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
+                                        </div>
+                                      <% else %>
+                                        <%= simple_form_for task do |f| %>
+                                          <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %> 
+                                          <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
+                                        <% end %>
+                                        <div>
+                                            <% if task.photo.key %>
+                                              <%= cl_image_tag task.photo.key %>
+                                            <% end %>
+                                        </div>
+                                      <% end %>
+                                      <% st_status = StationStatus.where(user: current_user, station: station).first %>
+                                      <% status = TaskStatus.where(user: current_user, task: task).first %>
+                                      <%# controler %>
+                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
+                                        <% if task.auto_check %>
+                                          <label for="completed">Marcar como terminado</label>
+                                          <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
+                                        <% end %>
+                                      </div>
                                     </div>
                                   <% end %>
-                                  <% st_status = StationStatus.where(user: current_user, station: station).first %>
-                                  <% status = TaskStatus.where(user: current_user, task: task).first %>
-                                  <%# controler %>
-                                  <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id=<%= st_status.id %>>
-                                    <% if task.auto_check %>
-                                      <label for="completed">Marcar como terminado</label>
-                                      <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
-                                    <% end %>
-                                  </div>
-                                </div>
-                              <% end %>
-                            <% end %>
-                          </div>
-                        </div>
-                      <% else %>
-                        <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
-                          <div class="content-dash">
-                            <p>
-                              <%= sanitize station.content %>
-                            </p>
-                            <% if station.tasks %>
-                              <% station.tasks.each do |task| %>
-                                <div class="card-task">
-                                  <% if task.tipo == 'video' %>
-                                    <div class='container-video'>
-                                      <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                <% end %>
+                              </div>
+                            </div>
+                          <% else %>
+                            <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                              <div class="content-dash">
+                                <p>
+                                  <%= sanitize station.content %>
+                                </p>
+                                <% if station.tasks %>
+                                  <% station.tasks.each do |task| %>
+                                    <div class="card-task">
+                                      <% if task.tipo == 'video' %>
+                                        <div class='container-video'>
+                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                        </div>
+                                      <% elsif task.tipo == 'file' %>
+                                        <div class='container-video'>
+                                          <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
+                                        </div>
+                                      <% else %>
+                                          <%= simple_form_for task do |f| %>
+                                          <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %> 
+                                          <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
+                                          <% end %>
+                                          <div>
+                                            <% if task.photo.key %>
+                                              <i class='fas fa-file-word'></i>
+                                            <% end %>
+                                          </div>
+                                      <% end %>
+                                      <% st_status = StationStatus.where(user: current_user, station: station).first %>
+                                      <% status = TaskStatus.where(user: current_user, task: task).first %>
+                                      <%# controler %>
+                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
+                                        <% if task.auto_check %>
+                                          <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
+                                          <label for="completed">Marcar como terminado</label>
+                                        <% end %>
+                                      </div>
+
                                     </div>
                                   <% end %>
                                   <% st_status = StationStatus.where(user: current_user, station: station).first %>

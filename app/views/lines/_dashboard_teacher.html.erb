@@ -30,34 +30,38 @@
 
     <div class="bar-space">
     </div>
-    <!-- Inicio tabla datos alummni -->
-    <div class="container">
-      <h2 class="text-center">Tus asesorados</h2>
-      <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Avatar</th>
-            <th scope="col">Nombres</th>
-            <th scope="col">Apellidos</th>
-            <th scope="col">Email</th>
-            <th scope="col">Fecha Inicio</th>
-            <th scope="col">Detalles</th>
-          </tr>
-        </thead>
-        <% @dashboard.each do |alummni| %>
-          <tbody>
-            <tr>
-              <td scope="row"><%#<%= cl_image_tag(alummni.photo.key, class: "avatar", default: "") %></td>
-              <td><%= alummni.first_name %></td>
-              <td><%= alummni.last_name %></td>
-              <td><%= alummni.email %></td>
-              <td><%= alummni.created_at.strftime('%d/%m/%y') %></td>
-              <td><%= link_to '<i class="fas fa-info-circle"></i>'.html_safe, line_path(alummni), class:"btn btn-detallea" %></td>
-            </tr>
-          </tbody>
-        <% end %>
-      </table>
-    </div>
+
+      <!-- Inicio tabla datos alummni -->
+      <div class="container">
+        <h1>Tus asesorados</h1>
+          <table class="table teacher">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">Avatar</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Email</th>
+                <th scope="col">Fecha Inicio</th>
+                <th scope="col">Detalles</th>
+                </tr>
+            </thead>
+            <% @dashboard.each do |alummni| %>
+            <tbody>
+              <tr>
+                <td scope="row"><%#<%= cl_image_tag(alummni.photo.key, class: "avatar", default: "") %></td>
+                <td><%= alummni.first_name %></td>
+                <td><%= alummni.last_name %></td>
+                <td><%= alummni.email %></td>
+                <td><%= alummni.created_at.strftime('%d/%m/%y') %></td> 
+                <td><%= link_to '<i class="fas fa-info-circle"></i>'.html_safe, line_path(alummni), class:"btn btn-detallea" %></td>
+              </tr>
+            <% end %>
+            </tbody> 
+          </table>
+        </div>
+
+<!-- Fin de la tabla datos alummnis -->
+    
   </div>
   <!-- Fin de la tabla datos alummnis -->
 </div>
