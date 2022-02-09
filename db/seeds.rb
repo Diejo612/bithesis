@@ -8,7 +8,7 @@ User.create(first_name: 'María', last_name: 'Henriquez', teacher: true, email: 
 User.create(first_name: 'Mel', last_name: 'Valle', email: 'mel@email.com', password: '1234567')
 User.create(first_name: 'Jhon', last_name: 'Figueroa', email: 'jh@email.com', password: '1234567')
 User.create(first_name: 'Jean', last_name: 'Pier', email: 'jean_pier@email.com', password: '1234567')
-User.create(first_name: 'Jon', last_name: 'Snow',
+User.create(first_name: 'Jon Snow', last_name: 'Stark',
             university: 'Winterfell', level_instruction: 'Lord Commander',
             email: 'user_admited@email.com', password: '1234567', admited: true).photo.attach(io: avatar, filename: 'jon snow', content_type: 'image/png')
 
