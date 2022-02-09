@@ -98,6 +98,12 @@
                                         <div class='container-video'>
                                           <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                                         </div>
+                                      <% elsif task.tipo == 'file' %>
+                                        <div class='container-video'>
+                                          <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
+                                        </div>
+                                      <% else %>
+                                          Sube tu tarea
                                       <% end %>
                                       <% st_status = StationStatus.where(user: current_user, station: station).first %>
 
@@ -128,6 +134,12 @@
                                         <div class='container-video'>
                                           <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                                         </div>
+                                      <% elsif task.tipo == 'file' %>
+                                        <div class='container-video'>
+                                          <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
+                                        </div>
+                                      <% else %>
+                                          Sube tu tarea
                                       <% end %>
                                       <% st_status = StationStatus.where(user: current_user, station: station).first %>
 
@@ -201,6 +213,12 @@
                                         <div class='container-video'>
                                           <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                                         </div>
+                                      <% elsif task.tipo == 'file' %>
+                                        <div class='container-video'>
+                                          <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
+                                        </div>
+                                      <% else %>
+                                          Sube tu tarea
                                       <% end %>
                                       <% st_status = StationStatus.where(user: current_user, station: station).first %>
                                       <% status = TaskStatus.where(user: current_user, task: task).first %>
@@ -229,14 +247,20 @@
                                         <div class='container-video'>
                                           <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                                         </div>
+                                      <% elsif task.tipo == 'file' %>
+                                        <div class='container-video'>
+                                          <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
+                                        </div>
+                                      <% else %>
+                                          Sube tu tarea
                                       <% end %>
                                       <% st_status = StationStatus.where(user: current_user, station: station).first %>
                                       <% status = TaskStatus.where(user: current_user, task: task).first %>
                                       <%# controler %>
                                       <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
                                         <% if task.auto_check %>
-                                          <label for="completed">Marcar como terminado</label>
                                           <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
+                                          <label for="completed">Marcar como terminado</label>
                                         <% end %>
                                       </div>
                                     </div>
