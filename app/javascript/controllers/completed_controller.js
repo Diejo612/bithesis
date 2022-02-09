@@ -24,20 +24,19 @@ export default class extends Controller {
       },
     });
 
-    fetch(this.data.get("status-id"), {
-      method: "PATCH",
-      body: formData,
-      credentials: "include",
-      headers: {
-        "X-CSRF-Token": csrfToken(),
-        Accept: "application/json",
-      },
-    }).then(response => response.json()).then((data) => {
-      console.log(data)
-      if (data.inserted_item) {
-        console.log(data.inserted_item);
-        document.querySelector('.status').innerHTML = data.inserted_item;
-      }
-    });
+    // fetch(this.data.get("status-id"), {
+    //   method: "PATCH",
+    //   body: formData,
+    //   credentials: "include",
+    //   headers: {
+    //     "X-CSRF-Token": csrfToken(),
+    //     Accept: "application/json",
+    //   },
+    // }).then(response => response.json()).then((data) => {
+    //   if (data.inserted_item) {
+    //     console.log(data.inserted_item);
+    //     document.querySelector('.status').innerHTML = data.inserted_item;
+    //   }
+    // });
   }
 }
