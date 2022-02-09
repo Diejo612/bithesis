@@ -158,7 +158,7 @@ Task.create(station_id: 4, tipo: 'video', url: 'https://www.loom.com/embed/7127b
 Task.create(station_id: 5, tipo: 'video', url: 'https://www.loom.com/embed/6d7ad28dc51f4246a9155904b750ea76', auto_check: true)
 Task.create(station_id: 5, tipo: 'video', url: 'https://www.loom.com/embed/0bc9cea925014e0686e86f93e6ebe946', auto_check: true)
 Task.create(station_id: 6, tipo: 'video', url: 'https://www.loom.com/embed/0bc9cea925014e0686e86f93e6ebe946', auto_check: true)
-Task.create(station_id: 6, tipo: 'file', url: 'https://res.cloudinary.com/dsetxwzxm/raw/upload/v1644422232/Tareas/Gu%C3%ADa_1_jwmywy.docx', auto_check: true)
+Task.create(station_id: 6, tipo: 'file', url: 'http://docs.google.com/gview?url=http://www.educoas.org/portal/bdigital/contenido/valzacchi/ValzacchiCapitulo-2New.pdf&embedded=true', auto_check: true)
 Task.create(station_id: 7, tipo: 'video', url: 'https://www.loom.com/embed/0bc9cea925014e0686e86f93e6ebe946', auto_check: true)
 Task.create(station_id: 7, tipo: 'tarea')
 Task.create(station_id: 31, tipo: 'video', url: 'https://www.loom.com/embed/011d94b6ee034f1b88d4f5eac5a64998', auto_check: true)
