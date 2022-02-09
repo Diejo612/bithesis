@@ -1,31 +1,19 @@
 .simple-calendar {
   table {
-    min-height: 80vh;
+    border: none;
   }
   .today {
-    background-color: #FAF3DD;
+    background-color: white;
   }
-}
-
-.meeting {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  background: #1EDD88;
-  transition: background 0.3s ease;
-}
-
-.meeting:hover {
-  background: #1BCB7F;
-  color: white;
+  .day {
+    height: 50px;
+  }
 }
 
 .form-entrevista {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   background-color: white;
   width: auto;
-  padding: 5%;
+  padding: 3%;
 }
 
 .container-register h1 {
@@ -33,6 +21,52 @@
   padding-bottom: 2%;
 }
 
-tbody {
-  background-color: #1EDD88;
+.form-entrevista h4 {
+  color: #8240ff;
+  font-weight: bold;
+}
+
+.tabla_calendario {
+  border: none;
+  background: none;
+}
+
+.tabla_calendario tr {
+  background: none;
+}
+.simple-calendar td {
+  border: none;
+  text-align: center;
+  padding: 0%;
+}
+
+.simple-calendar th {
+  border: none;
+  text-align: center;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background: none;
+}
+
+.simple-calendar .prev-month {
+  background: none;
+}
+
+.simple-calendar .next-month {
+  background: none;
+}
+
+.calendar-container {
+  width: 100%;
+  display: inline-block;
+}
+
+.fa-angle-right,
+.fa-angle-left {
+  color: #8240ff;
+  font-size: 20px;
+}
+
+.calendar-title {
+  color: #8240ff;
 }
