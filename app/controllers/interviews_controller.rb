@@ -11,6 +11,7 @@ class InterviewsController < ApplicationController
     @interview.user = @user
 
     if @interview.save
+      @user.set_interview = true
       @user.save
       redirect_to lines_path
     else
