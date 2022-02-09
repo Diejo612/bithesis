@@ -181,7 +181,6 @@
                   <div class="tab-pane fade" id="v-pills-<%= line.abrv %>" role="tabpanel" aria-labelledby="v-pills-<%= line.abrv %>-tab">
                     <div class='title-line'>
                       <h2><%= line.name %></h2>
-
                       <%# Estatus de la línea %>
 
                       <div class="status-line">
@@ -200,7 +199,6 @@
                     <nav>
 
                     <%# Pestañas de staciones %>
-
                       <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <% line.stations.each_with_index do |station,i| %>
                           <% if i.zero? %>
