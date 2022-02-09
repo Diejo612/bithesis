@@ -1,27 +1,11 @@
 <div class="simple-calendar">
-  <div class="row align-items-center">
-    <div class="col-4 text-center mt-2 mb-2">
-      <%= link_to calendar.url_for_previous_view do %>
-        <i class="fas fa-solid fa-angle-left"></i>
-      <% end %>
+  <div class="d-flex align-items-center justify-content-between">
+    <div class="calendar-heading my-2">
+      <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, class: 'btn btn-outline-primary' %>
+      <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+       <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view, class: 'btn btn-outline-primary' %>
     </div>
-    <div class="col-4 mt-2 mb-2 p-0">
-      <h5 class="text-center">
-        <span class="calendar-title d-flex ">
-          <div class="mr-2">
-            <%= t('date.month_names')[start_date.month] %>
-          </div>
-          <div>
-            <%= start_date.year %>
-          </div>
-        </span>
-      </h5>
-    </div>
-    <div class="col-4 text-center mt-2 mb-2">
-      <%= link_to calendar.url_for_next_view do %>
-        <i class="fas fa-solid fa-angle-right"></i>
-      <% end %>
-    </div>
+     <%= link_to 'Create meeting', new_meeting_path, class: 'btn btn-outline-warning' %>
   </div>
 
   <table class="table table-striped">
@@ -45,5 +29,4 @@
       <% end %>
     </tbody>
   </table>
-  <p class="text-center"><%= link_to 'Crear reunión', new_meeting_path, class: 'btn-yours' %></p>
 </div>

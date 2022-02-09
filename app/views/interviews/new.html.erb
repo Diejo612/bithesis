@@ -4,15 +4,23 @@
 </div>
 
 <div class='container-register'>
-  <h1 class="text-center">Programa tu reunión</h1>
-  <div class="form-entrevista text-center">
-    <h4>Días disponibles</h4>
+  <h1 class="text-center">Elige la fecha y hora para tu reunión</h1>
+  <div class="form-entrevista d-flex justify-content-between">
     <div class="calendar-container">
-      <%= simple_form_for [@interview] do |f| %>
-        <%= f.input :date, label: 'Elige una fecha' %>
-        <%= f.button :submit, class: 'btn btn-primary', value: 'Reserva' %>
+      <h3>Elige el día</h3>
+      <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
+      <%= date %>
+
       <% end %>
+      <% @meetings.each do |meeting| %>
+        <div class="meeting">
+          <p><%= meeting.name %></p>
+          <small><%= meeting.time unless meeting.multi_days? %></small>
+          </div>
+        <% end %>
+    </div>
+    <div>
+      <h3>Elige la hora</h3>
     </div>
   </div>
-<br>
 </div>
