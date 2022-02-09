@@ -44,202 +44,241 @@
     <div class="bar-space"></div>
     <div class='content'>
       <div class="tab-content" id="v-pills-tabContent">
-            <% @lines.each_with_index do |line,i| %>
-                <% if i.zero? %>
-                  <div class="tab-pane fade show active" id="v-pills-<%= line.abrv %>" role="tabpanel" aria-labelledby="v-pills-<%= line.abrv %>-tab">
-                    <div class='title-line'>
-                      <h2><%= line.name %></h2>
+        <% @lines.each_with_index do |line,i| %>
+            <% if i.zero? %>
+              <div class="tab-pane fade show active" id="v-pills-<%= line.abrv %>" role="tabpanel" aria-labelledby="v-pills-<%= line.abrv %>-tab">
+                <div class='title-line'>
+                  <h2><%= line.name %></h2>
 
-                    <%# Estatus de la línea %>
-                      <div class='status'>
-                        <%= render 'status_line', line: line %>
-                      </div>
-                    </div>
-
-                    <%# Generar pestañas con nombres de estaciones %>
-
-                    <nav>
-                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <% line.stations.each_with_index do |station,i| %>
-                          <% if i.zero? %>
-                            <a class="nav-link active" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="true"><%= station.name %></a>
-                          <% else %>
-                            <a class="nav-link" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="false"><%= station.name %></a>
-                          <% end %>
-                        <% end %>
-                      </div>
-                    </nav>
-
-
-                    <%# Contenido de las estaciones %>
-
-                    <div class="tab-content" id="nav-tabContent">
-                      <% line.stations.each_with_index do |station,i| %>
-                          <% if i.zero? %>
-                            <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
-                              <div class="content-dash">
-                                <p>
-                                <%= sanitize station.content %>
-                                </p>
-                                <%# <iframe src="http://docs.google.com/gview?url=http://www.educoas.org/portal/bdigital/contenido/valzacchi/ValzacchiCapitulo-2New.pdf&embedded=true" style="width:100%; height:700px;" frameborder="0" ></iframe> %>
-                                <% if station.tasks %>
-                                  <% station.tasks.each do |task| %>
-                                    <div class="card-task">
-                                      <% if task.tipo == 'video' %>
-                                        <div class='container-video'>
-                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-                                        </div>
-                                      <% end %>
-                                      <% st_status = StationStatus.where(user: current_user, station: station).first %>
-
-                                      <% status = TaskStatus.where(user: current_user, task: task).first %>
-                                      <%# controler %>
-                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
-                                        <% if task.auto_check %>
-                                          <label for="completed">Marcar como terminado</label>
-                                          <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' <%= 'checked' if status.completed %> >
-                                        <% end %>
-                                      </div>
-                                      <%# ---- %>
-                                    </div>
-                                  <% end %>
-                                <% end %>
-                              </div>
-                            </div>
-                          <% else %>
-                            <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
-                              <div class="content-dash">
-                                <p>
-                                <%= sanitize station.content %>
-                                </p>
-                                <% if station.tasks %>
-                                  <% station.tasks.each do |task| %>
-                                    <div class="card-task">
-                                      <% if task.tipo == 'video' %>
-                                        <div class='container-video'>
-                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-                                        </div>
-                                      <% end %>
-                                      <% st_status = StationStatus.where(user: current_user, station: station).first %>
-
-                                      <% status = TaskStatus.where(user: current_user, task: task).first %>
-                                      <%# controler %>
-                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id=<%= st_status.id %>>
-                                        <% if task.auto_check %>
-                                          <label for="completed">Marcar como terminado</label>
-                                          <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
-                                        <% end %>
-                                      </div>
-                                    </div>
-                                  <% end %>
-                                <% end %>
-                              </div>
-                            </div>
-                          <% end %>
-                      <% end %>
-                    </div>
-
+                <%# Estatus de la línea %>
+                  <div class='status'>
+                    <%= render 'status_line', line: line %>
                   </div>
-                <% else %>
-                  <div class="tab-pane fade" id="v-pills-<%= line.abrv %>" role="tabpanel" aria-labelledby="v-pills-<%= line.abrv %>-tab">
-                    <div class='title-line'>
-                      <h2><%= line.name %></h2>
+                </div>
 
-                      <%# Estatus de la línea %>
+                <%# Generar pestañas con nombres de estaciones %>
 
-                      <div class='status'>
-                        <%= render 'status_line', line: line %>
-                      </div>
-                    </div>
-                    <nav>
-
-                    <%# Pestañas de staciones %>
-
-                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <% line.stations.each_with_index do |station,i| %>
-                          <% if i.zero? %>
-                            <a class="nav-link active" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="true"><%= station.name %></a>
-                          <% else %>
-                            <a class="nav-link" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="false"><%= station.name %></a>
-                          <% end %>
-                        <% end %>
-                      </div>
-                    </nav>
-
-                    <%# Contenido %>
-
-                    <div class="tab-content" id="nav-tabContent">
-                      <% line.stations.each_with_index do |station,i| %>
-                          <% if i.zero? %>
-                            <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
-                              <div class="content-dash">
-                                <p>
-                                  <%= sanitize station.content %>
-                                </p>
-                                <% if station.tasks %>
-                                  <% station.tasks.each do |task| %>
-                                    <div class="card-task">
-                                      <% if task.tipo == 'video' %>
-                                        <div class='container-video'>
-                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-                                        </div>
-                                      <% end %>
-                                      <% st_status = StationStatus.where(user: current_user, station: station).first %>
-                                      <% status = TaskStatus.where(user: current_user, task: task).first %>
-                                      <%# controler %>
-                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id=<%= st_status.id %>>
-                                        <% if task.auto_check %>
-                                          <label for="completed">Marcar como terminado</label>
-                                          <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
-                                        <% end %>
-                                      </div>
-                                    </div>
-                                  <% end %>
-                                <% end %>
-                              </div>
-                            </div>
-                          <% else %>
-                            <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
-                              <div class="content-dash">
-                                <p>
-                                  <%= sanitize station.content %>
-                                </p>
-                                <% if station.tasks %>
-                                  <% station.tasks.each do |task| %>
-                                    <div class="card-task">
-                                      <% if task.tipo == 'video' %>
-                                        <div class='container-video'>
-                                          <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-                                        </div>
-                                      <% end %>
-                                      <% st_status = StationStatus.where(user: current_user, station: station).first %>
-                                      <% status = TaskStatus.where(user: current_user, task: task).first %>
-                                      <%# controler %>
-                                      <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id=<%= st_status.id %>>
-                                        <% if task.auto_check %>
-                                          <label for="completed">Marcar como terminado</label>
-                                          <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
-                                        <% end %>
-                                      </div>
-                                    </div>
-                                  <% end %>
-                                <% end %>
-                              </div>
-                            </div>
-                          <% end %>
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <% line.stations.each_with_index do |station,i| %>
+                      <% if i.zero? %>
+                        <a class="nav-link active" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="true"><%= station.name %></a>
+                      <% else %>
+                        <a class="nav-link" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="false"><%= station.name %></a>
                       <% end %>
-                    </div>
-
+                    <% end %>
                   </div>
-                <% end %>
+                </nav>
+
+
+                <%# Contenido de las estaciones %>
+
+                <div class="tab-content" id="nav-tabContent">
+                  <% line.stations.each_with_index do |station,i| %>
+                      <% if i.zero? %>
+                        <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                          <div class="content-dash">
+                            <p>
+                            <%= sanitize station.content %>
+                            </p>
+                            <%# <iframe src="http://docs.google.com/gview?url=http://www.educoas.org/portal/bdigital/contenido/valzacchi/ValzacchiCapitulo-2New.pdf&embedded=true" style="width:100%; height:700px;" frameborder="0" ></iframe> %>
+                            <% if station.tasks %>
+                              <% station.tasks.each do |task| %>
+                                <div class="card-task">
+                                  <% if task.tipo == 'video' %>
+                                    <div class='container-video'>
+                                      <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                    </div>
+                                  <% end %>
+                                  <% st_status = StationStatus.where(user: current_user, station: station).first %>
+
+                                  <% status = TaskStatus.where(user: current_user, task: task).first %>
+                                  <%# controler %>
+                                  <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
+                                    <% if task.auto_check %>
+                                      <label for="completed">Marcar como terminado</label>
+                                      <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' <%= 'checked' if status.completed %> >
+                                    <% end %>
+                                  </div>
+                                  <%# ---- %>
+                                </div>
+                              <% end %>
+                            <% end %>
+                          </div>
+                        </div>
+                      <% else %>
+                        <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                          <div class="content-dash">
+                            <p>
+                            <%= sanitize station.content %>
+                            </p>
+                            <% if station.tasks %>
+                              <% station.tasks.each do |task| %>
+                                <div class="card-task">
+                                  <% if task.tipo == 'video' %>
+                                    <div class='container-video'>
+                                      <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                    </div>
+                                  <% end %>
+                                  <% st_status = StationStatus.where(user: current_user, station: station).first %>
+
+                                  <% status = TaskStatus.where(user: current_user, task: task).first %>
+                                  <%# controler %>
+                                  <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id=<%= st_status.id %>>
+                                    <% if task.auto_check %>
+                                      <label for="completed">Marcar como terminado</label>
+                                      <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
+                                    <% end %>
+                                  </div>
+                                </div>
+                              <% end %>
+                            <% end %>
+                          </div>
+                        </div>
+                      <% end %>
+                  <% end %>
+                </div>
+
+              </div>
+            <% else %>
+              <div class="tab-pane fade" id="v-pills-<%= line.abrv %>" role="tabpanel" aria-labelledby="v-pills-<%= line.abrv %>-tab">
+                <div class='title-line'>
+                  <h2><%= line.name %></h2>
+
+                  <%# Estatus de la línea %>
+
+                  <div class='status'>
+                    <%= render 'status_line', line: line %>
+                  </div>
+                </div>
+                <nav>
+
+                <%# Pestañas de staciones %>
+
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <% line.stations.each_with_index do |station,i| %>
+                      <% if i.zero? %>
+                        <a class="nav-link active" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="true"><%= station.name %></a>
+                      <% else %>
+                        <a class="nav-link" id="nav-<%= station.abrv %>-tab" data-toggle="tab" href="#nav-<%= station.abrv %>" role="tab" aria-controls="nav-<%= station.abrv %>" aria-selected="false"><%= station.name %></a>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </nav>
+
+                <%# Contenido %>
+
+                <div class="tab-content" id="nav-tabContent">
+                  <% line.stations.each_with_index do |station,i| %>
+                      <% if i.zero? %>
+                        <div class="tab-pane fade show active" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                          <div class="content-dash">
+                            <p>
+                              <%= sanitize station.content %>
+                            </p>
+                            <% if station.tasks %>
+                              <% station.tasks.each do |task| %>
+                                <div class="card-task">
+                                  <% if task.tipo == 'video' %>
+                                    <div class='container-video'>
+                                      <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                    </div>
+                                  <% end %>
+                                  <% st_status = StationStatus.where(user: current_user, station: station).first %>
+                                  <% status = TaskStatus.where(user: current_user, task: task).first %>
+                                  <%# controler %>
+                                  <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id=<%= st_status.id %>>
+                                    <% if task.auto_check %>
+                                      <label for="completed">Marcar como terminado</label>
+                                      <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
+                                    <% end %>
+                                  </div>
+                                </div>
+                              <% end %>
+                            <% end %>
+                          </div>
+                        </div>
+                      <% else %>
+                        <div class="tab-pane fade" id="nav-<%= station.abrv %>" role="tabpanel" aria-labelledby="nav-<%= station.abrv %>-tab">
+                          <div class="content-dash">
+                            <p>
+                              <%= sanitize station.content %>
+                            </p>
+                            <% if station.tasks %>
+                              <% station.tasks.each do |task| %>
+                                <div class="card-task">
+                                  <% if task.tipo == 'video' %>
+                                    <div class='container-video'>
+                                      <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="<%= task.url %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+                                    </div>
+                                  <% end %>
+                                  <% st_status = StationStatus.where(user: current_user, station: station).first %>
+                                  <% status = TaskStatus.where(user: current_user, task: task).first %>
+                                  <%# controler %>
+                                  <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id=<%= st_status.id %>>
+                                    <% if task.auto_check %>
+                                      <label for="completed">Marcar como terminado</label>
+                                      <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
+                                    <% end %>
+                                  </div>
+                                </div>
+                              <% end %>
+                            <% end %>
+                          </div>
+                        </div>
+                      <% end %>
+                  <% end %>
+                </div>
+
+              </div>
             <% end %>
-          </div>
+        <% end %>
+      </div>
       <div class="content-side">
         <div class="box-chat">
-          <h3>Acá irá el chat</h3>
+          <div class="container">
+            <div class="row clearfix">
+              <div class="col-lg-12">
+                <div class="chat-app">
+                  <div class="chat">
+                    <div class="chat-history">
+                      <ul class="m-b-0">
+                        <li class="clearfix">
+                            <div class="message-data text-right">
+                                <span class="message-data-time">10:10 AM, Hoy</span>
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                            </div>
+                            <div class="message other-message float-right"> Hola Jhon, ¿cómo estás? ¿Cómo va tu avance? </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="message-data">
+                                <span class="message-data-time">10:12 AM, Hoy</span>
+                            </div>
+                            <div class="message my-message">¿Nos reunimos hoy?</div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="message-data">
+                                <span class="message-data-time">10:15 AM, Hoy</span>
+                            </div>
+                            <div class="message my-message">El proyecto ya ha sido terminado y tengo resultados para mostrarte.</div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="chat-message clearfix">
+                        <div class="input-group mb-0">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-solid fa-paper-plane"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Enter text here...">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="box-interview">
-          <h4>Acá ira el calendario para entrevistas</h4>
          <div class="calendar-container">
             <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
               <%= date %>

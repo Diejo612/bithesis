@@ -11,7 +11,7 @@
       <%= simple_form_for [@meeting] do |f| %>
         <%= f.input :start_time, label: 'Inicio' %>
         <%= f.input :end_time, label: 'Final' %>
-        <p class="text-center mt-4"><%= f.button :submit, class: 'btn-reservar ', value: 'Reservar' %></p>
+        <p class="text-center mt-4"><%= f.button :submit, action: "/lines", class: 'btn-reservar ', value: 'Reservar' %></p>
       <% end %>
     </div>
   </div>
