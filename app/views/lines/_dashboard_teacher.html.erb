@@ -51,11 +51,12 @@
             <% @dashboard.each do |alummni| %>
             <tbody>
               <tr>
-                <th scope="row"><%= cl_image_tag alummni.photo.key, class: "avatar" %></th>
+                <td scope="row"><%#<%= cl_image_tag(alummni.photo.key, class: "avatar", default: "") %></td>
                 <td><%= alummni.first_name %></td>
                 <td><%= alummni.last_name %></td>
                 <td><%= alummni.email %></td>
                 <td><%= alummni.created_at.strftime('%d/%m/%y') %></td> 
+                <td><%= link_to '<i class="fas fa-info-circle"></i>'.html_safe, line_path(alummni), class:"btn btn-detallea" %></td>
               </tr>
             <% end %>
             </tbody> 
