@@ -123,8 +123,10 @@
                                       <%# controler %>
                                       <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
                                         <% if task.auto_check %>
-                                          <input class='checkbox' type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' <%= 'checked' if status.completed %> >
-                                          <label for="completed">Marcar como terminado</label>
+                                          <div class="checkbox-wrapper">
+                                            <input class='checkbox' type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' <%= 'checked' if status.completed %> >
+                                            <label for="completed">Marcar como terminado</label>
+                                          </div>
                                         <% end %>
                                       </div>
                                       <%# ---- %>
@@ -169,8 +171,10 @@
                                       <%# controler %>
                                       <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
                                         <% if task.auto_check %>
-                                          <input class='checkbox' type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
-                                          <label for="completed">Marcar como terminado</label>
+                                          <div class="checkbox-wrapper">
+                                            <input class='checkbox' type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' <%= 'checked' if status.completed %> >
+                                            <label for="completed">Marcar como terminado</label>
+                                          </div>
                                         <% end %>
                                       </div>
                                     </div>
@@ -255,8 +259,10 @@
                                       <%# controler %>
                                       <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
                                         <% if task.auto_check %>
-                                          <input class='checkbox' type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
-                                          <label for="completed">Marcar como terminado</label>
+                                          <div class="checkbox-wrapper">
+                                            <input class='checkbox' type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' <%= 'checked' if status.completed %> >
+                                            <label for="completed">Marcar como terminado</label>
+                                          </div>
                                         <% end %>
                                       </div>
                                     </div>
@@ -299,8 +305,10 @@
                                       <%# controler %>
                                       <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
                                         <% if task.auto_check %>
-                                          <input class='checkbox' type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
-                                          <label for="completed">Marcar como terminado</label>
+                                          <div class="checkbox-wrapper">
+                                            <input class='checkbox' type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' <%= 'checked' if status.completed %> >
+                                            <label for="completed">Marcar como terminado</label>
+                                          </div>
                                         <% end %>
                                       </div>
                                     </div>
@@ -334,7 +342,7 @@
                                   <%= image_tag 'avatar-default' %>
                                 <% end %>
                             </div>
-                            <div class="message other-message float-right"> Hola Jhon, ¿cómo estás? ¿Cómo va tu avance? </div>
+                            <div class="message other-message float-right"> Hola Mel, ¿cómo estás? ¿Cómo va tu avance? </div>
                         </li>
                         <li class="clearfix">
                             <div class="message-data">
@@ -392,11 +400,3 @@
     </div>
   </div>
 </div>
-
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script>
-    swal("Bienvenido <%= current_user.first_name %>", 'Te has logeado correctamente', 'success', {
-          buttons: false,
-          timer: 2500,
-        });
-</script>
