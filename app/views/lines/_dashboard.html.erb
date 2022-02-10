@@ -1,3 +1,5 @@
+
+
 <div class='container-dashboard'>
   <div class='sidebar'>
     <%= link_to '/' do %>
@@ -376,3 +378,11 @@
     </div>
   </div>
 </div>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    swal("Bienvenido <%= current_user.first_name %>", 'Te has logeado correctamente', 'success', {
+          buttons: false,
+          timer: 2500,
+        });
+</script>
