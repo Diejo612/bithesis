@@ -35,15 +35,16 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-4 text-center p-5">
-                    <div class="row">
+                    <div class="row mb-5">
                         <div class="col">
                             <% if @alummni.photo.key.nil? %>
+                                <%= image_tag 'avatar-default' %>
                             <% else %>
                                 <%= cl_image_tag(@alummni.photo.key, class: "img-fluid") %>
                             <% end %>
                         </div>
                     </div>
-                    <div class="row align-items-center">
+                    <div class="row text-left">
                         <div class="col-4">
                             <th><strong>Nombre:</strong></th>
                         </div>
@@ -51,44 +52,44 @@
                             <th><%= @alummni.first_name %> <%= @alummni.last_name %></th>
                         </div>
                     </div>
-                    <div class="row align-items-center">
+                    <div class="row text-left">
                         <div class="col-4">
-                            
+
                             <th><strong>Email:</strong></th>
                         </div>
                         <div class="col-8">
                             <th><%= @alummni.email %></th>
                         </div>
                     </div>
-                    <div class="row align-items-center">
-                        <div class="col-4">                            
+                    <div class="row text-left">
+                        <div class="col-4">
                             <th><strong>Universidad:</strong></th>
                         </div>
-                        <div class="col-8">                            
+                        <div class="col-8">
                             <th><%= @alummni.university %></th>
                         </div>
                     </div>
-                     <div class="row align-items-center">
-                        <div class="col-4">                            
+                     <div class="row text-left">
+                        <div class="col-4">
                             <th><strong>Grado de Instrucción:</strong></th>
                         </div>
-                        <div class="col-8">                            
+                        <div class="col-8">
                             <th><%= @alummni.level_instruction %></th>
                         </div>
                     </div>
-                     <div class="row align-items-center">
-                        <div class="col-4">                            
+                     <div class="row text-left">
+                        <div class="col-4">
                             <th><strong>Teléfono:</strong></th>
                         </div>
-                        <div class="col-8">                            
+                        <div class="col-8">
                             <th><%= @alummni.phone %></th>
                         </div>
                     </div>
-                     <div class="row align-items-center">
-                        <div class="col-4">                            
+                     <div class="row text-left">
+                        <div class="col-4">
                             <th><strong>Fecha de Ingreso:</strong></th>
                         </div>
-                        <div class="col-8">                            
+                        <div class="col-8">
                             <th><%= @alummni.created_at %></th>
                         </div>
                     </div>
@@ -124,11 +125,8 @@
         </div>
 
 <!-- Fin de la tabla datos alummnis -->
-    
+
   </div>
 </div>
 
 </div>
-
-
-
