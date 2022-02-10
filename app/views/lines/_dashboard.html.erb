@@ -119,8 +119,8 @@
                                       <%# controler %>
                                       <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
                                         <% if task.auto_check %>
+                                          <input class='checkbox' type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' <%= 'checked' if status.completed %> >
                                           <label for="completed">Marcar como terminado</label>
-                                          <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' <%= 'checked' if status.completed %> >
                                         <% end %>
                                       </div>
                                       <%# ---- %>
@@ -163,8 +163,8 @@
                                       <%# controler %>
                                       <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
                                         <% if task.auto_check %>
+                                          <input class='checkbox' type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
                                           <label for="completed">Marcar como terminado</label>
-                                          <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
                                         <% end %>
                                       </div>
                                     </div>
@@ -247,8 +247,8 @@
                                       <%# controler %>
                                       <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
                                         <% if task.auto_check %>
+                                          <input class='checkbox' type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
                                           <label for="completed">Marcar como terminado</label>
-                                          <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
                                         <% end %>
                                       </div>
                                     </div>
@@ -289,7 +289,7 @@
                                       <%# controler %>
                                       <div data-controller='completed'  data-completed-update-url="<%= task_status_path(status) %>" data-completed-status-id="<%= station_status_path(st_status) %>">
                                         <% if task.auto_check %>
-                                          <input type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
+                                          <input class='checkbox' type="checkbox" name="completed" id="completed" data-completed-target='completed' data-action='click->completed#update_status' data-user-id=<%= current_user.id %> data-task-id=<%= task.id %> <%= 'checked' if status.completed %> >
                                           <label for="completed">Marcar como terminado</label>
                                         <% end %>
                                       </div>
