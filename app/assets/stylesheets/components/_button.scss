@@ -207,7 +207,10 @@
 
 .upload-file {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: 50%;
+  border: 0px;
+  margin: 0 auto;
 }
 
 .upload-file::before {
@@ -218,7 +221,6 @@
   justify-content: center;
   align-items: center;
   border-radius: 3px;
-  border: 0px;
   content: 'Seleccionar archivo';
   position: absolute;
   left: 0;
