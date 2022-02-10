@@ -5,12 +5,13 @@
 
 <div class='container-register'>
   <h1 class="text-center">Programa tu reunión</h1>
-  <div class="form-entrevista text-center">
-    <h4>Días disponibles</h4>
+  <div class="form-entrevista  ">
     <div class="calendar-container">
       <%= simple_form_for [@interview] do |f| %>
         <%= f.input :date, label: 'Elige una fecha' %>
-        <%= f.button :submit, class: 'btn btn-primary', value: 'Reserva' %>
+      <div class="text-center">
+        <%= f.button :submit, class: 'btn-reservar', value: 'Reservar' %>
+      </div>
       <% end %>
     </div>
   </div>

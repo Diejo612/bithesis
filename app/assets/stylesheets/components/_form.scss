@@ -28,7 +28,7 @@
 .container-register {
   width: 60%;
   margin: 0 auto;
-  margin-top: -300px;
+  margin-top: -200px;
   h1 {
     font-weight: bold;
     color: white;
@@ -129,7 +129,6 @@ input {
   background-image: url(https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
   background-size: cover;
   background-position: 30% 37%;
-
 }
 
 .edit-photo-user {
@@ -139,4 +138,63 @@ input {
 
 .espacio-navbar {
   height: 60px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #8240ff;
+  border-radius: 2px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #8240ff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(208, 160, 240);
+}
+
+.text-reserva h2 {
+  font-weight: bold;
+}
+
+.container-register-2 {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: -300px;
+  h1 {
+    font-weight: bold;
+    color: white;
+  }
+}
+
+.card-reunion {
+  width: 60%;
+  margin: 0 auto;
+  background: white;
+  padding: 2%;
+}
+
+.title-perfil-2 {
+  color: white;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.container-entrevista h2 {
+  font-weight: bold;
+}
+
+.container-reunion {
+  margin-top: -213px;
 }

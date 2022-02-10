@@ -2,17 +2,20 @@
 </div>
 <div class="background-perfil">
 </div>
+
 <div class="container-reunion">
-  <div class="title-perfil text-center">
-    <h1>Elige tu día y hora de reunión</h1>
-  </div>
-  <div class="card-reunion">
-    <div class='form'>
-      <%= simple_form_for [@meeting] do |f| %>
-        <%= f.input :start_time, label: 'Inicio' %>
-        <%= f.input :end_time, label: 'Final' %>
-        <p class="text-center mt-4"><%= f.button :submit, action: "/lines", class: 'btn-reservar ', value: 'Reservar' %></p>
-      <% end %>
+    <div class="title-perfil-2 text-center">
+      <h1>Elige tu día y hora de reunión</h1>
+    </div>
+    <div class="card-reunion">
+      <div class='form'>
+        <%= simple_form_for [@meeting] do |f| %>
+          <%= f.input :start_time, label: 'Inicio' %>
+          <%= f.input :end_time, label: 'Final' %>
+          <p class="text-center mt-4"><%= f.button :submit, action: "/lines", class: 'btn-reservar ', value: 'Reservar' %></p>
+        <% end %>
+      </div>
+    </div>
     </div>
   </div>
 </div>

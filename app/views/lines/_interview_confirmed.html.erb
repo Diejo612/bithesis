@@ -29,8 +29,21 @@
     </div>
     <div class="bar-space"></div>
     <div class='interview-info'>
-      <h1>Reunión confirmada</h1>
-      Tu cita ha sido programada para el <%= @date %>
+      <div class="row">
+        <div class="col-2 text-center">
+          <i class=" fas fa-solid fa-clipboard-check icono-check"></i>
+        </div>
+        <div class="col-10 text-reserva">
+          <h2>La solicitud ha sido generada exitosamente</h2>
+          <h6>Recibirás pronto un correo de confirmación con el link de la reunión.</h6>
+          <div class="d-flex">
+            <h6 class="fecha">Fecha:</h6>
+            <h6><strong><%= @date %></strong></h6>
+          </div>
+        </div>
+      </div>
+      <br>
+      <p class="text-center"><%= link_to "Volver", root_path, class: "btn-yours" %></p>
     </div>
   </div>
 </div>
