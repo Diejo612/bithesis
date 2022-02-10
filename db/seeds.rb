@@ -30,6 +30,9 @@ Assignation.create(user_id: 4, line_id: 2, completed: true)
 Assignation.create(user_id: 4, line_id: 3, completed: true)
 Assignation.create(user_id: 4, line_id: 4, completed: true)
 Assignation.create(user_id: 4, line_id: 5, completed: true)
+Assignation.create(user_id: 4, line_id: 6, completed: true)
+Assignation.create(user_id: 4, line_id: 7, completed: true)
+Assignation.create(user_id: 4, line_id: 8, completed: true)
 Assignation.create(user_id: 4, line_id: 9)
 
 puts 'Creando station'
