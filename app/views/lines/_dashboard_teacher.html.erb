@@ -19,7 +19,7 @@
             <% if current_user.photo.key %>
               <%= cl_image_tag current_user.photo.key, class: "avatar" %>
             <% else %>
-              <%= image_tag 'avatar-default', class: "avatar" %>
+              <%= image_tag 'avatar-default.jpg', class: "avatar" %>
             <% end %>
       </div>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -51,7 +51,7 @@
                 <% if alummni.photo.key %>
                   <%= cl_image_tag(alummni.photo.key, class: "avatar", default: "") %>
                 <% else %>
-                  <%= image_tag 'avatar-default', class: "avatar" %>
+                  <%= image_tag 'avatar-default.jpg', class: "avatar" %>
                 <% end %>
               </td>
               <td><%= alummni.first_name %></td>
