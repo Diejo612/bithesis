@@ -29,21 +29,41 @@
     </div>
     <div class="bar-space"></div>
     <div class='interview-info'>
-      <div class="row">
-        <div class="col-2 text-center">
-          <i class=" fas fa-solid fa-clipboard-check icono-check"></i>
-        </div>
-        <div class="col-10 text-reserva">
-          <h2>La solicitud ha sido generada exitosamente</h2>
-          <h6>Recibirás pronto un correo de confirmación con el link de la reunión.</h6>
-          <div class="d-flex">
-            <h6 class="fecha">Fecha:</h6>
-            <h6><strong><%= @date %></strong></h6>
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <div class="row">
+            <div class="col-4 text-center">
+              <i class=" fas fa-solid fa-clipboard-check icono-check"></i>
+            </div>
+            <div class="col-8 text-reserva">
+              <h2>Datos de tu entrevista</h2>
+              <div class="d-flex">
+                <h6 class="fecha">Fecha:</h6>
+                <h6><strong><%= @date %></strong></h6>
+              </div>
+              <div>
+              <div class="d-flex">
+                <h6 class="fecha">Hora</h6>
+                <h6><strong>3:00 pm</strong></h6>
+              </div>
+              <div class="d-flex">
+                <h6 class="fecha">Tutor:</h6>
+                <h6><strong>Maria Mercedes Henriquez De Urdaneta</strong></h6>
+              </div>
+              <div class="d-flex justify-content-center mt-3">
+                <%= link_to "Volver", root_path, class: "btn-yours" %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <br>
-      <p class="text-center"><%= link_to "Volver", root_path, class: "btn-yours" %></p>
     </div>
   </div>
 </div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    swal("La solicitud ha sido generada exitosamente", 'Recibirás pronto un correo de confirmación con el link de la reunión.', 'success', {
+          buttons: false,
+          timer: 2500,
+        });
+</script>
