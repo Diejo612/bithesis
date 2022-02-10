@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/recursos', to: "pages#recursos", as: 'recursos'
-  get '/articulo1', to: "pages#articulo1", as: 'articulo1'
+  get '/por-donde-empezar', to: "pages#articulo1", as: 'articulo1'
   get '/cursos', to: "pages#cursos", as: 'cursos'
   resources :lines, only: [:index, :show]
   resources :task_statuses, only: [:update]
