@@ -103,14 +103,16 @@
                                           <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
                                         </div>
                                       <% else %>
-                                          <%= simple_form_for task do |f| %>
-                                          <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %>
-                                          <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
-                                          <% end %>
-                                          <div>
-                                            <% if task.photo.key %>
-                                              <%= cl_image_tag task.photo.key %>
+                                          <div class='container-upload'>
+                                            <%= simple_form_for task, remote: true do |f| %>
+                                            <%= f.input :photo, as: :file, input_html: {class:"custom-file-input"}, label: 'Sube tu archivo aqui' %>
+                                            <%= f.button :submit, class: 'btn-yours', value: 'Subir archivo' %>
                                             <% end %>
+                                            <div class='container-file'>
+                                              <% if task.photo.key %>
+                                                <i class='fas fa-file-word'></i> <%= link_to task.photo.filename, task.photo.url, target: '_blank' %>
+                                              <% end %>
+                                            </div>
                                           </div>
                                       <% end %>
                                       <% st_status = StationStatus.where(user: current_user, station: station).first %>
@@ -147,14 +149,16 @@
                                           <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
                                         </div>
                                       <% else %>
-                                          <%= simple_form_for task do |f| %>
-                                            <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %>
-                                            <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
-                                          <% end %>
-                                          <div>
-                                            <% if task.photo.key %>
-                                              <%= cl_image_tag task.photo.key %>
+                                          <div class='container-upload'>
+                                            <%= simple_form_for task, remote: true do |f| %>
+                                            <%= f.input :photo, as: :file, input_html: {class:"custom-file-input"}, label: 'Sube tu archivo aqui' %>
+                                            <%= f.button :submit, class: 'btn-yours', value: 'Subir archivo' %>
                                             <% end %>
+                                            <div class='container-file'>
+                                              <% if task.photo.key %>
+                                                <i class='fas fa-file-word'></i> <%= link_to task.photo.filename, task.photo.url, target: '_blank' %>
+                                              <% end %>
+                                            </div>
                                           </div>
                                       <% end %>
                                       <% st_status = StationStatus.where(user: current_user, station: station).first %>
@@ -232,15 +236,17 @@
                                           <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
                                         </div>
                                       <% else %>
-                                        <%= simple_form_for task do |f| %>
-                                          <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %>
-                                          <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
-                                        <% end %>
-                                        <div>
-                                            <% if task.photo.key %>
-                                              <%= cl_image_tag task.photo.key %>
+                                        <div class='container-upload'>
+                                            <%= simple_form_for task, remote: true do |f| %>
+                                            <%= f.input :photo, as: :file, input_html: {class:"custom-file-input"}, label: 'Sube tu archivo aqui' %>
+                                            <%= f.button :submit, class: 'btn-yours', value: 'Subir archivo' %>
                                             <% end %>
-                                        </div>
+                                            <div class='container-file'>
+                                              <% if task.photo.key %>
+                                                <i class='fas fa-file-word'></i> <%= link_to task.photo.filename, task.photo.url, target: '_blank' %>
+                                              <% end %>
+                                            </div>
+                                          </div>
                                       <% end %>
                                       <% st_status = StationStatus.where(user: current_user, station: station).first %>
                                       <% status = TaskStatus.where(user: current_user, task: task).first %>
@@ -274,14 +280,16 @@
                                           <iframe src="<%= task.url %>" style="width:100%; height:700px;" frameborder="0" ></iframe>
                                         </div>
                                       <% else %>
-                                          <%= simple_form_for task do |f| %>
-                                          <%= f.input :photo, as: :file, input_html: {class:"edit-photo-user"} %>
-                                          <%= f.button :submit, class: 'btn btn-primary', value: 'Subir archivo' %>
-                                          <% end %>
-                                          <div>
-                                            <% if task.photo.key %>
-                                              <i class='fas fa-file-word'></i>
+                                          <div class='container-upload'>
+                                            <%= simple_form_for task, remote: true do |f| %>
+                                            <%= f.input :photo, as: :file, input_html: {class:"upload-file"}, label: 'Sube tu archivo aqui' %>
+                                            <%= f.button :submit, class: 'btn-yours', value: 'Subir archivo' %>
                                             <% end %>
+                                            <div class='container-file'>
+                                              <% if task.photo.key %>
+                                                <i class='fas fa-file-word'></i> <%= link_to task.photo.filename, task.photo.url, target: '_blank' %>
+                                              <% end %>
+                                            </div>
                                           </div>
                                       <% end %>
                                       <% st_status = StationStatus.where(user: current_user, station: station).first %>
