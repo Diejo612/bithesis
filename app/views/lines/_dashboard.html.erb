@@ -328,18 +328,32 @@
                         <li class="clearfix">
                             <div class="message-data text-right">
                                 <span class="message-data-time">10:10 AM, Hoy</span>
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                <% if User.find(1).photo.key %>
+                                  <%= cl_image_tag User.find(1).photo.key %>
+                                <% else %>
+                                  <%= image_tag 'avatar-default' %>
+                                <% end %>
                             </div>
                             <div class="message other-message float-right"> Hola Jhon, ¿cómo estás? ¿Cómo va tu avance? </div>
                         </li>
                         <li class="clearfix">
                             <div class="message-data">
+                                <% if current_user.photo.key %>
+                                  <%= cl_image_tag current_user.photo.key %>
+                                <% else %>
+                                  <%= image_tag 'avatar-default' %>
+                                <% end %>
                                 <span class="message-data-time">10:12 AM, Hoy</span>
                             </div>
                             <div class="message my-message">¿Nos reunimos hoy?</div>
                         </li>
                         <li class="clearfix">
                             <div class="message-data">
+                                <% if current_user.photo.key %>
+                                  <%= cl_image_tag current_user.photo.key %>
+                                <% else %>
+                                  <%= image_tag 'avatar-default' %>
+                                <% end %>
                                 <span class="message-data-time">10:15 AM, Hoy</span>
                             </div>
                             <div class="message my-message">El proyecto ya ha sido terminado y tengo resultados para mostrarte.</div>

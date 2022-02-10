@@ -157,6 +157,7 @@ Task.create(station_id: 3, tipo: 'video', url: 'https://www.loom.com/embed/3afd7
 Task.create(station_id: 4, tipo: 'video', url: 'https://www.loom.com/embed/7127b494d626479497e0c4c82e35627f', auto_check: true)
 Task.create(station_id: 5, tipo: 'video', url: 'https://www.loom.com/embed/6d7ad28dc51f4246a9155904b750ea76', auto_check: true)
 Task.create(station_id: 5, tipo: 'video', url: 'https://www.loom.com/embed/0bc9cea925014e0686e86f93e6ebe946', auto_check: true)
+Task.create(station_id: 5, tipo: 'file', url: 'https://drive.google.com/file/d/1kKs-rhaSz6XbeIq9A4wNfEkLpQ52fjhd/preview', auto_check: true)
 Task.create(station_id: 6, tipo: 'video', url: 'https://www.loom.com/embed/0bc9cea925014e0686e86f93e6ebe946', auto_check: true)
 Task.create(station_id: 6, tipo: 'file', url: 'https://drive.google.com/file/d/1FgclKWLSU5hfZK-xXmJROlxQn9-ZkV2D/preview', auto_check: true)
 Task.create(station_id: 7, tipo: 'video', url: 'https://www.loom.com/embed/0bc9cea925014e0686e86f93e6ebe946', auto_check: true)
