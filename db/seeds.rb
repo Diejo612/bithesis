@@ -25,12 +25,12 @@ Line.create(name: 'Estación servicios adicionales', icon_tag: 'fas fa-tasks', a
 
 puts 'Asignando cursos a usuario prueba'
 
-Assignation.create(user_id: 5, line_id: 1, completed: true)
-Assignation.create(user_id: 5, line_id: 2)
-Assignation.create(user_id: 5, line_id: 3)
-Assignation.create(user_id: 5, line_id: 4)
-Assignation.create(user_id: 5, line_id: 5)
-Assignation.create(user_id: 5, line_id: 9)
+Assignation.create(user_id: 4, line_id: 1, completed: true)
+Assignation.create(user_id: 4, line_id: 2, completed: true)
+Assignation.create(user_id: 4, line_id: 3, completed: true)
+Assignation.create(user_id: 4, line_id: 4, completed: true)
+Assignation.create(user_id: 4, line_id: 5, completed: true)
+Assignation.create(user_id: 4, line_id: 9)
 
 puts 'Creando station'
 
@@ -162,15 +162,16 @@ Task.create(station_id: 6, tipo: 'file', url: 'https://drive.google.com/file/d/1
 Task.create(station_id: 7, tipo: 'video', url: 'https://www.loom.com/embed/0bc9cea925014e0686e86f93e6ebe946', auto_check: true)
 Task.create(station_id: 7, tipo: 'tarea')
 Task.create(station_id: 31, tipo: 'video', url: 'https://www.loom.com/embed/011d94b6ee034f1b88d4f5eac5a64998', auto_check: true)
+Task.create(station_id: 31, tipo: 'file', url: 'https://docs.google.com/presentation/d/e/2PACX-1vRuU0LJcJHIuhIbgJ2EeHapCCf3zM3Rb7lb9zGRlQxp_qvT8hFO5S6YM5ytu3qcvh4UPprSsQ4C6eVZ/embed?start=false&loop=false&delayms=3000', auto_check: true)
 
 
 puts 'Generando tablas status'
 
-Assignation.where(user_id: 5).map { |a| a.line }.each do |line|
+Assignation.where(user_id: 4).map { |a| a.line }.each do |line|
   line.stations.each do |s|
-    StationStatus.create(user_id: 5, station: s)
+    StationStatus.create(user_id: 4, station: s)
     s.tasks.each do |t|
-      TaskStatus.create(user_id: 5, task: t)
+      TaskStatus.create(user_id: 4, task: t)
     end
   end
 end
