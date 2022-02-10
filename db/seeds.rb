@@ -1,7 +1,7 @@
 require 'open-uri'
 
 puts 'Creando avatar'
-avatar = URI.open('https://peru21.pe/resizer/TXxtyJjG3tta6dCsEvqqccFw_zY=/1200x1200/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/MHTXJWI6VZFNNKIM3HM5LKBFWE.jpg')
+# avatar = URI.open('https://peru21.pe/resizer/TXxtyJjG3tta6dCsEvqqccFw_zY=/1200x1200/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/MHTXJWI6VZFNNKIM3HM5LKBFWE.jpg')
 
 puts 'Creando Usuarios'
 User.create(first_name: 'María', last_name: 'Henriquez', teacher: true, email: 'maria@email.com', password: '1234567')
@@ -10,7 +10,7 @@ User.create(first_name: 'Jhon', last_name: 'Figueroa', email: 'jh@email.com', pa
 User.create(first_name: 'Jean', last_name: 'Pier', email: 'jean_pier@email.com', password: '1234567')
 User.create(first_name: 'Jon Snow', last_name: 'Stark',
             university: 'Winterfell', level_instruction: 'Lord Commander',
-            email: 'user_admited@email.com', password: '1234567', admited: true).photo.attach(io: avatar, filename: 'jon snow', content_type: 'image/png')
+            email: 'user_admited@email.com', password: '1234567', admited: true)
 
 puts 'Creando Lines'
 Line.create(name: 'Linea principal', icon_tag: 'fas fa-flag', abrv: 'linea1')
